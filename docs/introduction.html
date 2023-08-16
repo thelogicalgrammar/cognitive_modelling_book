@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introduction | An Introduction to Bayesian Cognitive Modelling in R</title>
+  <meta name="description" content="1 Introduction | An Introduction to Bayesian Cognitive Modelling in R" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introduction | An Introduction to Bayesian Cognitive Modelling in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introduction | An Introduction to Bayesian Cognitive Modelling in R" />
+  
+  
+  
+
+<meta name="author" content="Fausto Carcassi" />
+
+
+<meta name="date" content="2023-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="categorization.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#bits-and-pieces-of-r"><i class="fa fa-check"></i><b>1.1</b> Bits and pieces of R</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-motivating-example-sampling-from-an-urn"><i class="fa fa-check"></i><b>1.2</b> A motivating example: Sampling from an urn</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#sampling-possible-worlds-from-the-generative-model"><i class="fa fa-check"></i><b>1.2.1</b> Sampling possible worlds from the generative model</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#bayesian-update-learning-from-the-data"><i class="fa fa-check"></i><b>1.3</b> Bayesian update: Learning from the data</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#reminder-bayes-theorem"><i class="fa fa-check"></i><b>1.3.1</b> Reminder: Bayes Theorem</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#applying-bayes-theorem-to-the-urn-case"><i class="fa fa-check"></i><b>1.3.2</b> Applying Bayes theorem to the urn case</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#implementation-detail-how-to-avoid-calculating-pd"><i class="fa fa-check"></i><b>1.3.3</b> Implementation detail: How to avoid calculating p(D)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#if-there-is-time-left"><i class="fa fa-check"></i><b>1.4</b> If there is time left…</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#answers"><i class="fa fa-check"></i><b>1.6</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="categorization.html"><a href="categorization.html"><i class="fa fa-check"></i><b>2</b> Categorization</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="categorization.html"><a href="categorization.html#the-case-of-a-single-observation"><i class="fa fa-check"></i><b>2.1</b> The case of a single observation</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="categorization.html"><a href="categorization.html#little-r-programming-trick"><i class="fa fa-check"></i><b>2.1.1</b> Little R programming trick</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="categorization.html"><a href="categorization.html#the-case-of-multiple-observations"><i class="fa fa-check"></i><b>2.2</b> The case of multiple observations</a></li>
+<li class="chapter" data-level="2.3" data-path="categorization.html"><a href="categorization.html#if-there-is-time-left-1"><i class="fa fa-check"></i><b>2.3</b> If there is time left…</a></li>
+<li class="chapter" data-level="2.4" data-path="categorization.html"><a href="categorization.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="categorization.html"><a href="categorization.html#answers-1"><i class="fa fa-check"></i><b>2.5</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cultural-evolution.html"><a href="cultural-evolution.html"><i class="fa fa-check"></i><b>3</b> Cultural Evolution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cultural-evolution.html"><a href="cultural-evolution.html#the-languages"><i class="fa fa-check"></i><b>3.1</b> The languages</a></li>
+<li class="chapter" data-level="3.2" data-path="cultural-evolution.html"><a href="cultural-evolution.html#bayesian-learning-of-the-language-from-data"><i class="fa fa-check"></i><b>3.2</b> Bayesian learning of the language from data</a></li>
+<li class="chapter" data-level="3.3" data-path="cultural-evolution.html"><a href="cultural-evolution.html#cultural-evolution-with-bayesian-agents"><i class="fa fa-check"></i><b>3.3</b> Cultural evolution with Bayesian agents!</a></li>
+<li class="chapter" data-level="3.4" data-path="cultural-evolution.html"><a href="cultural-evolution.html#if-there-is-time-left-2"><i class="fa fa-check"></i><b>3.4</b> If there is time left…</a></li>
+<li class="chapter" data-level="3.5" data-path="cultural-evolution.html"><a href="cultural-evolution.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html"><i class="fa fa-check"></i><b>4</b> Rational Speech Acts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#surprisal-in-information-theory"><i class="fa fa-check"></i><b>4.1</b> Surprisal in information theory</a></li>
+<li class="chapter" data-level="4.2" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#the-rational-speech-act-model"><i class="fa fa-check"></i><b>4.2</b> The Rational Speech Act model</a></li>
+<li class="chapter" data-level="4.3" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#if-there-is-time-left-3"><i class="fa fa-check"></i><b>4.3</b> If there is time left…</a></li>
+<li class="chapter" data-level="4.4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#exercises-3"><i class="fa fa-check"></i><b>4.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="inferring-causality.html"><a href="inferring-causality.html"><i class="fa fa-check"></i><b>5</b> Inferring causality</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="inferring-causality.html"><a href="inferring-causality.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
+<li class="chapter" data-level="5.2" data-path="inferring-causality.html"><a href="inferring-causality.html#approximating-the-likelihood-with-a-simulation"><i class="fa fa-check"></i><b>5.2</b> Approximating the likelihood with a simulation</a></li>
+<li class="chapter" data-level="5.3" data-path="inferring-causality.html"><a href="inferring-causality.html#bayesian-inference"><i class="fa fa-check"></i><b>5.3</b> Bayesian inference</a></li>
+<li class="chapter" data-level="5.4" data-path="inferring-causality.html"><a href="inferring-causality.html#one-complication-from-real-participants"><i class="fa fa-check"></i><b>5.4</b> One complication from real participants</a></li>
+<li class="chapter" data-level="5.5" data-path="inferring-causality.html"><a href="inferring-causality.html#putting-it-all-together"><i class="fa fa-check"></i><b>5.5</b> Putting it all together</a></li>
+<li class="chapter" data-level="5.6" data-path="inferring-causality.html"><a href="inferring-causality.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
+<li class="chapter" data-level="5.7" data-path="inferring-causality.html"><a href="inferring-causality.html#appendices-you-dont-need-to-understand-them"><i class="fa fa-check"></i><b>5.7</b> Appendices (You don’t need to understand them)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-1"><i class="fa fa-check"></i><b>5.7.1</b> Appendix 1</a></li>
+<li class="chapter" data-level="5.7.2" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-2-gamma1."><i class="fa fa-check"></i><b>5.7.2</b> Appendix 2: <span class="math inline">\(\gamma=1\)</span>.</a></li>
+<li class="chapter" data-level="5.7.3" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-3-another-complication"><i class="fa fa-check"></i><b>5.7.3</b> Appendix 3: Another complication</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html"><i class="fa fa-check"></i><b>6</b> Learning in a Language of Thought</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-logsumexp-function"><i class="fa fa-check"></i><b>6.1</b> The LogSumExp function</a></li>
+<li class="chapter" data-level="6.2" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-conceptual-primitives-and-number-systems"><i class="fa fa-check"></i><b>6.2</b> The conceptual primitives and number systems</a></li>
+<li class="chapter" data-level="6.3" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#learning-an-lot"><i class="fa fa-check"></i><b>6.3</b> Learning an LoT</a></li>
+<li class="chapter" data-level="6.4" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#if-there-is-time-left-4"><i class="fa fa-check"></i><b>6.4</b> If there is time left…</a></li>
+<li class="chapter" data-level="6.5" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#exercises-5"><i class="fa fa-check"></i><b>6.5</b> Exercises</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Bayesian Cognitive Modelling in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Reading: Chapter 4 and 5 from Kruschke, John K. 2015. Doing Bayesian Data Analysis: A Tutorial with R, JAGS, and Stan. Edition 2. Boston: Academic Press.</p>
+<div id="bits-and-pieces-of-r" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Bits and pieces of R<a href="introduction.html#bits-and-pieces-of-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Some useful shortcuts for writing markdown:</p>
+<ul>
+<li>ctrl+shift+k: Render in html</li>
+<li>ctrl+alt+i: Insert r cell</li>
+<li>ctrl+shift+enter: Run current code chunk</li>
+</ul>
+<p>Various:</p>
+<ul>
+<li>A <em>vector</em> is a series of values of the same type in a given order. We’ll mostly use vectors of integers or floats.</li>
+<li>A <em>matrix</em> is a bunch of numbers arranged in a square (rows and columns).</li>
+<li>Important: we can refer to elements of a matrix by their <em>index</em>, which consists of two numbers. The first number indicates the row of the element, the second number indicates the column.</li>
+<li>You assign a value to a variable with <code>&lt;-</code>, you check equality with <code>==</code>.</li>
+</ul>
+<p>Bits of R that we’re going to use (make sure you understand them):</p>
+<ul>
+<li><em>c</em>: Combines values into a vector or list</li>
+<li>1:10: The ‘:’ creates a vector from 1 to 10</li>
+<li><em>rep</em>: Replicates an element a specified number of times</li>
+<li><em>print</em>: Prints something</li>
+<li><em>sample</em>: Samples values from a vector with the given probabilities (given in the <code>prob</code> argument)</li>
+<li><em>head</em>: Shows just the first few values of a vector, or the first few rows of a matrix</li>
+<li><em>hist</em>: plots an histogram. Useful to get a sense for the distribution of samples.</li>
+<li><em>rbinom</em>: Repeatedly samples from a binomial distribution. Arguments: rbinom (# observations, # trails/observation, probability of success )</li>
+<li><em>paste</em>: connects elements in a single string that can be printed.</li>
+<li><em>sum</em>: sums all the values in a vector / matrix</li>
+<li>for (i in c(1:10)): Loops over <code>i</code>, with <code>i</code> taking values between 1 and 10 (included).</li>
+<li><em>barplot</em>: Plots a barplot</li>
+<li><em>cbind</em>: Takes a series of vectors, connects them into a matrix so that each vector is a column.</li>
+<li><em>colSums</em>: Sums the columns of a matrix.</li>
+</ul>
+</div>
+<div id="a-motivating-example-sampling-from-an-urn" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> A motivating example: Sampling from an urn<a href="introduction.html#a-motivating-example-sampling-from-an-urn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imagine that you have an urn that has black and red balls inside. You can’t see inside the urn and you don’t know how many red and black balls there are, but you know that there is a total of 9 balls. You are interested in how many red balls there are (or, equivalently, how many black balls there are: since you know the total number, knowing one implies the other). The hypotheses are {0 red balls, 1 red ball, 2 red balls, …, 9 red balls }, one for each way that the unknown part of the world could be (the “world” here just means whatever bit of the world we want to model, in this case the urn’s content). Let’s call them respectively R0, R1, R2, etc.</p>
+<p>Since you don’t know which hypothesis is true, you have a case of <em>subjective uncertainty</em> (the world is in a certain way, but you don’t know which way it is). Therefore, it is natural to represent your uncertainty with a probability distribution over the possible unknown states that the world could be in, namely our 10 hypotheses: each hypothesis gets a probability, and the probabilities sum to 1. Which probabilities should you give to the hypotheses? Assume that you have no reason for thinking that there is any particular number of red or black balls in the urn. Then, it is natural to give each hypothesis the same probability 1/10 = 0.1, so that we have a <em>uniform distribution</em> over hypotheses (this is called the <em>principle of indifference</em>, which historically has been super important in the development of probability theory. The rabbit hole goes deep). This distribution over hypotheses (the possible ways the the unknown part of the world could be) before we observe any new data is called the <em>prior</em>.</p>
+<p>Suppose now you put your hand inside the urn, grab a ball at random, take it out of the urn, and look at it. The possible observations are { black ball, red ball }, call them <span class="math inline">\(BB\)</span> and <span class="math inline">\(RB\)</span> respectively. The probability of observing each color depends on which hypothesis is true, i.e. how many balls of each color are in the urn. For instance, if R0 is true (there are 0 red balls in the urn), then the probability of observing a black ball is 1 (<span class="math inline">\(p(BB|R0)=1.\)</span>), and the probability of observing a red ball is 0 (<span class="math inline">\(p(RB|R0)=0.\)</span>). The function of hypotheses that gives the probability of some specific observations given the hypothesis is called the <em>likelihood</em> (the likelihood is a bit confusing so don’t worry too much if you don’t get it now, going through examples will make it clearer).</p>
+<div id="sampling-possible-worlds-from-the-generative-model" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Sampling possible worlds from the generative model<a href="introduction.html#sampling-possible-worlds-from-the-generative-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we have a distribution over hypotheses, <span class="math inline">\(p(H)\)</span>, and a distribution over observations given each hypothesis, <span class="math inline">\(p(D|H)\)</span>. These two things together are called the <em>generative model</em>, because one thing we can do with them is generate possible scenarios, i.e. a combination of hypothesis and data sampled from that hypothesis. You can generate possible scenarios because prior and likelihood, if you multiply them together, define a <em>joint</em> distribution over hypotheses and observations: <span class="math inline">\(p(D|H)p(H)=p(D,H)\)</span> (chain rule of probability). So a scenario is a sample from this joint distribution.</p>
+<p>How do we sample from the generative model? Since this joint is defined over each combination of <span class="math inline">\(H\)</span> and <span class="math inline">\(D\)</span>, one option would be to sample directly from the joint distribution. However, there’s a simple way. Note that which hypothesis is true does not depend on the data, while the data depends on which hypothesis is true. Therefore, we can sample from the generative model as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Sample an hypothesis from the prior.</li>
+<li>Sample from the data given the hypothesis, using the likelihood function.</li>
+</ol>
+<p>Let’s first create a vector with the probability of each hypothesis:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" tabindex="-1"></a>p.hypotheses <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fl">0.1</span>,<span class="dv">10</span>)</span>
+<span id="cb1-2"><a href="introduction.html#cb1-2" tabindex="-1"></a><span class="fu">print</span>(p.hypotheses)</span></code></pre></div>
+<pre><code>##  [1] 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1</code></pre>
+<p>Let’s use the generative model to generate possible worlds in the urn case. Let’s first create a vector of 10000 hypotheses sampled from the prior:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction.html#cb3-1" tabindex="-1"></a>prior.samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb3-2"><a href="introduction.html#cb3-2" tabindex="-1"></a>                       <span class="dv">10000</span>,</span>
+<span id="cb3-3"><a href="introduction.html#cb3-3" tabindex="-1"></a>                       <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-4"><a href="introduction.html#cb3-4" tabindex="-1"></a>                       <span class="co"># the prob parameter allows to specify the probability</span></span>
+<span id="cb3-5"><a href="introduction.html#cb3-5" tabindex="-1"></a>                       <span class="co"># of each hypothesis.</span></span>
+<span id="cb3-6"><a href="introduction.html#cb3-6" tabindex="-1"></a>                       <span class="at">prob=</span>p.hypotheses)</span>
+<span id="cb3-7"><a href="introduction.html#cb3-7" tabindex="-1"></a><span class="fu">head</span>(prior.samples)</span></code></pre></div>
+<pre><code>## [1] 1 1 3 7 2 4</code></pre>
+<p>Here each number corresponds to one hypothesis: 1 corresponds to R1, 2 to R2, etc. You can see each sample as a possible way the unknown part of the world could be. Since the prior was uniform (i.e. each hypothesis had the same probability), each hypothesis appears more or less equally often. Let’s plot this to make sure:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction.html#cb5-1" tabindex="-1"></a><span class="fu">hist</span>(</span>
+<span id="cb5-2"><a href="introduction.html#cb5-2" tabindex="-1"></a>  prior.samples,</span>
+<span id="cb5-3"><a href="introduction.html#cb5-3" tabindex="-1"></a>  <span class="co"># this is to have the x ticks centered below the bars</span></span>
+<span id="cb5-4"><a href="introduction.html#cb5-4" tabindex="-1"></a>  <span class="at">breaks=</span><span class="fu">seq</span>(<span class="fu">min</span>(prior.samples)<span class="sc">-</span><span class="fl">0.5</span>, <span class="fu">max</span>(prior.samples)<span class="sc">+</span><span class="fl">0.5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb5-5"><a href="introduction.html#cb5-5" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Now for each element of <code>prior_samples</code>, we want to sample an observation. To do that, let’s first calculate the probability of the <span class="math inline">\(RB\)</span> observation for each element of <code>prior_samples</code>. If an element of <code>prior_samples</code> is for instance 2, we want the probability of <span class="math inline">\(RB\)</span> to be <span class="math inline">\(2/9\)</span>. In general, if the element is <span class="math inline">\(n\)</span>, we want the corresponding probability of <span class="math inline">\(RB\)</span> to be <span class="math inline">\(n/9\)</span>. We can do this in a simple way with R, exploiting the fact that it intelligently adapts dimensions to each other:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction.html#cb6-1" tabindex="-1"></a>p.RB <span class="ot">&lt;-</span> prior.samples <span class="sc">/</span> <span class="dv">9</span></span>
+<span id="cb6-2"><a href="introduction.html#cb6-2" tabindex="-1"></a><span class="fu">head</span>(p.RB)</span></code></pre></div>
+<pre><code>## [1] 0.1111111 0.1111111 0.3333333 0.7777778 0.2222222 0.4444444</code></pre>
+<p>Finally, we just need to sample one value for each element of <code>p.RB</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introduction.html#cb8-1" tabindex="-1"></a>samples.RB <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(</span>
+<span id="cb8-2"><a href="introduction.html#cb8-2" tabindex="-1"></a>  <span class="at">n=</span><span class="fu">length</span>(p.RB),</span>
+<span id="cb8-3"><a href="introduction.html#cb8-3" tabindex="-1"></a>  <span class="at">size=</span><span class="dv">1</span>,</span>
+<span id="cb8-4"><a href="introduction.html#cb8-4" tabindex="-1"></a>  <span class="at">prob=</span>p.RB</span>
+<span id="cb8-5"><a href="introduction.html#cb8-5" tabindex="-1"></a>)</span>
+<span id="cb8-6"><a href="introduction.html#cb8-6" tabindex="-1"></a><span class="fu">head</span>(samples.RB)</span></code></pre></div>
+<pre><code>## [1] 0 1 1 1 0 0</code></pre>
+<p><code>samples.RB</code> is equal to 1 when the observation was RB, and 0 when the observation was not RB (i.e. was BB). Just for sanity, let’s see how many observations of each type we got:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introduction.html#cb10-1" tabindex="-1"></a><span class="fu">hist</span>(</span>
+<span id="cb10-2"><a href="introduction.html#cb10-2" tabindex="-1"></a>  samples.RB,</span>
+<span id="cb10-3"><a href="introduction.html#cb10-3" tabindex="-1"></a>  <span class="at">breaks=</span><span class="fu">seq</span>(<span class="fu">min</span>(samples.RB)<span class="sc">-</span><span class="fl">0.5</span>, <span class="fu">max</span>(samples.RB)<span class="sc">+</span><span class="fl">0.5</span>, <span class="at">by=</span><span class="dv">1</span>),</span>
+<span id="cb10-4"><a href="introduction.html#cb10-4" tabindex="-1"></a>  <span class="at">xaxt=</span><span class="st">&#39;n&#39;</span></span>
+<span id="cb10-5"><a href="introduction.html#cb10-5" tabindex="-1"></a>)</span>
+<span id="cb10-6"><a href="introduction.html#cb10-6" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Since we had a uniform probability over the hypotheses, we had the sample probability of sampling a black or a red ball across all hypotheses. Therefore, as expected, we got more or less the same number of black and red balls when sampling from the generative model.</p>
+<p>We have seen how to simulate possible states of the world from your prior+likelihood. However, suppose that we want to go the other way: you make some observations, and you want to update your distribution over hypotheses. In the urn case, suppose you pick one ball at random from the urn, and it’s black. What is the probability of each hypothesis given that observation (<span class="math inline">\(p(H|BB)\)</span>)? We can calculate it using Bayes theorem.</p>
+</div>
+</div>
+<div id="bayesian-update-learning-from-the-data" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Bayesian update: Learning from the data<a href="introduction.html#bayesian-update-learning-from-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reminder-bayes-theorem" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Reminder: Bayes Theorem<a href="introduction.html#reminder-bayes-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As a reminder, this is Bayes theorem:
+<span class="math display">\[\begin{align}
+\color{violet}{p(H|D)}
+&amp;= \frac{\color{blue}{p(D|H)}\color{green}{p(H)}}{\color{red}{\sum_{H_i} p(D|H_i)p(H_i)}} \\
+&amp;= \frac{\color{blue}{p(D|H)}\color{green}{p(H)}}{\color{red}{p(D)}}
+\end{align}\]</span>
+This mostly consists of expressions we have already encountered: <span class="math inline">\(\color{violet}{\text{posterior}}\)</span>, <span class="math inline">\(\color{blue}{\text{likelihood}}\)</span>, <span class="math inline">\(\color{green}{\text{prior}}\)</span>, and <span class="math inline">\(\color{red}{\text{Bayesian evidence}}\)</span>. Let’s go through them once more:</p>
+<ul>
+<li>The posterior is the probability of the hypothesis given the data. This is generally what we are interested in at the end: we see some data, we want to find the probability of each hypothesis given the data.</li>
+<li>The likelihood is the probability of the data <em>given</em> the hypothesis.</li>
+<li>The prior is the probability of the hypothesis prior to seeing any data.</li>
+<li>The evidence is the probability of the data across all hypotheses. Note that it does not depend on the hypothesis, and so the denominator is always the same. Effectively, it works as a normalization constant, in other words it makes sure that the sum of the posterior probability of all hypotheses is 1. The evidence is generally hard to calculate.</li>
+</ul>
+<p>Essentially, Bayes theorem is saying that the probability of a hypothesis given some data depends on (1) how likely the hypothesis was to generate the data <em>and</em> (2) how likely the hypothesis was before seeing the data.</p>
+</div>
+<div id="applying-bayes-theorem-to-the-urn-case" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Applying Bayes theorem to the urn case<a href="introduction.html#applying-bayes-theorem-to-the-urn-case" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose you are in the urn scenario above, with a uniform prior distribution over the 10 hypotheses. Now you pick a ball and it’s black. Given this observation of BB, how should you change the probabilities you give to each hypothesis? Intuitively, you should now give a little bit more probability to those hypotheses that have more black balls than red balls, because those are the hypotheses that make your observations more likely. Moreover, you can safely exclude hypothesis <span class="math inline">\(R9\)</span>, because your observation would be impossible if <span class="math inline">\(R9\)</span> were true. Let’s calculate this with Bayes theorem.</p>
+<p>The prior is the vector <code>p.hypotheses</code> we defined above. Given that we have observed <span class="math inline">\(BB\)</span>, the likelihood should contain for each hypothesis the probability of the observation given the hypothesis. For <span class="math inline">\(R0\)</span>, the likelihood (<span class="math inline">\(p(BB|R0)\)</span>) is 1. For <span class="math inline">\(R1\)</span>, 8 out of the 9 balls are black, and therefore <span class="math inline">\(p(BB|R1)=8/9\)</span>. For hypothesis <span class="math inline">\(n\)</span>, the corresponding likelihood is <span class="math inline">\((9-n)/9\)</span>. We can therefore encode the likelihood in the following vector:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction.html#cb11-1" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> (<span class="dv">9</span><span class="sc">-</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)) <span class="sc">/</span> <span class="dv">9</span> </span>
+<span id="cb11-2"><a href="introduction.html#cb11-2" tabindex="-1"></a><span class="fu">print</span>(likelihood)</span></code></pre></div>
+<pre><code>##  [1] 1.0000000 0.8888889 0.7777778 0.6666667 0.5555556 0.4444444 0.3333333 0.2222222 0.1111111 0.0000000</code></pre>
+<p>Now suppose we want to find the probability of hypothesis <span class="math inline">\(R3\)</span> given your observation <span class="math inline">\(BB\)</span>. Let’s apply Bayes theorem:</p>
+<p><span class="math display">\[
+p(R3 \mid BB) = \frac{p(BB|R3)p(R3)}{\sum_h p(BB|h)p(h)}
+\]</span></p>
+<p>Let’s calculate the parts we need and use Bayes theorem:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introduction.html#cb13-1" tabindex="-1"></a>p.R3 <span class="ot">&lt;-</span> p.hypotheses[<span class="dv">3</span>]</span>
+<span id="cb13-2"><a href="introduction.html#cb13-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&#39;p(R3)=&#39;</span>, p.R3))</span></code></pre></div>
+<pre><code>## [1] &quot;p(R3)= 0.1&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introduction.html#cb15-1" tabindex="-1"></a>p.BB.given.R3 <span class="ot">&lt;-</span> likelihood[<span class="dv">3</span>]</span>
+<span id="cb15-2"><a href="introduction.html#cb15-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&#39;p(BB|R3)=&#39;</span>, p.BB.given.R3))</span></code></pre></div>
+<pre><code>## [1] &quot;p(BB|R3)= 0.777777777777778&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introduction.html#cb17-1" tabindex="-1"></a>evidence <span class="ot">&lt;-</span> <span class="fu">sum</span>(likelihood<span class="sc">*</span>p.hypotheses)</span>
+<span id="cb17-2"><a href="introduction.html#cb17-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&#39;p(BB)=&#39;</span>, p.BB.given.R3))</span></code></pre></div>
+<pre><code>## [1] &quot;p(BB)= 0.777777777777778&quot;</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introduction.html#cb19-1" tabindex="-1"></a>p.R3.given.BB <span class="ot">&lt;-</span> p.R3 <span class="sc">*</span> p.BB.given.R3 <span class="sc">/</span> evidence</span>
+<span id="cb19-2"><a href="introduction.html#cb19-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&#39;p(R3|BB)=&#39;</span>, p.R3.given.BB))</span></code></pre></div>
+<pre><code>## [1] &quot;p(R3|BB)= 0.155555555555556&quot;</code></pre>
+<p>Now let’s do the same for the other hypotheses, in a more compact way (note that the evidence is the same for all values):</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction.html#cb21-1" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb21-2"><a href="introduction.html#cb21-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)){</span>
+<span id="cb21-3"><a href="introduction.html#cb21-3" tabindex="-1"></a>  p.Ri.given.BB <span class="ot">&lt;-</span> p.hypotheses[i] <span class="sc">*</span> likelihood[i] <span class="sc">/</span> evidence</span>
+<span id="cb21-4"><a href="introduction.html#cb21-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&#39;p(R&#39;</span>, i, <span class="st">&#39;|BB)=&#39;</span>, p.Ri.given.BB))</span>
+<span id="cb21-5"><a href="introduction.html#cb21-5" tabindex="-1"></a>  posterior <span class="ot">&lt;-</span> <span class="fu">c</span>(posterior, p.Ri.given.BB)</span>
+<span id="cb21-6"><a href="introduction.html#cb21-6" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;p(R 1 |BB)= 0.2&quot;
+## [1] &quot;p(R 2 |BB)= 0.177777777777778&quot;
+## [1] &quot;p(R 3 |BB)= 0.155555555555556&quot;
+## [1] &quot;p(R 4 |BB)= 0.133333333333333&quot;
+## [1] &quot;p(R 5 |BB)= 0.111111111111111&quot;
+## [1] &quot;p(R 6 |BB)= 0.0888888888888889&quot;
+## [1] &quot;p(R 7 |BB)= 0.0666666666666667&quot;
+## [1] &quot;p(R 8 |BB)= 0.0444444444444444&quot;
+## [1] &quot;p(R 9 |BB)= 0.0222222222222222&quot;
+## [1] &quot;p(R 10 |BB)= 0&quot;</code></pre>
+<p>Note that, as expected, the posterior over hypotheses now is skewed towards those hypotheses with more black balls!</p>
+<p>Just for sanity, check that the posterior sums to 1:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introduction.html#cb23-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sum</span>(posterior))</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Finally, let’s plot the new posterior:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introduction.html#cb25-1" tabindex="-1"></a><span class="fu">barplot</span>(posterior,<span class="at">space=</span><span class="dv">0</span>)</span>
+<span id="cb25-2"><a href="introduction.html#cb25-2" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)<span class="sc">-</span><span class="fl">0.5</span>, <span class="at">labels=</span><span class="fu">paste</span>(<span class="st">&#39;R&#39;</span>, <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="implementation-detail-how-to-avoid-calculating-pd" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Implementation detail: How to avoid calculating p(D)<a href="introduction.html#implementation-detail-how-to-avoid-calculating-pd" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In practice, we generally do not need to calculate the evidence (denominator of Bayes rule) explicitly. When computing a posterior, we will mostly proceed as I am going to explain in this section, which is faster and also allows us to not worry about the denominator.</p>
+<p>First, we create a vector of prior probabilities, which has as many component as there are hypotheses. For instance, take the ten hypotheses above, so we can reuse <code>p.hypotheses</code>. Note that they sum to 1, as they should since it is a probability distribution.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introduction.html#cb26-1" tabindex="-1"></a><span class="co"># don&#39;t worry too much about &#39;cat&#39;</span></span>
+<span id="cb26-2"><a href="introduction.html#cb26-2" tabindex="-1"></a><span class="co"># if you&#39;re curious why not print, try </span></span>
+<span id="cb26-3"><a href="introduction.html#cb26-3" tabindex="-1"></a><span class="co"># to use print(paste(&#39;Prior vector: &#39;, p.hypotheses)) instead</span></span>
+<span id="cb26-4"><a href="introduction.html#cb26-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&#39;Prior vector: &#39;</span>, p.hypotheses)</span></code></pre></div>
+<pre><code>## Prior vector:  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1</code></pre>
+<p>Second, we create a likelihood array. When we did calculations above, we only had a vector with the likelihoods for the specific observation we did. However, we would like to have something that encodes the likelihood function for each possible observation given each possible hypothesis, rather than just for a specific observation. The likelihood defines <em>for each hypothesis</em> a distribution over possible observations. This is telling us given each possible way that the world could be, what is the probability of each observation.</p>
+<p>Suppose there are 2 possible observations as above, <span class="math inline">\(BB\)</span> and <span class="math inline">\(RB\)</span>. Then, we can encode the likelihood as an array with shape (# hypotheses, # possible observations), or in this case (10, 2). The likelihood array in the urn case would be:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="introduction.html#cb28-1" tabindex="-1"></a>likelihood.array <span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
+<span id="cb28-2"><a href="introduction.html#cb28-2" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)<span class="sc">/</span><span class="dv">9</span>,</span>
+<span id="cb28-3"><a href="introduction.html#cb28-3" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">-</span>(<span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>)<span class="sc">/</span><span class="dv">9</span>)</span>
+<span id="cb28-4"><a href="introduction.html#cb28-4" tabindex="-1"></a>)</span>
+<span id="cb28-5"><a href="introduction.html#cb28-5" tabindex="-1"></a><span class="fu">rownames</span>(likelihood.array) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&#39;R&#39;</span>,<span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>),<span class="at">sep=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb28-6"><a href="introduction.html#cb28-6" tabindex="-1"></a><span class="fu">colnames</span>(likelihood.array) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;RB&#39;</span>, <span class="st">&#39;BB&#39;</span>)</span>
+<span id="cb28-7"><a href="introduction.html#cb28-7" tabindex="-1"></a><span class="fu">print</span>(likelihood.array)</span></code></pre></div>
+<pre><code>##           RB        BB
+## R0 0.0000000 1.0000000
+## R1 0.1111111 0.8888889
+## R2 0.2222222 0.7777778
+## R3 0.3333333 0.6666667
+## R4 0.4444444 0.5555556
+## R5 0.5555556 0.4444444
+## R6 0.6666667 0.3333333
+## R7 0.7777778 0.2222222
+## R8 0.8888889 0.1111111
+## R9 1.0000000 0.0000000</code></pre>
+<p>Second, we multiply the prior and likelihood vectors together (the nominator of Bayes theorem) <em>element-wise</em> (first element gets multiplied with first element, second element by second element, etc.). That gives us the nominator of Bayes theorem (prior times likelihood):</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="introduction.html#cb30-1" tabindex="-1"></a>bayes.numerator <span class="ot">&lt;-</span> likelihood.array <span class="sc">*</span> p.hypotheses</span>
+<span id="cb30-2"><a href="introduction.html#cb30-2" tabindex="-1"></a><span class="fu">print</span>(bayes.numerator)</span></code></pre></div>
+<pre><code>##            RB         BB
+## R0 0.00000000 0.10000000
+## R1 0.01111111 0.08888889
+## R2 0.02222222 0.07777778
+## R3 0.03333333 0.06666667
+## R4 0.04444444 0.05555556
+## R5 0.05555556 0.04444444
+## R6 0.06666667 0.03333333
+## R7 0.07777778 0.02222222
+## R8 0.08888889 0.01111111
+## R9 0.10000000 0.00000000</code></pre>
+<p>Finally, note that we want a distribution for each column, i.e. a distribution over hypotheses given each observation. Therefore, we sum each column and then divide each element by the sum of its column:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="introduction.html#cb32-1" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">t</span>(bayes.numerator)<span class="sc">/</span><span class="fu">colSums</span>(bayes.numerator))</span>
+<span id="cb32-2"><a href="introduction.html#cb32-2" tabindex="-1"></a><span class="fu">print</span>(posterior)</span></code></pre></div>
+<pre><code>##            RB         BB
+## R0 0.00000000 0.20000000
+## R1 0.02222222 0.17777778
+## R2 0.04444444 0.15555556
+## R3 0.06666667 0.13333333
+## R4 0.08888889 0.11111111
+## R5 0.11111111 0.08888889
+## R6 0.13333333 0.06666667
+## R7 0.15555556 0.04444444
+## R8 0.17777778 0.02222222
+## R9 0.20000000 0.00000000</code></pre>
+<p>And that gives us the posterior without us having to explicitly calculate the evidence for each observation!</p>
+</div>
+</div>
+<div id="if-there-is-time-left" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> If there is time left…<a href="introduction.html#if-there-is-time-left" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Calculate the posterior if your observation is <span class="math inline">\(RB\)</span> instead of <span class="math inline">\(BB\)</span>.</li>
+<li>Calculate the posterior if you have two observations, namely <span class="math inline">\(BB\)</span> and <span class="math inline">\(RB\)</span>.</li>
+</ul>
+</div>
+<div id="exercises" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Exercises<a href="introduction.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Say that the probability that today is Sunday given that it’s sunny is written <span class="math inline">\(p(\text{today is Sunday} \mid \text{today is sunny})\)</span>. Write expressions for the following:</li>
+</ol>
+<ul>
+<li>Probability that it rains given that the street is wet.</li>
+<li>Probability that the street is wet given that it rains.</li>
+<li>Probability that it rains and the street is wet.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Suppose that the probability that John is bored is equal to the probability that John is bored <em>given that he is watching a film</em>. What does this imply about the two events (1) John is bored and (2) John is watching a film?</li>
+<li>Suppose there is a disease that affects 0.3% of the population, and a test that correctly identifies the disease 97% of the times (i.e. <span class="math inline">\(p( \text{test positive} \mid \text{has disease} )=0.97\)</span>).</li>
+</ol>
+<ul>
+<li>Given the probabilities above, can you infer the probability that you have the disease given that the test was positive?</li>
+<li>Given the probabilities above, can you infer the probability that you have the disease given that the test was negative?</li>
+<li>Given the probabilities above, can you infer the probability that you don’t have the disease given that the test was positive?</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Suppose that you had probability 0.4 for hypothesis R0 (in the lab notebook), and all other hypotheses had the same probability.</li>
+</ol>
+<ul>
+<li>Intuitively, what do you think will happen to the distribution of observations?</li>
+<li>Sample 1000 scenarios from the generative model and plot the results.</li>
+</ul>
+</div>
+<div id="answers" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Answers<a href="introduction.html#answers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><ol style="list-style-type: decimal">
+<li><span class="math inline">\(p(\text{it rains} \mid \text{the street is wet})\)</span></li>
+<li><span class="math inline">\(p(\text{the street is wet} \mid \text{it rains})\)</span></li>
+<li><span class="math inline">\(p(\text{it rains &amp; the street is wet})\)</span> or <span class="math inline">\(p(\text{it rains, the street is wet})\)</span> or <span class="math inline">\(p(\text{it rains and the street is wet})\)</span></li>
+</ol></li>
+<li>It implies that the event <em>John is bored</em> and the event <em>John is watching a film</em> are statistically independent of each other. Formally, <span class="math inline">\(p(\text{John is bored} \mid \text{John is watching a film}) = p(\text{John is bored})\)</span> and <span class="math inline">\(p(\text{John is watching a film} \mid \text{John is bored}) = p(\text{John is watching a film})\)</span>. This does <em>not</em> imply that either event has happened or is happening, and it does not imply that the two events are equally probable.</li>
+<li><ol style="list-style-type: decimal">
+<li>The solution would be simply an application of Bayes theorem:
+<span class="math display">\[
+P(\text{disease} \mid \text{positive}) = \frac{P(\text{positive} \mid \text{disease})P(\text{disease})}
+{P(\text{positive} \mid \text{disease})P(\text{disease}) + P(\text{positive} \mid \text{no disease})P(\text{no disease})}
+\]</span>
+You have <span class="math inline">\(P(\text{no disease})=0.7\)</span>, <span class="math inline">\(P(\text{disease}) = 0.3\)</span>, <span class="math inline">\(P(\text{positive} \mid \text{disease})=0.97\)</span>, and <span class="math inline">\(P(\text{negative} \mid \text{disease}) = 0.03\)</span>. What you <em>don’t</em> have is <span class="math inline">\(P(\text{positive} \mid \text{no disease})\)</span>. Therefore, one acceptable answer was: This cannot be calculated with the information given in the exercise. This exercise was to some extent a trick question, but given that nobody answered it this way I am going to assume that you are not used to this type of question and I won’t ask one again. Another acceptable answer was to assume that <span class="math inline">\(P(\text{positive} \mid \text{no disease})=0\)</span>. In that case:
+<span class="math display">\[
+P(\text{disease} \mid \text{positive}) = \frac{0.97 \times 0.3}{0.97 \times 0.3 + 0 \times 0.7} = 1.
+\]</span>
+This makes intuitive sense: under this assumption the test is positive only when there is a disease, so if it is positive there is a disease.</li>
+<li>This is asking for <span class="math inline">\(P(\text{disease} \mid \text{negative}) = \frac{P(\text{negative} \mid \text{disease})P(\text{disease})}{P(\text{negative} \mid \text{disease})P(\text{disease}) + P(\text{negative} \mid \text{no disease})P(\text{no disease})}\)</span>.
+The answer is that you cannot calculate it, because you don’t have the necessary bits for applying Bayes theorem. Again, I accepted answers that assumed <span class="math inline">\(P(\text{positive} \mid \text{no disease})=0\)</span>, in which case <span class="math inline">\(P(\text{negative} \mid \text{no disease})=1\)</span>, and so:
+<span class="math display">\[
+P(\text{disease} \mid \text{negative}) = \frac{0.03 \times 0.3}{0.03 \times 0.3 + 1 * 0.7} = \frac{0.009}{1.009} \approx 0.009
+\]</span></li>
+<li><span class="math inline">\(P(\text{no disease} \mid \text{negative}) = 1 - P(\text{disease} \mid \text{negative})\)</span>. Since you can’t calculate <span class="math inline">\(P(\text{disease} \mid \text{negative})\)</span>, you can’t answer this question. Again, under the assumptions that <span class="math inline">\(P(\text{positive} \mid \text{no disease})=0\)</span>, <span class="math inline">\(P(\text{no disease} \mid \text{negative}) \approx 0.999\)</span>.</li>
+</ol></li>
+<li><ol style="list-style-type: decimal">
+<li>R1 will have a higher probability than the other observations, while all the other observations will have the same probability as each other. Since R1 has 0 red balls, there is going to be overall more blue balls than red balls in the sampled observations.</li>
+<li>Following code:</li>
+</ol></li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="introduction.html#cb34-1" tabindex="-1"></a><span class="co"># only change is here</span></span>
+<span id="cb34-2"><a href="introduction.html#cb34-2" tabindex="-1"></a>p.hypotheses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fu">rep</span>(<span class="fl">0.6</span><span class="sc">/</span><span class="dv">9</span>,<span class="dv">9</span>))</span>
+<span id="cb34-3"><a href="introduction.html#cb34-3" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="introduction.html#cb34-4" tabindex="-1"></a><span class="co"># Same code as above</span></span>
+<span id="cb34-5"><a href="introduction.html#cb34-5" tabindex="-1"></a>prior.samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb34-6"><a href="introduction.html#cb34-6" tabindex="-1"></a>                       <span class="dv">10000</span>,</span>
+<span id="cb34-7"><a href="introduction.html#cb34-7" tabindex="-1"></a>                       <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb34-8"><a href="introduction.html#cb34-8" tabindex="-1"></a>                       <span class="co"># the prob parameter allows to specify the probability</span></span>
+<span id="cb34-9"><a href="introduction.html#cb34-9" tabindex="-1"></a>                       <span class="co"># of each hypothesis.</span></span>
+<span id="cb34-10"><a href="introduction.html#cb34-10" tabindex="-1"></a>                       <span class="at">prob=</span>p.hypotheses)</span>
+<span id="cb34-11"><a href="introduction.html#cb34-11" tabindex="-1"></a>p.RB <span class="ot">&lt;-</span> prior.samples <span class="sc">/</span> <span class="dv">9</span></span>
+<span id="cb34-12"><a href="introduction.html#cb34-12" tabindex="-1"></a>samples.RB <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(</span>
+<span id="cb34-13"><a href="introduction.html#cb34-13" tabindex="-1"></a>  <span class="at">n=</span><span class="fu">length</span>(p.RB),</span>
+<span id="cb34-14"><a href="introduction.html#cb34-14" tabindex="-1"></a>  <span class="at">size=</span><span class="dv">1</span>,</span>
+<span id="cb34-15"><a href="introduction.html#cb34-15" tabindex="-1"></a>  <span class="at">prob=</span>p.RB</span>
+<span id="cb34-16"><a href="introduction.html#cb34-16" tabindex="-1"></a>)</span>
+<span id="cb34-17"><a href="introduction.html#cb34-17" tabindex="-1"></a><span class="fu">hist</span>(</span>
+<span id="cb34-18"><a href="introduction.html#cb34-18" tabindex="-1"></a>  samples.RB,</span>
+<span id="cb34-19"><a href="introduction.html#cb34-19" tabindex="-1"></a>  <span class="at">breaks=</span><span class="fu">seq</span>(<span class="fu">min</span>(samples.RB)<span class="sc">-</span><span class="fl">0.5</span>, <span class="fu">max</span>(samples.RB)<span class="sc">+</span><span class="fl">0.5</span>, <span class="at">by=</span><span class="dv">1</span>),</span>
+<span id="cb34-20"><a href="introduction.html#cb34-20" tabindex="-1"></a>  <span class="at">xaxt=</span><span class="st">&#39;n&#39;</span></span>
+<span id="cb34-21"><a href="introduction.html#cb34-21" tabindex="-1"></a>)</span>
+<span id="cb34-22"><a href="introduction.html#cb34-22" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="categorization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+---
+title: An Introduction to Bayesian Cognitive Modelling in R
+author: Fausto Carcassi
+date: "`r Sys.Date()`"
+---
+
+# Preface {-}
+
+In the Winter semester 2021, I taught an introductory cognitive modeling course at the University of Amsterdam for 3rd year students with little programming experience. The course contained a combination of lectures and labs. I couldn't find a coherent set of labs for a course like this, so I thought I'd write it myself. This book contains those labs.
+
+It's got plenty of typos & many parts could be clearer, but this has to happen over multiple iterations of the course! I learned R in a rush to do this, so the code could be better in many ways, but here we are.
+
+The whole thing is in base R except for a single package in the last lab 
+with LogSumExp, which is there mainly to teach students how to use functions from a package.
+
+Feedback *very* welcome.
+
+This course was written while working in Jakub Szymanik's project, with funding from the European Research Council under the European Union’s Seventh Framework Programme (FP/2007–2013)/ERC Grant Agreement n. STG 716230 CoSaQ (Thanks Jakub for being so patient while I was teaching!)

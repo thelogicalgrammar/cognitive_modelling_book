@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Categorization | An Introduction to Bayesian Cognitive Modelling in R</title>
+  <meta name="description" content="2 Categorization | An Introduction to Bayesian Cognitive Modelling in R" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Categorization | An Introduction to Bayesian Cognitive Modelling in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Categorization | An Introduction to Bayesian Cognitive Modelling in R" />
+  
+  
+  
+
+<meta name="author" content="Fausto Carcassi" />
+
+
+<meta name="date" content="2023-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="cultural-evolution.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#bits-and-pieces-of-r"><i class="fa fa-check"></i><b>1.1</b> Bits and pieces of R</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-motivating-example-sampling-from-an-urn"><i class="fa fa-check"></i><b>1.2</b> A motivating example: Sampling from an urn</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#sampling-possible-worlds-from-the-generative-model"><i class="fa fa-check"></i><b>1.2.1</b> Sampling possible worlds from the generative model</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#bayesian-update-learning-from-the-data"><i class="fa fa-check"></i><b>1.3</b> Bayesian update: Learning from the data</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#reminder-bayes-theorem"><i class="fa fa-check"></i><b>1.3.1</b> Reminder: Bayes Theorem</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#applying-bayes-theorem-to-the-urn-case"><i class="fa fa-check"></i><b>1.3.2</b> Applying Bayes theorem to the urn case</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#implementation-detail-how-to-avoid-calculating-pd"><i class="fa fa-check"></i><b>1.3.3</b> Implementation detail: How to avoid calculating p(D)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#if-there-is-time-left"><i class="fa fa-check"></i><b>1.4</b> If there is time left…</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#answers"><i class="fa fa-check"></i><b>1.6</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="categorization.html"><a href="categorization.html"><i class="fa fa-check"></i><b>2</b> Categorization</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="categorization.html"><a href="categorization.html#the-case-of-a-single-observation"><i class="fa fa-check"></i><b>2.1</b> The case of a single observation</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="categorization.html"><a href="categorization.html#little-r-programming-trick"><i class="fa fa-check"></i><b>2.1.1</b> Little R programming trick</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="categorization.html"><a href="categorization.html#the-case-of-multiple-observations"><i class="fa fa-check"></i><b>2.2</b> The case of multiple observations</a></li>
+<li class="chapter" data-level="2.3" data-path="categorization.html"><a href="categorization.html#if-there-is-time-left-1"><i class="fa fa-check"></i><b>2.3</b> If there is time left…</a></li>
+<li class="chapter" data-level="2.4" data-path="categorization.html"><a href="categorization.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="categorization.html"><a href="categorization.html#answers-1"><i class="fa fa-check"></i><b>2.5</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cultural-evolution.html"><a href="cultural-evolution.html"><i class="fa fa-check"></i><b>3</b> Cultural Evolution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cultural-evolution.html"><a href="cultural-evolution.html#the-languages"><i class="fa fa-check"></i><b>3.1</b> The languages</a></li>
+<li class="chapter" data-level="3.2" data-path="cultural-evolution.html"><a href="cultural-evolution.html#bayesian-learning-of-the-language-from-data"><i class="fa fa-check"></i><b>3.2</b> Bayesian learning of the language from data</a></li>
+<li class="chapter" data-level="3.3" data-path="cultural-evolution.html"><a href="cultural-evolution.html#cultural-evolution-with-bayesian-agents"><i class="fa fa-check"></i><b>3.3</b> Cultural evolution with Bayesian agents!</a></li>
+<li class="chapter" data-level="3.4" data-path="cultural-evolution.html"><a href="cultural-evolution.html#if-there-is-time-left-2"><i class="fa fa-check"></i><b>3.4</b> If there is time left…</a></li>
+<li class="chapter" data-level="3.5" data-path="cultural-evolution.html"><a href="cultural-evolution.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html"><i class="fa fa-check"></i><b>4</b> Rational Speech Acts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#surprisal-in-information-theory"><i class="fa fa-check"></i><b>4.1</b> Surprisal in information theory</a></li>
+<li class="chapter" data-level="4.2" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#the-rational-speech-act-model"><i class="fa fa-check"></i><b>4.2</b> The Rational Speech Act model</a></li>
+<li class="chapter" data-level="4.3" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#if-there-is-time-left-3"><i class="fa fa-check"></i><b>4.3</b> If there is time left…</a></li>
+<li class="chapter" data-level="4.4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#exercises-3"><i class="fa fa-check"></i><b>4.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="inferring-causality.html"><a href="inferring-causality.html"><i class="fa fa-check"></i><b>5</b> Inferring causality</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="inferring-causality.html"><a href="inferring-causality.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
+<li class="chapter" data-level="5.2" data-path="inferring-causality.html"><a href="inferring-causality.html#approximating-the-likelihood-with-a-simulation"><i class="fa fa-check"></i><b>5.2</b> Approximating the likelihood with a simulation</a></li>
+<li class="chapter" data-level="5.3" data-path="inferring-causality.html"><a href="inferring-causality.html#bayesian-inference"><i class="fa fa-check"></i><b>5.3</b> Bayesian inference</a></li>
+<li class="chapter" data-level="5.4" data-path="inferring-causality.html"><a href="inferring-causality.html#one-complication-from-real-participants"><i class="fa fa-check"></i><b>5.4</b> One complication from real participants</a></li>
+<li class="chapter" data-level="5.5" data-path="inferring-causality.html"><a href="inferring-causality.html#putting-it-all-together"><i class="fa fa-check"></i><b>5.5</b> Putting it all together</a></li>
+<li class="chapter" data-level="5.6" data-path="inferring-causality.html"><a href="inferring-causality.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
+<li class="chapter" data-level="5.7" data-path="inferring-causality.html"><a href="inferring-causality.html#appendices-you-dont-need-to-understand-them"><i class="fa fa-check"></i><b>5.7</b> Appendices (You don’t need to understand them)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-1"><i class="fa fa-check"></i><b>5.7.1</b> Appendix 1</a></li>
+<li class="chapter" data-level="5.7.2" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-2-gamma1."><i class="fa fa-check"></i><b>5.7.2</b> Appendix 2: <span class="math inline">\(\gamma=1\)</span>.</a></li>
+<li class="chapter" data-level="5.7.3" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-3-another-complication"><i class="fa fa-check"></i><b>5.7.3</b> Appendix 3: Another complication</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html"><i class="fa fa-check"></i><b>6</b> Learning in a Language of Thought</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-logsumexp-function"><i class="fa fa-check"></i><b>6.1</b> The LogSumExp function</a></li>
+<li class="chapter" data-level="6.2" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-conceptual-primitives-and-number-systems"><i class="fa fa-check"></i><b>6.2</b> The conceptual primitives and number systems</a></li>
+<li class="chapter" data-level="6.3" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#learning-an-lot"><i class="fa fa-check"></i><b>6.3</b> Learning an LoT</a></li>
+<li class="chapter" data-level="6.4" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#if-there-is-time-left-4"><i class="fa fa-check"></i><b>6.4</b> If there is time left…</a></li>
+<li class="chapter" data-level="6.5" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#exercises-5"><i class="fa fa-check"></i><b>6.5</b> Exercises</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to Bayesian Cognitive Modelling in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="categorization" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Categorization<a href="categorization.html#categorization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Reading: Tenenbaum, Joshua B, and Thomas L Griffiths. 2001. “Generalization, Similarity, and Bayesian Inference.” Behavioural and Brain Sciences, 629–40.</p>
+<p>In this lab, we are going to implement the categorization model from Tenenbaum &amp; Griffiths (2001). This is a great model because it combines conceptually simple and plausible ingredients to get sophisticated predictions for an important cognitive phenomenon, namely categorization. As it happens, it is also quite easy to implement (compared to other models!).</p>
+<p>This week I am not going to give you the meaning of each function we used, because figuring out what a function does is a skill you need to have anyway. Tip: beside googling (Google is a programmer’s best friend), you can ask R directly to tell you more about a function by running <code>help(function.name)</code>.</p>
+<div id="the-case-of-a-single-observation" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> The case of a single observation<a href="categorization.html#the-case-of-a-single-observation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As always, when doing Bayesian modelling the first step is to describe the situation that is being modelled (i.e. specifying a <em>generative model</em>). We have seen what the generative model for the categorization case looks like in the lecture on Monday, so we can get onto the implementation directly (though maybe have the paper open to you can refer back to it if something it confusing).</p>
+<p>Let’s say our space is constrained between 1 and 100.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="categorization.html#cb35-1" tabindex="-1"></a>n.stimuli <span class="ot">&lt;-</span> <span class="dv">100</span></span></code></pre></div>
+<p>Let’s define some vectors containing the information for each hypothesis. First, an array with the lower and upper bounds (inclusive) for each category. The shape of this <code>borders</code> array is (# categories, 2). Note that there is a total of 5050 categories.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="categorization.html#cb36-1" tabindex="-1"></a><span class="co"># all combinations of numbers from 1 up to (and including) the n.stimuli.</span></span>
+<span id="cb36-2"><a href="categorization.html#cb36-2" tabindex="-1"></a>borders <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli))</span>
+<span id="cb36-3"><a href="categorization.html#cb36-3" tabindex="-1"></a><span class="co"># change row names</span></span>
+<span id="cb36-4"><a href="categorization.html#cb36-4" tabindex="-1"></a><span class="co"># lb for &#39;lower bound&#39; and ub for &#39;upper bound&#39;</span></span>
+<span id="cb36-5"><a href="categorization.html#cb36-5" tabindex="-1"></a><span class="fu">colnames</span>(borders) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;lb&#39;</span>, <span class="st">&#39;ub&#39;</span>)</span>
+<span id="cb36-6"><a href="categorization.html#cb36-6" tabindex="-1"></a><span class="co"># only keep those categories where the lower bound is lower</span></span>
+<span id="cb36-7"><a href="categorization.html#cb36-7" tabindex="-1"></a><span class="co"># or equal to the upper bound</span></span>
+<span id="cb36-8"><a href="categorization.html#cb36-8" tabindex="-1"></a>borders <span class="ot">&lt;-</span> borders[borders[,<span class="dv">1</span>]<span class="sc">&lt;=</span>borders[,<span class="dv">2</span>],]</span>
+<span id="cb36-9"><a href="categorization.html#cb36-9" tabindex="-1"></a><span class="co"># reset the row names</span></span>
+<span id="cb36-10"><a href="categorization.html#cb36-10" tabindex="-1"></a><span class="fu">row.names</span>(borders) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(borders))</span>
+<span id="cb36-11"><a href="categorization.html#cb36-11" tabindex="-1"></a><span class="fu">head</span>(borders)</span></code></pre></div>
+<pre><code>##   lb ub
+## 1  1  1
+## 2  1  2
+## 3  2  2
+## 4  1  3
+## 5  2  3
+## 6  3  3</code></pre>
+<p>Second, an array with the size of each category:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="categorization.html#cb38-1" tabindex="-1"></a>sizes <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">t</span>(borders[<span class="st">&#39;ub&#39;</span>]<span class="sc">-</span>borders[<span class="st">&#39;lb&#39;</span>] <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb38-2"><a href="categorization.html#cb38-2" tabindex="-1"></a><span class="fu">head</span>(sizes)</span></code></pre></div>
+<pre><code>## [1] 1 2 1 3 2 1</code></pre>
+<p>Next, suppose we make a single observation, namely 60 (like in figure 1 from Tenenbaum &amp; Griffiths 2001).</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="categorization.html#cb40-1" tabindex="-1"></a>observation <span class="ot">&lt;-</span> <span class="dv">60</span></span></code></pre></div>
+<p>Let’s find the likelihood, i.e. the probability of the observation (60) given each category. This is described by <em>strong sampling</em> in the way we have seen in the Monday lecture.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="categorization.html#cb41-1" tabindex="-1"></a>likelihood.given.observation <span class="ot">&lt;-</span> <span class="fu">as.array</span>(<span class="fu">t</span>(<span class="fu">ifelse</span>(</span>
+<span id="cb41-2"><a href="categorization.html#cb41-2" tabindex="-1"></a>  (borders[<span class="st">&#39;lb&#39;</span>] <span class="sc">&lt;=</span> observation) <span class="sc">&amp;</span> (borders[<span class="st">&#39;ub&#39;</span>] <span class="sc">&gt;=</span> observation),</span>
+<span id="cb41-3"><a href="categorization.html#cb41-3" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">/</span>sizes, </span>
+<span id="cb41-4"><a href="categorization.html#cb41-4" tabindex="-1"></a>  <span class="dv">0</span></span>
+<span id="cb41-5"><a href="categorization.html#cb41-5" tabindex="-1"></a>)))</span>
+<span id="cb41-6"><a href="categorization.html#cb41-6" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="categorization.html#cb41-7" tabindex="-1"></a><span class="fu">dim</span>(likelihood.given.observation)</span></code></pre></div>
+<pre><code>## [1]    1 5050</code></pre>
+<p>To find the posterior over hypotheses, assuming we have a uniform prior, it is enough to normalize the likelihood vector (can you see why?):</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="categorization.html#cb43-1" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> (likelihood.given.observation <span class="sc">/</span> <span class="fu">sum</span>(likelihood.given.observation))</span>
+<span id="cb43-2"><a href="categorization.html#cb43-2" tabindex="-1"></a><span class="fu">print</span>(posterior[<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>])</span></code></pre></div>
+<pre><code>##  [1] 0 0 0 0 0 0 0 0 0 0</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="categorization.html#cb45-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sum</span>(posterior))</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Finally, let’s <em>average</em> across categories. For each point in the space (i.e. integers between 1 and 100 inclusive) sum the probabilities of the categories that include that point.
+To to this, we first create an array that has the whole posterior for each stimulus.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="categorization.html#cb47-1" tabindex="-1"></a><span class="co"># repeat the posterior for each stim, </span></span>
+<span id="cb47-2"><a href="categorization.html#cb47-2" tabindex="-1"></a><span class="co"># to get a matrix with shape (stimulus, categories)</span></span>
+<span id="cb47-3"><a href="categorization.html#cb47-3" tabindex="-1"></a>tiled.posterior <span class="ot">&lt;-</span></span>
+<span id="cb47-4"><a href="categorization.html#cb47-4" tabindex="-1"></a>  <span class="fu">matrix</span>(</span>
+<span id="cb47-5"><a href="categorization.html#cb47-5" tabindex="-1"></a>    posterior,</span>
+<span id="cb47-6"><a href="categorization.html#cb47-6" tabindex="-1"></a>    <span class="at">nrow =</span> n.stimuli, <span class="co"># number of stimuli</span></span>
+<span id="cb47-7"><a href="categorization.html#cb47-7" tabindex="-1"></a>    <span class="at">ncol =</span> <span class="fu">length</span>(posterior),</span>
+<span id="cb47-8"><a href="categorization.html#cb47-8" tabindex="-1"></a>    <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb47-9"><a href="categorization.html#cb47-9" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Then, we create a mask so that for each stimulus we know which categories we need to consider in the sum (namely, those that contain the stimulus).</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="categorization.html#cb48-1" tabindex="-1"></a><span class="co"># for each stimulus, get a Boolean mask of the categories </span></span>
+<span id="cb48-2"><a href="categorization.html#cb48-2" tabindex="-1"></a><span class="co"># that contain the stimulus. The mask also has shape (stimulus, categories)</span></span>
+<span id="cb48-3"><a href="categorization.html#cb48-3" tabindex="-1"></a>stimulus.index <span class="ot">&lt;-</span></span>
+<span id="cb48-4"><a href="categorization.html#cb48-4" tabindex="-1"></a>  <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli),</span>
+<span id="cb48-5"><a href="categorization.html#cb48-5" tabindex="-1"></a>         <span class="at">nrow =</span> n.stimuli,</span>
+<span id="cb48-6"><a href="categorization.html#cb48-6" tabindex="-1"></a>         <span class="at">ncol =</span> <span class="fu">length</span>(posterior),</span>
+<span id="cb48-7"><a href="categorization.html#cb48-7" tabindex="-1"></a>         <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb48-8"><a href="categorization.html#cb48-8" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="categorization.html#cb48-9" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co"> 1: we have to reshape the lb and ub vectors</span></span>
+<span id="cb48-10"><a href="categorization.html#cb48-10" tabindex="-1"></a><span class="co"># so that it has the same shape as the mask</span></span>
+<span id="cb48-11"><a href="categorization.html#cb48-11" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co"> 2: borders[&#39;lb&#39;] returns a named vector,</span></span>
+<span id="cb48-12"><a href="categorization.html#cb48-12" tabindex="-1"></a><span class="co"># while borders[[&#39;lb&#39;]] returns the vector of numbers</span></span>
+<span id="cb48-13"><a href="categorization.html#cb48-13" tabindex="-1"></a>mask <span class="ot">&lt;-</span> </span>
+<span id="cb48-14"><a href="categorization.html#cb48-14" tabindex="-1"></a>  (</span>
+<span id="cb48-15"><a href="categorization.html#cb48-15" tabindex="-1"></a>    (stimulus.index <span class="sc">&gt;=</span> <span class="fu">t</span>(<span class="fu">replicate</span>(n.stimuli, borders[[<span class="st">&#39;lb&#39;</span>]]))) <span class="sc">&amp;</span> </span>
+<span id="cb48-16"><a href="categorization.html#cb48-16" tabindex="-1"></a>    (stimulus.index <span class="sc">&lt;=</span> <span class="fu">t</span>(<span class="fu">replicate</span>(n.stimuli, borders[[<span class="st">&#39;ub&#39;</span>]])))</span>
+<span id="cb48-17"><a href="categorization.html#cb48-17" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Finally, we sum the tiled posterior as indicated by the mask. In other words, for each stimulus we sum the posterior probability of those hypotheses that contain the posterior. We plot the resulting distribution, which has for each point the probability that the point belongs to the unknown category (the black dot is the observation).</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="categorization.html#cb49-1" tabindex="-1"></a><span class="co"># use the Boolean array to attribut 0 to the hypotheses </span></span>
+<span id="cb49-2"><a href="categorization.html#cb49-2" tabindex="-1"></a><span class="co"># that do not contain a point</span></span>
+<span id="cb49-3"><a href="categorization.html#cb49-3" tabindex="-1"></a>tiled.posterior[<span class="sc">!</span>mask] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb49-4"><a href="categorization.html#cb49-4" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="categorization.html#cb49-5" tabindex="-1"></a><span class="fu">dim</span>(tiled.posterior)</span></code></pre></div>
+<pre><code>## [1]  100 5050</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="categorization.html#cb51-1" tabindex="-1"></a><span class="co"># sum across categories to get the probability of each point</span></span>
+<span id="cb51-2"><a href="categorization.html#cb51-2" tabindex="-1"></a>p.point <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(tiled.posterior)</span>
+<span id="cb51-3"><a href="categorization.html#cb51-3" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="categorization.html#cb51-4" tabindex="-1"></a><span class="fu">plot</span>(p.point)</span>
+<span id="cb51-5"><a href="categorization.html#cb51-5" tabindex="-1"></a><span class="fu">points</span>(observation,<span class="dv">0</span>,<span class="at">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<div id="little-r-programming-trick" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Little R programming trick<a href="categorization.html#little-r-programming-trick" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The operation above for doing binary comparison between an array with each row of a matrix can be rewritten more simply with the ‘sweep’ function in the following way:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="categorization.html#cb52-1" tabindex="-1"></a><span class="co"># basically, sweep applies an operation to each ith row (or column) of a matrix</span></span>
+<span id="cb52-2"><a href="categorization.html#cb52-2" tabindex="-1"></a><span class="co"># using the ith element of an array</span></span>
+<span id="cb52-3"><a href="categorization.html#cb52-3" tabindex="-1"></a>greater.equal.to.lb <span class="ot">&lt;-</span> <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;lb&#39;</span>]], <span class="st">&#39;&gt;=&#39;</span>)</span>
+<span id="cb52-4"><a href="categorization.html#cb52-4" tabindex="-1"></a><span class="co"># check that they are the same for every element</span></span>
+<span id="cb52-5"><a href="categorization.html#cb52-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">all</span>((stimulus.index <span class="sc">&gt;=</span> <span class="fu">t</span>(</span>
+<span id="cb52-6"><a href="categorization.html#cb52-6" tabindex="-1"></a>  <span class="fu">replicate</span>(n.stimuli, borders[[<span class="st">&#39;lb&#39;</span>]])</span>
+<span id="cb52-7"><a href="categorization.html#cb52-7" tabindex="-1"></a>)) <span class="sc">==</span> greater.equal.to.lb))</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="categorization.html#cb54-1" tabindex="-1"></a><span class="co"># and therefore</span></span>
+<span id="cb54-2"><a href="categorization.html#cb54-2" tabindex="-1"></a>mask.with.sweep <span class="ot">&lt;-</span></span>
+<span id="cb54-3"><a href="categorization.html#cb54-3" tabindex="-1"></a>  (</span>
+<span id="cb54-4"><a href="categorization.html#cb54-4" tabindex="-1"></a>    <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;lb&#39;</span>]], <span class="st">&#39;&gt;=&#39;</span>) <span class="sc">&amp;</span></span>
+<span id="cb54-5"><a href="categorization.html#cb54-5" tabindex="-1"></a>    <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;ub&#39;</span>]], <span class="st">&#39;&lt;=&#39;</span>)</span>
+<span id="cb54-6"><a href="categorization.html#cb54-6" tabindex="-1"></a>  )</span>
+<span id="cb54-7"><a href="categorization.html#cb54-7" tabindex="-1"></a></span>
+<span id="cb54-8"><a href="categorization.html#cb54-8" tabindex="-1"></a><span class="fu">all</span>(mask<span class="sc">==</span>mask.with.sweep)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+<div id="the-case-of-multiple-observations" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> The case of multiple observations<a href="categorization.html#the-case-of-multiple-observations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the case of multiple observations, only two things need to be changed:</p>
+<ol style="list-style-type: decimal">
+<li>We need to compare the lower bound of the category with the lowest observation and the upper bound of the category with the greatest observation, rather than comparing them just with a single observation.</li>
+<li>The likelihood is not anymore just <span class="math inline">\(\frac{1}{\text{size of category}}\)</span>, but rather <span class="math inline">\(\frac{1}{\text{size of category}^{\text{N of observations}}}\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="categorization.html#cb56-1" tabindex="-1"></a>observations <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>)</span>
+<span id="cb56-2"><a href="categorization.html#cb56-2" tabindex="-1"></a>n.observations <span class="ot">&lt;-</span> <span class="fu">length</span>(observations)</span>
+<span id="cb56-3"><a href="categorization.html#cb56-3" tabindex="-1"></a>min.obs <span class="ot">&lt;-</span> <span class="fu">min</span>(observations)</span>
+<span id="cb56-4"><a href="categorization.html#cb56-4" tabindex="-1"></a>max.obs <span class="ot">&lt;-</span> <span class="fu">max</span>(observations)</span>
+<span id="cb56-5"><a href="categorization.html#cb56-5" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="categorization.html#cb56-6" tabindex="-1"></a>likelihood.given.observation <span class="ot">&lt;-</span> <span class="fu">as.array</span>(<span class="fu">t</span>(<span class="fu">ifelse</span>(</span>
+<span id="cb56-7"><a href="categorization.html#cb56-7" tabindex="-1"></a>  <span class="co"># HERE IS ONE CHANGE</span></span>
+<span id="cb56-8"><a href="categorization.html#cb56-8" tabindex="-1"></a>  (borders[<span class="st">&#39;lb&#39;</span>] <span class="sc">&lt;=</span> min.obs) <span class="sc">&amp;</span> (borders[<span class="st">&#39;ub&#39;</span>] <span class="sc">&gt;=</span> max.obs),</span>
+<span id="cb56-9"><a href="categorization.html#cb56-9" tabindex="-1"></a>  <span class="co"># HERE IS ANOTHER CHANGE</span></span>
+<span id="cb56-10"><a href="categorization.html#cb56-10" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">/</span>(sizes<span class="sc">^</span>n.observations), </span>
+<span id="cb56-11"><a href="categorization.html#cb56-11" tabindex="-1"></a>  <span class="dv">0</span></span>
+<span id="cb56-12"><a href="categorization.html#cb56-12" tabindex="-1"></a>)))</span>
+<span id="cb56-13"><a href="categorization.html#cb56-13" tabindex="-1"></a></span>
+<span id="cb56-14"><a href="categorization.html#cb56-14" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> (likelihood.given.observation <span class="sc">/</span> <span class="fu">sum</span>(likelihood.given.observation))</span>
+<span id="cb56-15"><a href="categorization.html#cb56-15" tabindex="-1"></a></span>
+<span id="cb56-16"><a href="categorization.html#cb56-16" tabindex="-1"></a>tiled.posterior <span class="ot">&lt;-</span></span>
+<span id="cb56-17"><a href="categorization.html#cb56-17" tabindex="-1"></a>  <span class="fu">matrix</span>(</span>
+<span id="cb56-18"><a href="categorization.html#cb56-18" tabindex="-1"></a>    posterior,</span>
+<span id="cb56-19"><a href="categorization.html#cb56-19" tabindex="-1"></a>    <span class="at">nrow =</span> n.stimuli, <span class="co"># number of stimuli</span></span>
+<span id="cb56-20"><a href="categorization.html#cb56-20" tabindex="-1"></a>    <span class="at">ncol =</span> <span class="fu">length</span>(posterior),</span>
+<span id="cb56-21"><a href="categorization.html#cb56-21" tabindex="-1"></a>    <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb56-22"><a href="categorization.html#cb56-22" tabindex="-1"></a>  )</span>
+<span id="cb56-23"><a href="categorization.html#cb56-23" tabindex="-1"></a></span>
+<span id="cb56-24"><a href="categorization.html#cb56-24" tabindex="-1"></a>stimulus.index <span class="ot">&lt;-</span></span>
+<span id="cb56-25"><a href="categorization.html#cb56-25" tabindex="-1"></a>  <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli),</span>
+<span id="cb56-26"><a href="categorization.html#cb56-26" tabindex="-1"></a>         <span class="at">nrow =</span> n.stimuli,</span>
+<span id="cb56-27"><a href="categorization.html#cb56-27" tabindex="-1"></a>         <span class="at">ncol =</span> <span class="fu">length</span>(posterior),</span>
+<span id="cb56-28"><a href="categorization.html#cb56-28" tabindex="-1"></a>         <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb56-29"><a href="categorization.html#cb56-29" tabindex="-1"></a></span>
+<span id="cb56-30"><a href="categorization.html#cb56-30" tabindex="-1"></a>mask <span class="ot">&lt;-</span></span>
+<span id="cb56-31"><a href="categorization.html#cb56-31" tabindex="-1"></a>  (</span>
+<span id="cb56-32"><a href="categorization.html#cb56-32" tabindex="-1"></a>    <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;lb&#39;</span>]], <span class="st">&#39;&gt;=&#39;</span>) <span class="sc">&amp;</span></span>
+<span id="cb56-33"><a href="categorization.html#cb56-33" tabindex="-1"></a>    <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;ub&#39;</span>]], <span class="st">&#39;&lt;=&#39;</span>)</span>
+<span id="cb56-34"><a href="categorization.html#cb56-34" tabindex="-1"></a>  )</span>
+<span id="cb56-35"><a href="categorization.html#cb56-35" tabindex="-1"></a></span>
+<span id="cb56-36"><a href="categorization.html#cb56-36" tabindex="-1"></a>tiled.posterior[<span class="sc">!</span>mask] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb56-37"><a href="categorization.html#cb56-37" tabindex="-1"></a></span>
+<span id="cb56-38"><a href="categorization.html#cb56-38" tabindex="-1"></a></span>
+<span id="cb56-39"><a href="categorization.html#cb56-39" tabindex="-1"></a>p.point <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(tiled.posterior)</span>
+<span id="cb56-40"><a href="categorization.html#cb56-40" tabindex="-1"></a></span>
+<span id="cb56-41"><a href="categorization.html#cb56-41" tabindex="-1"></a><span class="fu">plot</span>(p.point)</span>
+<span id="cb56-42"><a href="categorization.html#cb56-42" tabindex="-1"></a><span class="fu">points</span>(observations,<span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(observations)),<span class="at">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+<div id="if-there-is-time-left-1" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> If there is time left…<a href="categorization.html#if-there-is-time-left-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Try to expand the model to a 2-d space, so that the hypotheses are rectangles instead of segments.</p>
+</div>
+<div id="exercises-1" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Exercises<a href="categorization.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Imagine you have two observations at 100 and 110. Now, you get another observation between them at 105. What happens to the generalization gradient? Why? (NOTE: I don’t mean the exact numbers, but rather how the ‘shape’ of the generalization gradient changes. This doesn’t depend on the size of the space very much, but if it helps you to use a specific space assume that the space is between 0 and 200.)</li>
+<li>Plot the prior distribution describing the probability that each stimulus belongs to the true category <em>before</em> making any observation (NOTE: Use the space above with points between 1 and 100).</li>
+<li>Change the code so that there are 200 instead of 100 stimuli. Plot the probability of each stimulus belonging to the category with observations {100}, {150}, {100,150}.</li>
+</ol>
+<p>Now imagine that you have prior reason for thinking that the true category contains an even number of stimuli, so that any category with an even number of stimuli is twice as likely a priori as any category with an odd number of stimuli.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Change the code to calculate the prior accordingly and plot the generalization function before observing any stimulus.</li>
+<li>Plot the generalization function after observing {50}, {85}, and {50, 85}.</li>
+</ol>
+</div>
+<div id="answers-1" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Answers<a href="categorization.html#answers-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="categorization.html#cb57-1" tabindex="-1"></a><span class="co"># Let&#39;s define three useful functions that we can reuse below, for clarity</span></span>
+<span id="cb57-2"><a href="categorization.html#cb57-2" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: you didn&#39;t need to use functions, you could just copy-paste</span></span>
+<span id="cb57-3"><a href="categorization.html#cb57-3" tabindex="-1"></a><span class="co"># the relevant bits of code each time.</span></span>
+<span id="cb57-4"><a href="categorization.html#cb57-4" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: I have only made minimal changes to these function compared to the </span></span>
+<span id="cb57-5"><a href="categorization.html#cb57-5" tabindex="-1"></a><span class="co"># code above to make it a bit more general. I have marked the changes with comments.</span></span>
+<span id="cb57-6"><a href="categorization.html#cb57-6" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="categorization.html#cb57-7" tabindex="-1"></a><span class="co"># just copied some code from above. No changes here</span></span>
+<span id="cb57-8"><a href="categorization.html#cb57-8" tabindex="-1"></a>create.borders <span class="ot">&lt;-</span> <span class="cf">function</span>(n.stimuli){</span>
+<span id="cb57-9"><a href="categorization.html#cb57-9" tabindex="-1"></a>  borders <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli))</span>
+<span id="cb57-10"><a href="categorization.html#cb57-10" tabindex="-1"></a>  <span class="fu">colnames</span>(borders) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;lb&#39;</span>, <span class="st">&#39;ub&#39;</span>)</span>
+<span id="cb57-11"><a href="categorization.html#cb57-11" tabindex="-1"></a>  borders <span class="ot">&lt;-</span> borders[borders[,<span class="dv">1</span>]<span class="sc">&lt;=</span>borders[,<span class="dv">2</span>],]</span>
+<span id="cb57-12"><a href="categorization.html#cb57-12" tabindex="-1"></a>  <span class="fu">row.names</span>(borders) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(borders))</span>
+<span id="cb57-13"><a href="categorization.html#cb57-13" tabindex="-1"></a>  <span class="co"># Only added a return line because it&#39;s a function</span></span>
+<span id="cb57-14"><a href="categorization.html#cb57-14" tabindex="-1"></a>  <span class="fu">return</span>(borders)</span>
+<span id="cb57-15"><a href="categorization.html#cb57-15" tabindex="-1"></a>}</span>
+<span id="cb57-16"><a href="categorization.html#cb57-16" tabindex="-1"></a><span class="co"># Use same code as above to calculate sizes</span></span>
+<span id="cb57-17"><a href="categorization.html#cb57-17" tabindex="-1"></a>create.sizes <span class="ot">&lt;-</span> <span class="cf">function</span>(borders){</span>
+<span id="cb57-18"><a href="categorization.html#cb57-18" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">as.vector</span>(<span class="fu">t</span>(borders[<span class="st">&#39;ub&#39;</span>]<span class="sc">-</span>borders[<span class="st">&#39;lb&#39;</span>] <span class="sc">+</span> <span class="dv">1</span>)))</span>
+<span id="cb57-19"><a href="categorization.html#cb57-19" tabindex="-1"></a>}</span>
+<span id="cb57-20"><a href="categorization.html#cb57-20" tabindex="-1"></a></span>
+<span id="cb57-21"><a href="categorization.html#cb57-21" tabindex="-1"></a><span class="co"># let&#39;s copy the bit for going from a distribution over categories to </span></span>
+<span id="cb57-22"><a href="categorization.html#cb57-22" tabindex="-1"></a><span class="co"># the generalization gradient and put it into a function</span></span>
+<span id="cb57-23"><a href="categorization.html#cb57-23" tabindex="-1"></a><span class="co"># (I just changed the word &#39;posterior&#39; with &#39;distribution&#39; for clarity)</span></span>
+<span id="cb57-24"><a href="categorization.html#cb57-24" tabindex="-1"></a>plot.gradient.from.categories.dist <span class="ot">&lt;-</span> <span class="cf">function</span>(distribution){</span>
+<span id="cb57-25"><a href="categorization.html#cb57-25" tabindex="-1"></a>  tiled.distribution <span class="ot">&lt;-</span></span>
+<span id="cb57-26"><a href="categorization.html#cb57-26" tabindex="-1"></a>    <span class="fu">matrix</span>(</span>
+<span id="cb57-27"><a href="categorization.html#cb57-27" tabindex="-1"></a>      distribution,</span>
+<span id="cb57-28"><a href="categorization.html#cb57-28" tabindex="-1"></a>      <span class="at">nrow =</span> n.stimuli, <span class="co"># number of stimuli</span></span>
+<span id="cb57-29"><a href="categorization.html#cb57-29" tabindex="-1"></a>      <span class="at">ncol =</span> <span class="fu">length</span>(distribution),</span>
+<span id="cb57-30"><a href="categorization.html#cb57-30" tabindex="-1"></a>      <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb57-31"><a href="categorization.html#cb57-31" tabindex="-1"></a>    )</span>
+<span id="cb57-32"><a href="categorization.html#cb57-32" tabindex="-1"></a>  stimulus.index <span class="ot">&lt;-</span></span>
+<span id="cb57-33"><a href="categorization.html#cb57-33" tabindex="-1"></a>    <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n.stimuli),</span>
+<span id="cb57-34"><a href="categorization.html#cb57-34" tabindex="-1"></a>           <span class="at">nrow =</span> n.stimuli,</span>
+<span id="cb57-35"><a href="categorization.html#cb57-35" tabindex="-1"></a>           <span class="at">ncol =</span> <span class="fu">length</span>(distribution),</span>
+<span id="cb57-36"><a href="categorization.html#cb57-36" tabindex="-1"></a>           <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb57-37"><a href="categorization.html#cb57-37" tabindex="-1"></a>  mask <span class="ot">&lt;-</span></span>
+<span id="cb57-38"><a href="categorization.html#cb57-38" tabindex="-1"></a>    (</span>
+<span id="cb57-39"><a href="categorization.html#cb57-39" tabindex="-1"></a>      <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;lb&#39;</span>]], <span class="st">&#39;&gt;=&#39;</span>) <span class="sc">&amp;</span></span>
+<span id="cb57-40"><a href="categorization.html#cb57-40" tabindex="-1"></a>      <span class="fu">sweep</span>(stimulus.index, <span class="dv">2</span>, borders[[<span class="st">&#39;ub&#39;</span>]], <span class="st">&#39;&lt;=&#39;</span>)</span>
+<span id="cb57-41"><a href="categorization.html#cb57-41" tabindex="-1"></a>    )</span>
+<span id="cb57-42"><a href="categorization.html#cb57-42" tabindex="-1"></a>  tiled.distribution[<span class="sc">!</span>mask] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb57-43"><a href="categorization.html#cb57-43" tabindex="-1"></a>  p.point <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(tiled.distribution)</span>
+<span id="cb57-44"><a href="categorization.html#cb57-44" tabindex="-1"></a>  <span class="fu">plot</span>(p.point)</span>
+<span id="cb57-45"><a href="categorization.html#cb57-45" tabindex="-1"></a>}</span>
+<span id="cb57-46"><a href="categorization.html#cb57-46" tabindex="-1"></a></span>
+<span id="cb57-47"><a href="categorization.html#cb57-47" tabindex="-1"></a><span class="co"># copy the code for calculating the posterior</span></span>
+<span id="cb57-48"><a href="categorization.html#cb57-48" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: only change is that we are also multiplying by the prior now</span></span>
+<span id="cb57-49"><a href="categorization.html#cb57-49" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: if prior isn&#39;t specified, a uniform prior is assumed in this function</span></span>
+<span id="cb57-50"><a href="categorization.html#cb57-50" tabindex="-1"></a>calculate.posterior <span class="ot">&lt;-</span> <span class="cf">function</span>(observations, borders, sizes, <span class="at">prior=</span><span class="dv">1</span>){</span>
+<span id="cb57-51"><a href="categorization.html#cb57-51" tabindex="-1"></a>  n.observations <span class="ot">&lt;-</span> <span class="fu">length</span>(observations)</span>
+<span id="cb57-52"><a href="categorization.html#cb57-52" tabindex="-1"></a>  min.obs <span class="ot">&lt;-</span> <span class="fu">min</span>(observations)</span>
+<span id="cb57-53"><a href="categorization.html#cb57-53" tabindex="-1"></a>  max.obs <span class="ot">&lt;-</span> <span class="fu">max</span>(observations)</span>
+<span id="cb57-54"><a href="categorization.html#cb57-54" tabindex="-1"></a>  likelihood.given.observation <span class="ot">&lt;-</span> <span class="fu">as.array</span>(<span class="fu">t</span>(<span class="fu">ifelse</span>(</span>
+<span id="cb57-55"><a href="categorization.html#cb57-55" tabindex="-1"></a>    (borders[<span class="st">&#39;lb&#39;</span>] <span class="sc">&lt;=</span> min.obs) <span class="sc">&amp;</span> (borders[<span class="st">&#39;ub&#39;</span>] <span class="sc">&gt;=</span> max.obs),</span>
+<span id="cb57-56"><a href="categorization.html#cb57-56" tabindex="-1"></a>    <span class="dv">1</span><span class="sc">/</span>(sizes<span class="sc">^</span>n.observations), </span>
+<span id="cb57-57"><a href="categorization.html#cb57-57" tabindex="-1"></a>    <span class="dv">0</span></span>
+<span id="cb57-58"><a href="categorization.html#cb57-58" tabindex="-1"></a>  )))</span>
+<span id="cb57-59"><a href="categorization.html#cb57-59" tabindex="-1"></a>  </span>
+<span id="cb57-60"><a href="categorization.html#cb57-60" tabindex="-1"></a>  <span class="co"># Only change here: multiply by prior</span></span>
+<span id="cb57-61"><a href="categorization.html#cb57-61" tabindex="-1"></a>  posterior <span class="ot">&lt;-</span> (likelihood.given.observation<span class="sc">*</span>prior <span class="sc">/</span> <span class="fu">sum</span>(likelihood.given.observation<span class="sc">*</span>prior))</span>
+<span id="cb57-62"><a href="categorization.html#cb57-62" tabindex="-1"></a>  <span class="fu">return</span>(posterior)</span>
+<span id="cb57-63"><a href="categorization.html#cb57-63" tabindex="-1"></a>}</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li></li>
+</ol>
+<p>The answer is that adding a new observation between two observations that we know are already examples of the category makes the generalization gradient decrease steeper as it gets further from the maximum and minimum observations. This is because under the strong sampling assumption, if the category had been much larger than the category between the observed minimum and maximum, it would have been likely for the new observation to be below the minimum or above the maximum of the previously observed examples. However, the same does not hold under weak sampling.</p>
+<ol start="2" style="list-style-type: decimal">
+<li></li>
+</ol>
+<p>To answer this question it was enough to change line 153 (<code>observations &lt;- c(30, 50, 60)</code>) to <code>observations &lt;- c()</code> and re-run the cell.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="categorization.html#cb58-1" tabindex="-1"></a>n.stimuli <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb58-2"><a href="categorization.html#cb58-2" tabindex="-1"></a>borders <span class="ot">&lt;-</span> <span class="fu">create.borders</span>(n.stimuli)</span>
+<span id="cb58-3"><a href="categorization.html#cb58-3" tabindex="-1"></a>sizes <span class="ot">&lt;-</span> <span class="fu">create.sizes</span>(borders)</span>
+<span id="cb58-4"><a href="categorization.html#cb58-4" tabindex="-1"></a>posterior.exercise<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(), borders, sizes)</span></code></pre></div>
+<pre><code>## Warning in min(observations): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>## Warning in max(observations): no non-missing arguments to max; returning -Inf</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="categorization.html#cb61-1" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.1</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Alternatively, you could avoid calculating the posterior at all and just use the prior.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="categorization.html#cb62-1" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">length</span>(sizes)) <span class="sc">/</span> <span class="fu">length</span>(sizes)</span>
+<span id="cb62-2"><a href="categorization.html#cb62-2" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(prior)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li></li>
+</ol>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="categorization.html#cb63-1" tabindex="-1"></a>n.stimuli <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb63-2"><a href="categorization.html#cb63-2" tabindex="-1"></a>borders <span class="ot">&lt;-</span> <span class="fu">create.borders</span>(n.stimuli)</span>
+<span id="cb63-3"><a href="categorization.html#cb63-3" tabindex="-1"></a>sizes <span class="ot">&lt;-</span> <span class="fu">create.sizes</span>(borders)</span>
+<span id="cb63-4"><a href="categorization.html#cb63-4" tabindex="-1"></a>posterior.exercise<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(<span class="dv">100</span>), borders, sizes)</span>
+<span id="cb63-5"><a href="categorization.html#cb63-5" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.3</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="categorization.html#cb64-1" tabindex="-1"></a>posterior.exercise<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(<span class="dv">150</span>), borders, sizes)</span>
+<span id="cb64-2"><a href="categorization.html#cb64-2" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.3</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="categorization.html#cb65-1" tabindex="-1"></a>posterior.exercise<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>), borders, sizes)</span>
+<span id="cb65-2"><a href="categorization.html#cb65-2" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.3</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li></li>
+</ol>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="categorization.html#cb66-1" tabindex="-1"></a><span class="co"># I accepted both a space between 1 and 100 and between 1 and 200</span></span>
+<span id="cb66-2"><a href="categorization.html#cb66-2" tabindex="-1"></a>n.stimuli <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb66-3"><a href="categorization.html#cb66-3" tabindex="-1"></a>borders <span class="ot">&lt;-</span> <span class="fu">create.borders</span>(n.stimuli)</span>
+<span id="cb66-4"><a href="categorization.html#cb66-4" tabindex="-1"></a>sizes <span class="ot">&lt;-</span> <span class="fu">create.sizes</span>(borders)</span>
+<span id="cb66-5"><a href="categorization.html#cb66-5" tabindex="-1"></a></span>
+<span id="cb66-6"><a href="categorization.html#cb66-6" tabindex="-1"></a><span class="co"># create new prior</span></span>
+<span id="cb66-7"><a href="categorization.html#cb66-7" tabindex="-1"></a>even.prior <span class="ot">&lt;-</span> <span class="sc">-</span>(sizes<span class="sc">%%</span><span class="dv">2-2</span>)</span>
+<span id="cb66-8"><a href="categorization.html#cb66-8" tabindex="-1"></a>even.prior <span class="ot">&lt;-</span> even.prior <span class="sc">/</span> <span class="fu">sum</span>(even.prior)</span>
+<span id="cb66-9"><a href="categorization.html#cb66-9" tabindex="-1"></a></span>
+<span id="cb66-10"><a href="categorization.html#cb66-10" tabindex="-1"></a>distribution.exercise<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(), borders, sizes, <span class="at">prior=</span>even.prior)</span></code></pre></div>
+<pre><code>## Warning in min(observations): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>## Warning in max(observations): no non-missing arguments to max; returning -Inf</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="categorization.html#cb69-1" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(distribution.exercise<span class="fl">.4</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li></li>
+</ol>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="categorization.html#cb70-1" tabindex="-1"></a>posterior.exercise<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(<span class="dv">50</span>), borders, sizes, <span class="at">prior=</span>even.prior)</span>
+<span id="cb70-2"><a href="categorization.html#cb70-2" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="categorization.html#cb71-1" tabindex="-1"></a>posterior.exercise<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(<span class="dv">85</span>), borders, sizes, <span class="at">prior=</span>even.prior)</span>
+<span id="cb71-2"><a href="categorization.html#cb71-2" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="categorization.html#cb72-1" tabindex="-1"></a>posterior.exercise<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">calculate.posterior</span>(<span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">85</span>), borders, sizes, <span class="at">prior=</span>even.prior)</span>
+<span id="cb72-2"><a href="categorization.html#cb72-2" tabindex="-1"></a><span class="fu">plot.gradient.from.categories.dist</span>(posterior.exercise<span class="fl">.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cultural-evolution.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
