@@ -5,7 +5,12 @@ This book is written with the R library bookdown.
 1. Clone the book locally with `git clone https://github.com/thelogicalgrammar/cognitive_modelling_book`
 1. Make the changes as described below.
 
-# Updating the book
+# Updating the book via script
+
+1. Make the desired changes
+1. Run `sh update_book.sh`
+
+# Updating the book manually
 
 1. Make the desired changes.
 1. Run the R command `bookdown::render_book()`. This will run all the R notebooks, collect them in a book, and store the resulting website in a folder called `docs`.
