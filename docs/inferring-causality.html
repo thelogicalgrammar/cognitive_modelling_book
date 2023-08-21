@@ -23,7 +23,7 @@
 <meta name="author" content="Fausto Carcassi" />
 
 
-<meta name="date" content="2023-08-16" />
+<meta name="date" content="2023-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,27 +55,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,15 +82,15 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -137,15 +135,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#bits-and-pieces-of-r"><i class="fa fa-check"></i><b>1.1</b> Bits and pieces of R</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-motivating-example-sampling-from-an-urn"><i class="fa fa-check"></i><b>1.2</b> A motivating example: Sampling from an urn</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-motivating-example-sampling-from-an-urn"><i class="fa fa-check"></i><b>1.2</b> A motivating example: Sampling from an urn</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#sampling-possible-worlds-from-the-generative-model"><i class="fa fa-check"></i><b>1.2.1</b> Sampling possible worlds from the generative model</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#bayesian-update-learning-from-the-data"><i class="fa fa-check"></i><b>1.3</b> Bayesian update: Learning from the data</a>
-<ul>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#bayesian-update-learning-from-the-data"><i class="fa fa-check"></i><b>1.3</b> Bayesian update: Learning from the data</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#reminder-bayes-theorem"><i class="fa fa-check"></i><b>1.3.1</b> Reminder: Bayes Theorem</a></li>
 <li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#applying-bayes-theorem-to-the-urn-case"><i class="fa fa-check"></i><b>1.3.2</b> Applying Bayes theorem to the urn case</a></li>
 <li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#implementation-detail-how-to-avoid-calculating-pd"><i class="fa fa-check"></i><b>1.3.3</b> Implementation detail: How to avoid calculating p(D)</a></li>
@@ -154,10 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a></li>
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#answers"><i class="fa fa-check"></i><b>1.6</b> Answers</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="categorization.html"><a href="categorization.html"><i class="fa fa-check"></i><b>2</b> Categorization</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="categorization.html"><a href="categorization.html#the-case-of-a-single-observation"><i class="fa fa-check"></i><b>2.1</b> The case of a single observation</a>
-<ul>
+<li class="chapter" data-level="2" data-path="categorization.html"><a href="categorization.html"><i class="fa fa-check"></i><b>2</b> Categorization</a><ul>
+<li class="chapter" data-level="2.1" data-path="categorization.html"><a href="categorization.html#the-case-of-a-single-observation"><i class="fa fa-check"></i><b>2.1</b> The case of a single observation</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="categorization.html"><a href="categorization.html#little-r-programming-trick"><i class="fa fa-check"></i><b>2.1.1</b> Little R programming trick</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="categorization.html"><a href="categorization.html#the-case-of-multiple-observations"><i class="fa fa-check"></i><b>2.2</b> The case of multiple observations</a></li>
@@ -165,38 +158,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="categorization.html"><a href="categorization.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="categorization.html"><a href="categorization.html#answers-1"><i class="fa fa-check"></i><b>2.5</b> Answers</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="cultural-evolution.html"><a href="cultural-evolution.html"><i class="fa fa-check"></i><b>3</b> Cultural Evolution</a>
-<ul>
+<li class="chapter" data-level="3" data-path="cultural-evolution.html"><a href="cultural-evolution.html"><i class="fa fa-check"></i><b>3</b> Cultural Evolution</a><ul>
 <li class="chapter" data-level="3.1" data-path="cultural-evolution.html"><a href="cultural-evolution.html#the-languages"><i class="fa fa-check"></i><b>3.1</b> The languages</a></li>
 <li class="chapter" data-level="3.2" data-path="cultural-evolution.html"><a href="cultural-evolution.html#bayesian-learning-of-the-language-from-data"><i class="fa fa-check"></i><b>3.2</b> Bayesian learning of the language from data</a></li>
 <li class="chapter" data-level="3.3" data-path="cultural-evolution.html"><a href="cultural-evolution.html#cultural-evolution-with-bayesian-agents"><i class="fa fa-check"></i><b>3.3</b> Cultural evolution with Bayesian agents!</a></li>
 <li class="chapter" data-level="3.4" data-path="cultural-evolution.html"><a href="cultural-evolution.html#if-there-is-time-left-2"><i class="fa fa-check"></i><b>3.4</b> If there is time left…</a></li>
 <li class="chapter" data-level="3.5" data-path="cultural-evolution.html"><a href="cultural-evolution.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html"><i class="fa fa-check"></i><b>4</b> Rational Speech Acts</a>
-<ul>
+<li class="chapter" data-level="4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html"><i class="fa fa-check"></i><b>4</b> Rational Speech Acts</a><ul>
 <li class="chapter" data-level="4.1" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#surprisal-in-information-theory"><i class="fa fa-check"></i><b>4.1</b> Surprisal in information theory</a></li>
 <li class="chapter" data-level="4.2" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#the-rational-speech-act-model"><i class="fa fa-check"></i><b>4.2</b> The Rational Speech Act model</a></li>
 <li class="chapter" data-level="4.3" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#if-there-is-time-left-3"><i class="fa fa-check"></i><b>4.3</b> If there is time left…</a></li>
 <li class="chapter" data-level="4.4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#exercises-3"><i class="fa fa-check"></i><b>4.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="inferring-causality.html"><a href="inferring-causality.html"><i class="fa fa-check"></i><b>5</b> Inferring causality</a>
-<ul>
+<li class="chapter" data-level="5" data-path="inferring-causality.html"><a href="inferring-causality.html"><i class="fa fa-check"></i><b>5</b> Inferring causality</a><ul>
 <li class="chapter" data-level="5.1" data-path="inferring-causality.html"><a href="inferring-causality.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
 <li class="chapter" data-level="5.2" data-path="inferring-causality.html"><a href="inferring-causality.html#approximating-the-likelihood-with-a-simulation"><i class="fa fa-check"></i><b>5.2</b> Approximating the likelihood with a simulation</a></li>
 <li class="chapter" data-level="5.3" data-path="inferring-causality.html"><a href="inferring-causality.html#bayesian-inference"><i class="fa fa-check"></i><b>5.3</b> Bayesian inference</a></li>
 <li class="chapter" data-level="5.4" data-path="inferring-causality.html"><a href="inferring-causality.html#one-complication-from-real-participants"><i class="fa fa-check"></i><b>5.4</b> One complication from real participants</a></li>
 <li class="chapter" data-level="5.5" data-path="inferring-causality.html"><a href="inferring-causality.html#putting-it-all-together"><i class="fa fa-check"></i><b>5.5</b> Putting it all together</a></li>
 <li class="chapter" data-level="5.6" data-path="inferring-causality.html"><a href="inferring-causality.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
-<li class="chapter" data-level="5.7" data-path="inferring-causality.html"><a href="inferring-causality.html#appendices-you-dont-need-to-understand-them"><i class="fa fa-check"></i><b>5.7</b> Appendices (You don’t need to understand them)</a>
-<ul>
+<li class="chapter" data-level="5.7" data-path="inferring-causality.html"><a href="inferring-causality.html#appendices-you-dont-need-to-understand-them"><i class="fa fa-check"></i><b>5.7</b> Appendices (You don’t need to understand them)</a><ul>
 <li class="chapter" data-level="5.7.1" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-1"><i class="fa fa-check"></i><b>5.7.1</b> Appendix 1</a></li>
 <li class="chapter" data-level="5.7.2" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-2-gamma1."><i class="fa fa-check"></i><b>5.7.2</b> Appendix 2: <span class="math inline">\(\gamma=1\)</span>.</a></li>
 <li class="chapter" data-level="5.7.3" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-3-another-complication"><i class="fa fa-check"></i><b>5.7.3</b> Appendix 3: Another complication</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html"><i class="fa fa-check"></i><b>6</b> Learning in a Language of Thought</a>
-<ul>
+<li class="chapter" data-level="6" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html"><i class="fa fa-check"></i><b>6</b> Learning in a Language of Thought</a><ul>
 <li class="chapter" data-level="6.1" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-logsumexp-function"><i class="fa fa-check"></i><b>6.1</b> The LogSumExp function</a></li>
 <li class="chapter" data-level="6.2" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-conceptual-primitives-and-number-systems"><i class="fa fa-check"></i><b>6.2</b> The conceptual primitives and number systems</a></li>
 <li class="chapter" data-level="6.3" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#learning-an-lot"><i class="fa fa-check"></i><b>6.3</b> Learning an LoT</a></li>
@@ -220,30 +208,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inferring-causality" class="section level1 hasAnchor" number="5">
+<div id="inferring-causality" class="section level1 hasAnchor">
 <h1><span class="header-section-number">5</span> Inferring causality<a href="inferring-causality.html#inferring-causality" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Reading: Steyvers, Mark, Joshua B. Tenenbaum, Eric-Jan Wagenmakers, and Ben Blum. “Inferring Causal Networks from Observations and Interventions.” Cognitive Science 27, no. 3 (May 2003): 453–89.</p>
-<div id="setup" class="section level2 hasAnchor" number="5.1">
+<div id="setup" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.1</span> Setup<a href="inferring-causality.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are three aliens, which we can call A, B, and C. <em>At each timestep</em>, a Bayesian learner makes one observation, which consists of one word for each alien. There are <span class="math inline">\(n\)</span> possible words. After a certain number of timesteps <span class="math inline">\(T\)</span> (i.e. after having made <span class="math inline">\(T\)</span>-many observations), the learner has to infer which alien is reading which alien’s mind based on the observed groups of words (which we will call ‘the data’ <span class="math inline">\(D\)</span>). There are two possible causal structures:</p>
 <ul>
 <li>CC (common cause model): A and C both read C’s mind. A &lt;- C -&gt; B. First, a random word is chosen for C. Then, A and B independently get the same word as C with probability <span class="math inline">\(\alpha\)</span>, and a random word (which could possibly be the same as C’s word, by chance) with probability <span class="math inline">\(1-\alpha\)</span>.</li>
 <li>CE (common effect model): C can read both A’s and B’s minds. A -&gt; C &lt;- B. First, a random word is selected for A and a random word is selected for B. Then, C reads both A’s and B’s minds, each with independent probability of success <span class="math inline">\(\alpha\)</span>, i.e. with probability <span class="math inline">\(\alpha\)</span> they read the right word and with probability <span class="math inline">\(1-\alpha\)</span> they read the wrong word. If C reads both minds, it produces one of the two read words at random. If it fails to read both minds, it produces a random word.</li>
 </ul>
-<div class="float">
+<div class="figure">
 <img src="DAGs.png" alt="The two hypotheses." />
-<div class="figcaption">The two hypotheses.</div>
+<p class="caption">The two hypotheses.</p>
 </div>
 <p>In the model below <span class="math inline">\(\alpha=0.8\)</span> and <span class="math inline">\(n=10\)</span>.</p>
 <p>There are 4 patterns with different probability, because the specific words don’t matter: all that matters is which aliens produce the same or different words. Here they are:</p>
 <table>
-<colgroup>
-<col width="6%" />
-<col width="44%" />
-<col width="23%" />
-<col width="14%" />
-<col width="11%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Index</th>
@@ -286,100 +267,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Draw them to get a sense of what the possible cases are and why they are different from each other.</p>
 </div>
-<div id="approximating-the-likelihood-with-a-simulation" class="section level2 hasAnchor" number="5.2">
+<div id="approximating-the-likelihood-with-a-simulation" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.2</span> Approximating the likelihood with a simulation<a href="inferring-causality.html#approximating-the-likelihood-with-a-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The probability of two words being the same by chance is 10/100, i.e. 0.1. How to get the probabilities above for each case and each hypothesis? Let’s consider an example: the first case (where <span class="math inline">\(A=B=C\)</span>) for hypothesis CC (A &lt;- C -&gt; B) can be obtained in four different ways. First, both A and B correctly read C’s mind (two events of probability 0.8 happen, so 0.8*0.8). Second, A correctly reads C’s mind and B just happens to get the same word (0.8*0.2*0.1). Third, B correctly reads C’s mind and A just happens to get the same word (0.8*0.2*0.1). Finally, neither A nor B correctly read C’s mind, but they both just happen to get the same word (0.2*0.1*0.2*0.1).</p>
 <p>It is a bit laborious to determine the probabilities by enumerating the possible events. However, we can do it by sampling! I.e. we simulate a bunch of times what happens given an hypothesis and see what proportions of the samples have e.g. A=B=C, and that gives us an approximation of the probability of each observation given the hypothesis. Let’s write a function to sample under CE and under CC:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="inferring-causality.html#cb105-1" tabindex="-1"></a>sample.bernoulli <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">p.true=</span><span class="fl">0.8</span>){</span>
-<span id="cb105-2"><a href="inferring-causality.html#cb105-2" tabindex="-1"></a>  <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>),<span class="at">size=</span><span class="dv">1</span>,<span class="at">prob=</span><span class="fu">c</span>(p.true,<span class="dv">1</span><span class="sc">-</span>p.true))</span>
-<span id="cb105-3"><a href="inferring-causality.html#cb105-3" tabindex="-1"></a>}</span>
-<span id="cb105-4"><a href="inferring-causality.html#cb105-4" tabindex="-1"></a></span>
-<span id="cb105-5"><a href="inferring-causality.html#cb105-5" tabindex="-1"></a>sample.word <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb105-6"><a href="inferring-causality.html#cb105-6" tabindex="-1"></a>  <span class="fu">sample</span>(<span class="at">x=</span><span class="dv">10</span>,<span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb105-7"><a href="inferring-causality.html#cb105-7" tabindex="-1"></a>}</span>
-<span id="cb105-8"><a href="inferring-causality.html#cb105-8" tabindex="-1"></a></span>
-<span id="cb105-9"><a href="inferring-causality.html#cb105-9" tabindex="-1"></a>produce.data.CE <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb105-10"><a href="inferring-causality.html#cb105-10" tabindex="-1"></a>  </span>
-<span id="cb105-11"><a href="inferring-causality.html#cb105-11" tabindex="-1"></a>  word.A <span class="ot">&lt;-</span> <span class="fu">sample.word</span>()</span>
-<span id="cb105-12"><a href="inferring-causality.html#cb105-12" tabindex="-1"></a>  word.B <span class="ot">&lt;-</span> <span class="fu">sample.word</span>()</span>
-<span id="cb105-13"><a href="inferring-causality.html#cb105-13" tabindex="-1"></a>  </span>
-<span id="cb105-14"><a href="inferring-causality.html#cb105-14" tabindex="-1"></a>  C.reads.A <span class="ot">&lt;-</span> <span class="fu">sample.bernoulli</span>()</span>
-<span id="cb105-15"><a href="inferring-causality.html#cb105-15" tabindex="-1"></a>  C.reads.B <span class="ot">&lt;-</span> <span class="fu">sample.bernoulli</span>()</span>
-<span id="cb105-16"><a href="inferring-causality.html#cb105-16" tabindex="-1"></a>  </span>
-<span id="cb105-17"><a href="inferring-causality.html#cb105-17" tabindex="-1"></a>  <span class="cf">if</span> (C.reads.A <span class="sc">&amp;</span> C.reads.B){</span>
-<span id="cb105-18"><a href="inferring-causality.html#cb105-18" tabindex="-1"></a>    <span class="co"># both</span></span>
-<span id="cb105-19"><a href="inferring-causality.html#cb105-19" tabindex="-1"></a>    word.C <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(word.A,word.B),<span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb105-20"><a href="inferring-causality.html#cb105-20" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (C.reads.A){</span>
-<span id="cb105-21"><a href="inferring-causality.html#cb105-21" tabindex="-1"></a>    <span class="co"># just A</span></span>
-<span id="cb105-22"><a href="inferring-causality.html#cb105-22" tabindex="-1"></a>    word.C <span class="ot">&lt;-</span> word.A</span>
-<span id="cb105-23"><a href="inferring-causality.html#cb105-23" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (C.reads.B){</span>
-<span id="cb105-24"><a href="inferring-causality.html#cb105-24" tabindex="-1"></a>    <span class="co"># just B</span></span>
-<span id="cb105-25"><a href="inferring-causality.html#cb105-25" tabindex="-1"></a>    word.C <span class="ot">&lt;-</span> word.B</span>
-<span id="cb105-26"><a href="inferring-causality.html#cb105-26" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb105-27"><a href="inferring-causality.html#cb105-27" tabindex="-1"></a>    <span class="co"># neither</span></span>
-<span id="cb105-28"><a href="inferring-causality.html#cb105-28" tabindex="-1"></a>    word.C <span class="ot">&lt;-</span> <span class="fu">sample.word</span>()</span>
-<span id="cb105-29"><a href="inferring-causality.html#cb105-29" tabindex="-1"></a>  }</span>
-<span id="cb105-30"><a href="inferring-causality.html#cb105-30" tabindex="-1"></a>  </span>
-<span id="cb105-31"><a href="inferring-causality.html#cb105-31" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(word.A, word.B, word.C))</span>
-<span id="cb105-32"><a href="inferring-causality.html#cb105-32" tabindex="-1"></a>}</span>
-<span id="cb105-33"><a href="inferring-causality.html#cb105-33" tabindex="-1"></a></span>
-<span id="cb105-34"><a href="inferring-causality.html#cb105-34" tabindex="-1"></a>produce.data.CC <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb105-35"><a href="inferring-causality.html#cb105-35" tabindex="-1"></a>  </span>
-<span id="cb105-36"><a href="inferring-causality.html#cb105-36" tabindex="-1"></a>  word.C <span class="ot">&lt;-</span> <span class="fu">sample.word</span>()</span>
-<span id="cb105-37"><a href="inferring-causality.html#cb105-37" tabindex="-1"></a>  </span>
-<span id="cb105-38"><a href="inferring-causality.html#cb105-38" tabindex="-1"></a>  A.reads.C <span class="ot">&lt;-</span> <span class="fu">sample.bernoulli</span>()</span>
-<span id="cb105-39"><a href="inferring-causality.html#cb105-39" tabindex="-1"></a>  B.reads.C <span class="ot">&lt;-</span> <span class="fu">sample.bernoulli</span>()</span>
-<span id="cb105-40"><a href="inferring-causality.html#cb105-40" tabindex="-1"></a>  </span>
-<span id="cb105-41"><a href="inferring-causality.html#cb105-41" tabindex="-1"></a>  <span class="cf">if</span> (A.reads.C){</span>
-<span id="cb105-42"><a href="inferring-causality.html#cb105-42" tabindex="-1"></a>    word.A <span class="ot">&lt;-</span> word.C</span>
-<span id="cb105-43"><a href="inferring-causality.html#cb105-43" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb105-44"><a href="inferring-causality.html#cb105-44" tabindex="-1"></a>    word.A <span class="ot">&lt;-</span> <span class="fu">sample.word</span>()</span>
-<span id="cb105-45"><a href="inferring-causality.html#cb105-45" tabindex="-1"></a>  }</span>
-<span id="cb105-46"><a href="inferring-causality.html#cb105-46" tabindex="-1"></a>  </span>
-<span id="cb105-47"><a href="inferring-causality.html#cb105-47" tabindex="-1"></a>  <span class="cf">if</span> (B.reads.C){</span>
-<span id="cb105-48"><a href="inferring-causality.html#cb105-48" tabindex="-1"></a>    word.B <span class="ot">&lt;-</span> word.C</span>
-<span id="cb105-49"><a href="inferring-causality.html#cb105-49" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb105-50"><a href="inferring-causality.html#cb105-50" tabindex="-1"></a>    word.B <span class="ot">&lt;-</span> <span class="fu">sample.word</span>()</span>
-<span id="cb105-51"><a href="inferring-causality.html#cb105-51" tabindex="-1"></a>  }</span>
-<span id="cb105-52"><a href="inferring-causality.html#cb105-52" tabindex="-1"></a>  </span>
-<span id="cb105-53"><a href="inferring-causality.html#cb105-53" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(word.A, word.B, word.C))</span>
-<span id="cb105-54"><a href="inferring-causality.html#cb105-54" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" title="1">sample.bernoulli &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">p.true=</span><span class="fl">0.8</span>){</a>
+<a class="sourceLine" id="cb105-2" title="2">  <span class="kw">sample</span>(<span class="dt">x=</span><span class="kw">c</span>(<span class="ot">TRUE</span>,<span class="ot">FALSE</span>),<span class="dt">size=</span><span class="dv">1</span>,<span class="dt">prob=</span><span class="kw">c</span>(p.true,<span class="dv">1</span><span class="op">-</span>p.true))</a>
+<a class="sourceLine" id="cb105-3" title="3">}</a>
+<a class="sourceLine" id="cb105-4" title="4"></a>
+<a class="sourceLine" id="cb105-5" title="5">sample.word &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
+<a class="sourceLine" id="cb105-6" title="6">  <span class="kw">sample</span>(<span class="dt">x=</span><span class="dv">10</span>,<span class="dt">size=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb105-7" title="7">}</a>
+<a class="sourceLine" id="cb105-8" title="8"></a>
+<a class="sourceLine" id="cb105-9" title="9">produce.data.CE &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
+<a class="sourceLine" id="cb105-10" title="10">  </a>
+<a class="sourceLine" id="cb105-11" title="11">  word.A &lt;-<span class="st"> </span><span class="kw">sample.word</span>()</a>
+<a class="sourceLine" id="cb105-12" title="12">  word.B &lt;-<span class="st"> </span><span class="kw">sample.word</span>()</a>
+<a class="sourceLine" id="cb105-13" title="13">  </a>
+<a class="sourceLine" id="cb105-14" title="14">  C.reads.A &lt;-<span class="st"> </span><span class="kw">sample.bernoulli</span>()</a>
+<a class="sourceLine" id="cb105-15" title="15">  C.reads.B &lt;-<span class="st"> </span><span class="kw">sample.bernoulli</span>()</a>
+<a class="sourceLine" id="cb105-16" title="16">  </a>
+<a class="sourceLine" id="cb105-17" title="17">  <span class="cf">if</span> (C.reads.A <span class="op">&amp;</span><span class="st"> </span>C.reads.B){</a>
+<a class="sourceLine" id="cb105-18" title="18">    <span class="co"># both</span></a>
+<a class="sourceLine" id="cb105-19" title="19">    word.C &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">c</span>(word.A,word.B),<span class="dt">size=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb105-20" title="20">  } <span class="cf">else</span> <span class="cf">if</span> (C.reads.A){</a>
+<a class="sourceLine" id="cb105-21" title="21">    <span class="co"># just A</span></a>
+<a class="sourceLine" id="cb105-22" title="22">    word.C &lt;-<span class="st"> </span>word.A</a>
+<a class="sourceLine" id="cb105-23" title="23">  } <span class="cf">else</span> <span class="cf">if</span> (C.reads.B){</a>
+<a class="sourceLine" id="cb105-24" title="24">    <span class="co"># just B</span></a>
+<a class="sourceLine" id="cb105-25" title="25">    word.C &lt;-<span class="st"> </span>word.B</a>
+<a class="sourceLine" id="cb105-26" title="26">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb105-27" title="27">    <span class="co"># neither</span></a>
+<a class="sourceLine" id="cb105-28" title="28">    word.C &lt;-<span class="st"> </span><span class="kw">sample.word</span>()</a>
+<a class="sourceLine" id="cb105-29" title="29">  }</a>
+<a class="sourceLine" id="cb105-30" title="30">  </a>
+<a class="sourceLine" id="cb105-31" title="31">  <span class="kw">return</span>(<span class="kw">c</span>(word.A, word.B, word.C))</a>
+<a class="sourceLine" id="cb105-32" title="32">}</a>
+<a class="sourceLine" id="cb105-33" title="33"></a>
+<a class="sourceLine" id="cb105-34" title="34">produce.data.CC &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
+<a class="sourceLine" id="cb105-35" title="35">  </a>
+<a class="sourceLine" id="cb105-36" title="36">  word.C &lt;-<span class="st"> </span><span class="kw">sample.word</span>()</a>
+<a class="sourceLine" id="cb105-37" title="37">  </a>
+<a class="sourceLine" id="cb105-38" title="38">  A.reads.C &lt;-<span class="st"> </span><span class="kw">sample.bernoulli</span>()</a>
+<a class="sourceLine" id="cb105-39" title="39">  B.reads.C &lt;-<span class="st"> </span><span class="kw">sample.bernoulli</span>()</a>
+<a class="sourceLine" id="cb105-40" title="40">  </a>
+<a class="sourceLine" id="cb105-41" title="41">  <span class="cf">if</span> (A.reads.C){</a>
+<a class="sourceLine" id="cb105-42" title="42">    word.A &lt;-<span class="st"> </span>word.C</a>
+<a class="sourceLine" id="cb105-43" title="43">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb105-44" title="44">    word.A &lt;-<span class="st"> </span><span class="kw">sample.word</span>()</a>
+<a class="sourceLine" id="cb105-45" title="45">  }</a>
+<a class="sourceLine" id="cb105-46" title="46">  </a>
+<a class="sourceLine" id="cb105-47" title="47">  <span class="cf">if</span> (B.reads.C){</a>
+<a class="sourceLine" id="cb105-48" title="48">    word.B &lt;-<span class="st"> </span>word.C</a>
+<a class="sourceLine" id="cb105-49" title="49">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb105-50" title="50">    word.B &lt;-<span class="st"> </span><span class="kw">sample.word</span>()</a>
+<a class="sourceLine" id="cb105-51" title="51">  }</a>
+<a class="sourceLine" id="cb105-52" title="52">  </a>
+<a class="sourceLine" id="cb105-53" title="53">  <span class="kw">return</span>(<span class="kw">c</span>(word.A, word.B, word.C))</a>
+<a class="sourceLine" id="cb105-54" title="54">}</a></code></pre></div>
 <p>And let’s test this function:</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="inferring-causality.html#cb106-1" tabindex="-1"></a><span class="fu">produce.data.CE</span>()</span></code></pre></div>
-<pre><code>## [1] 9 4 4</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" title="1"><span class="kw">produce.data.CE</span>()</a></code></pre></div>
+<pre><code>## [1] 6 6 6</code></pre>
 <p>What we need next is a function that take a specific datapoint produced by the function above and categorizes it into one of the four cases described above.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="inferring-causality.html#cb108-1" tabindex="-1"></a>divide.cases <span class="ot">&lt;-</span> <span class="cf">function</span>(samples){</span>
-<span id="cb108-2"><a href="inferring-causality.html#cb108-2" tabindex="-1"></a>  </span>
-<span id="cb108-3"><a href="inferring-causality.html#cb108-3" tabindex="-1"></a>  A.equals.B <span class="ot">&lt;-</span> samples[<span class="dv">1</span>,] <span class="sc">==</span> samples[<span class="dv">2</span>,]</span>
-<span id="cb108-4"><a href="inferring-causality.html#cb108-4" tabindex="-1"></a>  A.equals.C <span class="ot">&lt;-</span> samples[<span class="dv">1</span>,] <span class="sc">==</span> samples[<span class="dv">3</span>,]</span>
-<span id="cb108-5"><a href="inferring-causality.html#cb108-5" tabindex="-1"></a>  B.equals.C <span class="ot">&lt;-</span> samples[<span class="dv">2</span>,] <span class="sc">==</span> samples[<span class="dv">3</span>,]</span>
-<span id="cb108-6"><a href="inferring-causality.html#cb108-6" tabindex="-1"></a>  </span>
-<span id="cb108-7"><a href="inferring-causality.html#cb108-7" tabindex="-1"></a>  <span class="co"># the cases above</span></span>
-<span id="cb108-8"><a href="inferring-causality.html#cb108-8" tabindex="-1"></a>  case<span class="fl">.1</span> <span class="ot">&lt;-</span> A.equals.B <span class="sc">&amp;</span> A.equals.C <span class="sc">&amp;</span> B.equals.C</span>
-<span id="cb108-9"><a href="inferring-causality.html#cb108-9" tabindex="-1"></a>  case<span class="fl">.2</span> <span class="ot">&lt;-</span> (A.equals.C <span class="sc">&amp;</span> <span class="sc">!</span>B.equals.C) <span class="sc">|</span> (B.equals.C <span class="sc">&amp;</span> <span class="sc">!</span>A.equals.C)</span>
-<span id="cb108-10"><a href="inferring-causality.html#cb108-10" tabindex="-1"></a>  case<span class="fl">.3</span> <span class="ot">&lt;-</span> A.equals.B <span class="sc">&amp;</span> <span class="sc">!</span>A.equals.C</span>
-<span id="cb108-11"><a href="inferring-causality.html#cb108-11" tabindex="-1"></a>  case<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="sc">!</span>A.equals.B <span class="sc">&amp;</span> <span class="sc">!</span>B.equals.C <span class="sc">&amp;</span> <span class="sc">!</span>A.equals.C</span>
-<span id="cb108-12"><a href="inferring-causality.html#cb108-12" tabindex="-1"></a>  </span>
-<span id="cb108-13"><a href="inferring-causality.html#cb108-13" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">rbind</span>(case<span class="fl">.1</span>,case<span class="fl">.2</span>,case<span class="fl">.3</span>,case<span class="fl">.4</span>))</span>
-<span id="cb108-14"><a href="inferring-causality.html#cb108-14" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1">divide.cases &lt;-<span class="st"> </span><span class="cf">function</span>(samples){</a>
+<a class="sourceLine" id="cb108-2" title="2">  </a>
+<a class="sourceLine" id="cb108-3" title="3">  A.equals.B &lt;-<span class="st"> </span>samples[<span class="dv">1</span>,] <span class="op">==</span><span class="st"> </span>samples[<span class="dv">2</span>,]</a>
+<a class="sourceLine" id="cb108-4" title="4">  A.equals.C &lt;-<span class="st"> </span>samples[<span class="dv">1</span>,] <span class="op">==</span><span class="st"> </span>samples[<span class="dv">3</span>,]</a>
+<a class="sourceLine" id="cb108-5" title="5">  B.equals.C &lt;-<span class="st"> </span>samples[<span class="dv">2</span>,] <span class="op">==</span><span class="st"> </span>samples[<span class="dv">3</span>,]</a>
+<a class="sourceLine" id="cb108-6" title="6">  </a>
+<a class="sourceLine" id="cb108-7" title="7">  <span class="co"># the cases above</span></a>
+<a class="sourceLine" id="cb108-8" title="8">  case<span class="fl">.1</span> &lt;-<span class="st"> </span>A.equals.B <span class="op">&amp;</span><span class="st"> </span>A.equals.C <span class="op">&amp;</span><span class="st"> </span>B.equals.C</a>
+<a class="sourceLine" id="cb108-9" title="9">  case<span class="fl">.2</span> &lt;-<span class="st"> </span>(A.equals.C <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span>B.equals.C) <span class="op">|</span><span class="st"> </span>(B.equals.C <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span>A.equals.C)</a>
+<a class="sourceLine" id="cb108-10" title="10">  case<span class="fl">.3</span> &lt;-<span class="st"> </span>A.equals.B <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span>A.equals.C</a>
+<a class="sourceLine" id="cb108-11" title="11">  case<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="op">!</span>A.equals.B <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span>B.equals.C <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span>A.equals.C</a>
+<a class="sourceLine" id="cb108-12" title="12">  </a>
+<a class="sourceLine" id="cb108-13" title="13">  <span class="kw">return</span>(<span class="kw">rbind</span>(case<span class="fl">.1</span>,case<span class="fl">.2</span>,case<span class="fl">.3</span>,case<span class="fl">.4</span>))</a>
+<a class="sourceLine" id="cb108-14" title="14">}</a></code></pre></div>
 <p>Let’s approximate the likelihood by seeing how often the 4 cases happen under each of the two hypotheses:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="inferring-causality.html#cb109-1" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">500000</span></span>
-<span id="cb109-2"><a href="inferring-causality.html#cb109-2" tabindex="-1"></a></span>
-<span id="cb109-3"><a href="inferring-causality.html#cb109-3" tabindex="-1"></a>samples.CC <span class="ot">&lt;-</span></span>
-<span id="cb109-4"><a href="inferring-causality.html#cb109-4" tabindex="-1"></a>  <span class="fu">rowMeans</span>(<span class="fu">divide.cases</span>(<span class="fu">replicate</span>(n, <span class="fu">produce.data.CC</span>())))</span>
-<span id="cb109-5"><a href="inferring-causality.html#cb109-5" tabindex="-1"></a></span>
-<span id="cb109-6"><a href="inferring-causality.html#cb109-6" tabindex="-1"></a>samples.CE <span class="ot">&lt;-</span></span>
-<span id="cb109-7"><a href="inferring-causality.html#cb109-7" tabindex="-1"></a>  <span class="fu">rowMeans</span>(<span class="fu">divide.cases</span>(<span class="fu">replicate</span>(n, <span class="fu">produce.data.CE</span>())))</span>
-<span id="cb109-8"><a href="inferring-causality.html#cb109-8" tabindex="-1"></a></span>
-<span id="cb109-9"><a href="inferring-causality.html#cb109-9" tabindex="-1"></a><span class="fu">print</span>(samples.CC)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1">n=<span class="dv">500000</span></a>
+<a class="sourceLine" id="cb109-2" title="2"></a>
+<a class="sourceLine" id="cb109-3" title="3">samples.CC &lt;-</a>
+<a class="sourceLine" id="cb109-4" title="4"><span class="st">  </span><span class="kw">rowMeans</span>(<span class="kw">divide.cases</span>(<span class="kw">replicate</span>(n, <span class="kw">produce.data.CC</span>())))</a>
+<a class="sourceLine" id="cb109-5" title="5"></a>
+<a class="sourceLine" id="cb109-6" title="6">samples.CE &lt;-</a>
+<a class="sourceLine" id="cb109-7" title="7"><span class="st">  </span><span class="kw">rowMeans</span>(<span class="kw">divide.cases</span>(<span class="kw">replicate</span>(n, <span class="kw">produce.data.CE</span>())))</a>
+<a class="sourceLine" id="cb109-8" title="8"></a>
+<a class="sourceLine" id="cb109-9" title="9"><span class="kw">print</span>(samples.CC)</a></code></pre></div>
 <pre><code>##   case.1   case.2   case.3   case.4 
-## 0.672780 0.295102 0.003568 0.028550</code></pre>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="inferring-causality.html#cb111-1" tabindex="-1"></a><span class="fu">print</span>(samples.CE)</span></code></pre></div>
+## 0.672456 0.295436 0.003640 0.028468</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1"><span class="kw">print</span>(samples.CE)</a></code></pre></div>
 <pre><code>##   case.1   case.2   case.3   case.4 
-## 0.095748 0.871482 0.003546 0.029224</code></pre>
+## 0.096366 0.871172 0.003562 0.028900</code></pre>
 <p>You can see that these approximations are pretty close to the ones in the paper!</p>
 </div>
-<div id="bayesian-inference" class="section level2 hasAnchor" number="5.3">
+<div id="bayesian-inference" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.3</span> Bayesian inference<a href="inferring-causality.html#bayesian-inference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Just to be extra clear,</p>
 <ul>
@@ -410,7 +391,7 @@ P(CE \mid D) = \frac{P(D \mid CE) P(CE)}{P(D \mid CC) P(CC) + P(D \mid CE) P(CE)
 \]</span></p>
 <p>You don’t need to understand why the two are equivalent (see Appendix 1 if you’re curious).</p>
 </div>
-<div id="one-complication-from-real-participants" class="section level2 hasAnchor" number="5.4">
+<div id="one-complication-from-real-participants" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.4</span> One complication from real participants<a href="inferring-causality.html#one-complication-from-real-participants" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Up until this point in the course, we have modelled mostly perfect Bayesian agents, namely agents that learn and behave conforming perfectly to Bayes’ theorem (although sometimes their generative model might not accurately described reality). However, this paper shows us an interesting new direction: if we are interested in modeling real human participants, we can assume a Bayesian learner and then add on top of it some transformations that approximate ‘irrationality’. This might be a bit confusing now but should become clearer in the rest of this section.</p>
 <p>The type of ‘irrationality’ we will add to the model concerns the way the learner actually selects an hypothesis given their posterior probability after seeing the data. A ‘perfect’ Bayesian agent would simply select the hypothesis, between CC and CE, that has the highest posterior probability. This would mean selecting CC whenever <span class="math inline">\(\phi &gt; 0\)</span> and CE whenever <span class="math inline">\(\phi &lt;0\)</span> (Can you explain why?). However, real humans might not be so rational. Rather, in the model they might not be as sure. Therefore, we write <span class="math inline">\(P(\text{guessing }CC)\)</span> (the probability that they will choose the <span class="math inline">\(CC\)</span> hypothesis) as follows:</p>
@@ -419,32 +400,32 @@ P(CC) = \frac{1}{1+e^{-\gamma \phi}}
 \]</span></p>
 <p>This is a case of the famous <em>logistic function</em> <span class="math inline">\(\frac{1}{1+e^{-x}}\)</span>, where <span class="math inline">\(x\)</span> is set to <span class="math inline">\(\gamma\phi\)</span>. The logistic function can be used when you want to ‘squeeze’ a value below 0 or above 1 between 0 and 1.</p>
 <p>Let’s plot this for different values of the parameters to get a feeling of the behaviour (with the probability of the data given CE fixed to 0.4):</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="inferring-causality.html#cb113-1" tabindex="-1"></a>p.function <span class="ot">&lt;-</span> <span class="cf">function</span>(p.data.given.CC, p.data.given.CE, gamma.var){</span>
-<span id="cb113-2"><a href="inferring-causality.html#cb113-2" tabindex="-1"></a>  phi.var <span class="ot">&lt;-</span> <span class="fu">log</span>(p.data.given.CC<span class="sc">/</span>p.data.given.CE)</span>
-<span id="cb113-3"><a href="inferring-causality.html#cb113-3" tabindex="-1"></a>  value <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>gamma.var<span class="sc">*</span>phi.var))</span>
-<span id="cb113-4"><a href="inferring-causality.html#cb113-4" tabindex="-1"></a>  <span class="fu">return</span>(value)</span>
-<span id="cb113-5"><a href="inferring-causality.html#cb113-5" tabindex="-1"></a>}</span>
-<span id="cb113-6"><a href="inferring-causality.html#cb113-6" tabindex="-1"></a></span>
-<span id="cb113-7"><a href="inferring-causality.html#cb113-7" tabindex="-1"></a>values.of.gamma <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)</span>
-<span id="cb113-8"><a href="inferring-causality.html#cb113-8" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">heat.colors</span>(<span class="fu">length</span>(values.of.gamma), <span class="at">rev=</span><span class="cn">TRUE</span>)</span>
-<span id="cb113-9"><a href="inferring-causality.html#cb113-9" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(values.of.gamma)){</span>
-<span id="cb113-10"><a href="inferring-causality.html#cb113-10" tabindex="-1"></a>  <span class="fu">curve</span>(</span>
-<span id="cb113-11"><a href="inferring-causality.html#cb113-11" tabindex="-1"></a>    <span class="fu">p.function</span>(x, <span class="fl">0.4</span>, values.of.gamma[i]),</span>
-<span id="cb113-12"><a href="inferring-causality.html#cb113-12" tabindex="-1"></a>    <span class="at">from =</span> <span class="dv">0</span>,</span>
-<span id="cb113-13"><a href="inferring-causality.html#cb113-13" tabindex="-1"></a>    <span class="at">to =</span> <span class="dv">1</span>,</span>
-<span id="cb113-14"><a href="inferring-causality.html#cb113-14" tabindex="-1"></a>    <span class="at">col =</span> col[i],</span>
-<span id="cb113-15"><a href="inferring-causality.html#cb113-15" tabindex="-1"></a>    <span class="at">add =</span> i <span class="sc">!=</span> <span class="dv">1</span>,</span>
-<span id="cb113-16"><a href="inferring-causality.html#cb113-16" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&#39;&#39;</span>,</span>
-<span id="cb113-17"><a href="inferring-causality.html#cb113-17" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb113-18"><a href="inferring-causality.html#cb113-18" tabindex="-1"></a>  )</span>
-<span id="cb113-19"><a href="inferring-causality.html#cb113-19" tabindex="-1"></a>}</span>
-<span id="cb113-20"><a href="inferring-causality.html#cb113-20" tabindex="-1"></a></span>
-<span id="cb113-21"><a href="inferring-causality.html#cb113-21" tabindex="-1"></a><span class="fu">legend</span>(<span class="fl">0.8</span>, <span class="fl">0.5</span>, values.of.gamma, <span class="at">col=</span>col, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">title=</span><span class="fu">expression</span>(gamma))</span>
-<span id="cb113-22"><a href="inferring-causality.html#cb113-22" tabindex="-1"></a></span>
-<span id="cb113-23"><a href="inferring-causality.html#cb113-23" tabindex="-1"></a><span class="fu">title</span>(</span>
-<span id="cb113-24"><a href="inferring-causality.html#cb113-24" tabindex="-1"></a>  <span class="fu">expression</span>(<span class="st">&quot;Prob of picking hypothesis CC given D and &quot;</span><span class="sc">*</span>gamma),</span>
-<span id="cb113-25"><a href="inferring-causality.html#cb113-25" tabindex="-1"></a>  <span class="at">xlab=</span><span class="st">&#39;P(CC|D)&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;P(CC)&#39;</span></span>
-<span id="cb113-26"><a href="inferring-causality.html#cb113-26" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1">p.function &lt;-<span class="st"> </span><span class="cf">function</span>(p.data.given.CC, p.data.given.CE, gamma.var){</a>
+<a class="sourceLine" id="cb113-2" title="2">  phi.var &lt;-<span class="st"> </span><span class="kw">log</span>(p.data.given.CC<span class="op">/</span>p.data.given.CE)</a>
+<a class="sourceLine" id="cb113-3" title="3">  value &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(<span class="op">-</span>gamma.var<span class="op">*</span>phi.var))</a>
+<a class="sourceLine" id="cb113-4" title="4">  <span class="kw">return</span>(value)</a>
+<a class="sourceLine" id="cb113-5" title="5">}</a>
+<a class="sourceLine" id="cb113-6" title="6"></a>
+<a class="sourceLine" id="cb113-7" title="7">values.of.gamma &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb113-8" title="8">col &lt;-<span class="st"> </span><span class="kw">heat.colors</span>(<span class="kw">length</span>(values.of.gamma), <span class="dt">rev=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb113-9" title="9"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(values.of.gamma)){</a>
+<a class="sourceLine" id="cb113-10" title="10">  <span class="kw">curve</span>(</a>
+<a class="sourceLine" id="cb113-11" title="11">    <span class="kw">p.function</span>(x, <span class="fl">0.4</span>, values.of.gamma[i]),</a>
+<a class="sourceLine" id="cb113-12" title="12">    <span class="dt">from =</span> <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb113-13" title="13">    <span class="dt">to =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb113-14" title="14">    <span class="dt">col =</span> col[i],</a>
+<a class="sourceLine" id="cb113-15" title="15">    <span class="dt">add =</span> i <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb113-16" title="16">    <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,</a>
+<a class="sourceLine" id="cb113-17" title="17">    <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb113-18" title="18">  )</a>
+<a class="sourceLine" id="cb113-19" title="19">}</a>
+<a class="sourceLine" id="cb113-20" title="20"></a>
+<a class="sourceLine" id="cb113-21" title="21"><span class="kw">legend</span>(<span class="fl">0.8</span>, <span class="fl">0.5</span>, values.of.gamma, <span class="dt">col=</span>col, <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">title=</span><span class="kw">expression</span>(gamma))</a>
+<a class="sourceLine" id="cb113-22" title="22"></a>
+<a class="sourceLine" id="cb113-23" title="23"><span class="kw">title</span>(</a>
+<a class="sourceLine" id="cb113-24" title="24">  <span class="kw">expression</span>(<span class="st">&quot;Prob of picking hypothesis CC given D and &quot;</span><span class="op">*</span>gamma),</a>
+<a class="sourceLine" id="cb113-25" title="25">  <span class="dt">xlab=</span><span class="st">&#39;P(CC|D)&#39;</span>, <span class="dt">ylab=</span><span class="st">&#39;P(CC)&#39;</span></a>
+<a class="sourceLine" id="cb113-26" title="26">)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 <p>The plot shows for each possible posterior probability of <span class="math inline">\(CC\)</span> given the data, the probability of selecting <span class="math inline">\(CC\)</span> as the true hypothesis. A couple things to note about the plot:</p>
 <ul>
@@ -452,45 +433,45 @@ P(CC) = \frac{1}{1+e^{-\gamma \phi}}
 <li>When <span class="math inline">\(\gamma\)</span> is close to 0, the data only makes a small impact on the probability of choosing one hypothesis or the other (unless the data completely excludes one or the other hypothesis). When <span class="math inline">\(\gamma\)</span> gets larger, even a small support for one or the other hypothesis means that the agent will likely choose it.</li>
 </ul>
 </div>
-<div id="putting-it-all-together" class="section level2 hasAnchor" number="5.5">
+<div id="putting-it-all-together" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.5</span> Putting it all together<a href="inferring-causality.html#putting-it-all-together" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we have a full model of how participants infer the true causal model given some data. Let’s implement it. Let’s produce some data to train the participant. We have the function to produce data for CE above, but let’s write it for CC too here:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="inferring-causality.html#cb114-1" tabindex="-1"></a>n.datapoints <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb114-2"><a href="inferring-causality.html#cb114-2" tabindex="-1"></a></span>
-<span id="cb114-3"><a href="inferring-causality.html#cb114-3" tabindex="-1"></a><span class="co"># we can use empirical proportions obtained above by sampling</span></span>
-<span id="cb114-4"><a href="inferring-causality.html#cb114-4" tabindex="-1"></a><span class="co"># this is a close enough approximation</span></span>
-<span id="cb114-5"><a href="inferring-causality.html#cb114-5" tabindex="-1"></a>likelihoods.CC <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">t</span>(samples.CC))</span>
-<span id="cb114-6"><a href="inferring-causality.html#cb114-6" tabindex="-1"></a>likelihoods.CE <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">t</span>(samples.CE))</span>
-<span id="cb114-7"><a href="inferring-causality.html#cb114-7" tabindex="-1"></a></span>
-<span id="cb114-8"><a href="inferring-causality.html#cb114-8" tabindex="-1"></a><span class="co"># produce n.datapoints datapoints from world where CC is true</span></span>
-<span id="cb114-9"><a href="inferring-causality.html#cb114-9" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n.datapoints,<span class="fu">produce.data.CC</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1">n.datapoints &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb114-2" title="2"></a>
+<a class="sourceLine" id="cb114-3" title="3"><span class="co"># we can use empirical proportions obtained above by sampling</span></a>
+<a class="sourceLine" id="cb114-4" title="4"><span class="co"># this is a close enough approximation</span></a>
+<a class="sourceLine" id="cb114-5" title="5">likelihoods.CC &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">t</span>(samples.CC))</a>
+<a class="sourceLine" id="cb114-6" title="6">likelihoods.CE &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">t</span>(samples.CE))</a>
+<a class="sourceLine" id="cb114-7" title="7"></a>
+<a class="sourceLine" id="cb114-8" title="8"><span class="co"># produce n.datapoints datapoints from world where CC is true</span></a>
+<a class="sourceLine" id="cb114-9" title="9">data &lt;-<span class="st"> </span><span class="kw">replicate</span>(n.datapoints,<span class="kw">produce.data.CC</span>())</a></code></pre></div>
 <p>Then, we get the likelihoods of the produced datapoints under the hypotheses:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="inferring-causality.html#cb115-1" tabindex="-1"></a><span class="co"># get the likelihoods of the observed datapoints under hypothesis CC</span></span>
-<span id="cb115-2"><a href="inferring-causality.html#cb115-2" tabindex="-1"></a>likelihoods.data.CC <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">ifelse</span>(</span>
-<span id="cb115-3"><a href="inferring-causality.html#cb115-3" tabindex="-1"></a>  <span class="fu">divide.cases</span>(data),</span>
-<span id="cb115-4"><a href="inferring-causality.html#cb115-4" tabindex="-1"></a>  <span class="fu">replicate</span>(n.datapoints,likelihoods.CC),</span>
-<span id="cb115-5"><a href="inferring-causality.html#cb115-5" tabindex="-1"></a>  <span class="fl">0.</span></span>
-<span id="cb115-6"><a href="inferring-causality.html#cb115-6" tabindex="-1"></a>))</span>
-<span id="cb115-7"><a href="inferring-causality.html#cb115-7" tabindex="-1"></a></span>
-<span id="cb115-8"><a href="inferring-causality.html#cb115-8" tabindex="-1"></a><span class="co"># and same for CE, for the same datapoints</span></span>
-<span id="cb115-9"><a href="inferring-causality.html#cb115-9" tabindex="-1"></a>likelihoods.data.CE <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">ifelse</span>(</span>
-<span id="cb115-10"><a href="inferring-causality.html#cb115-10" tabindex="-1"></a>  <span class="fu">divide.cases</span>(data),</span>
-<span id="cb115-11"><a href="inferring-causality.html#cb115-11" tabindex="-1"></a>  <span class="fu">replicate</span>(n.datapoints,likelihoods.CE),</span>
-<span id="cb115-12"><a href="inferring-causality.html#cb115-12" tabindex="-1"></a>  <span class="fl">0.</span></span>
-<span id="cb115-13"><a href="inferring-causality.html#cb115-13" tabindex="-1"></a>))</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1"><span class="co"># get the likelihoods of the observed datapoints under hypothesis CC</span></a>
+<a class="sourceLine" id="cb115-2" title="2">likelihoods.data.CC &lt;-<span class="st"> </span><span class="kw">colSums</span>(<span class="kw">ifelse</span>(</a>
+<a class="sourceLine" id="cb115-3" title="3">  <span class="kw">divide.cases</span>(data),</a>
+<a class="sourceLine" id="cb115-4" title="4">  <span class="kw">replicate</span>(n.datapoints,likelihoods.CC),</a>
+<a class="sourceLine" id="cb115-5" title="5">  <span class="fl">0.</span></a>
+<a class="sourceLine" id="cb115-6" title="6">))</a>
+<a class="sourceLine" id="cb115-7" title="7"></a>
+<a class="sourceLine" id="cb115-8" title="8"><span class="co"># and same for CE, for the same datapoints</span></a>
+<a class="sourceLine" id="cb115-9" title="9">likelihoods.data.CE &lt;-<span class="st"> </span><span class="kw">colSums</span>(<span class="kw">ifelse</span>(</a>
+<a class="sourceLine" id="cb115-10" title="10">  <span class="kw">divide.cases</span>(data),</a>
+<a class="sourceLine" id="cb115-11" title="11">  <span class="kw">replicate</span>(n.datapoints,likelihoods.CE),</a>
+<a class="sourceLine" id="cb115-12" title="12">  <span class="fl">0.</span></a>
+<a class="sourceLine" id="cb115-13" title="13">))</a></code></pre></div>
 <p>Finally, we calculate <span class="math inline">\(\phi\)</span> at each timestep:</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="inferring-causality.html#cb116-1" tabindex="-1"></a><span class="co"># cumulative phi as observations are received</span></span>
-<span id="cb116-2"><a href="inferring-causality.html#cb116-2" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(<span class="fu">log</span>(likelihoods.data.CC<span class="sc">/</span>likelihoods.data.CE))</span>
-<span id="cb116-3"><a href="inferring-causality.html#cb116-3" tabindex="-1"></a></span>
-<span id="cb116-4"><a href="inferring-causality.html#cb116-4" tabindex="-1"></a><span class="fu">plot</span>(phi)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1"><span class="co"># cumulative phi as observations are received</span></a>
+<a class="sourceLine" id="cb116-2" title="2">phi &lt;-<span class="st"> </span><span class="kw">cumsum</span>(<span class="kw">log</span>(likelihoods.data.CC<span class="op">/</span>likelihoods.data.CE))</a>
+<a class="sourceLine" id="cb116-3" title="3"></a>
+<a class="sourceLine" id="cb116-4" title="4"><span class="kw">plot</span>(phi)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
 <p>And from <span class="math inline">\(\phi\)</span> calculate the probability of accepting hypothesis CC at each timestep.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="inferring-causality.html#cb117-1" tabindex="-1"></a>gamma <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb117-2"><a href="inferring-causality.html#cb117-2" tabindex="-1"></a>p.choosing.CC <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>gamma<span class="sc">*</span>phi))</span>
-<span id="cb117-3"><a href="inferring-causality.html#cb117-3" tabindex="-1"></a><span class="fu">plot</span>(p.choosing.CC)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1">gamma &lt;-<span class="st"> </span><span class="fl">0.05</span></a>
+<a class="sourceLine" id="cb117-2" title="2">p.choosing.CC &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(<span class="op">-</span>gamma<span class="op">*</span>phi))</a>
+<a class="sourceLine" id="cb117-3" title="3"><span class="kw">plot</span>(p.choosing.CC)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 </div>
-<div id="exercises-4" class="section level2 hasAnchor" number="5.6">
+<div id="exercises-4" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.6</span> Exercises<a href="inferring-causality.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Make CE the true hypothesis instead and plot <span class="math inline">\(\phi\)</span> over 100 timesteps.</li>
@@ -499,9 +480,9 @@ P(CC) = \frac{1}{1+e^{-\gamma \phi}}
 <li>What is the effect of increasing and decreasing the <span class="math inline">\(\gamma\)</span> parameter on the way <span class="math inline">\(\phi\)</span> changes over time?</li>
 </ol>
 </div>
-<div id="appendices-you-dont-need-to-understand-them" class="section level2 hasAnchor" number="5.7">
+<div id="appendices-you-dont-need-to-understand-them" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.7</span> Appendices (You don’t need to understand them)<a href="inferring-causality.html#appendices-you-dont-need-to-understand-them" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="appendix-1" class="section level3 hasAnchor" number="5.7.1">
+<div id="appendix-1" class="section level3 hasAnchor">
 <h3><span class="header-section-number">5.7.1</span> Appendix 1<a href="inferring-causality.html#appendix-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\begin{align}
 \phi
@@ -519,10 +500,10 @@ P(CC) = \frac{1}{1+e^{-\gamma \phi}}
 &amp;= \sum_{t=1}^{T} \log \frac{P(d_t \mid CC)}{P(d_t \mid CE)} \\
 \end{align}\]</span></p>
 </div>
-<div id="appendix-2-gamma1." class="section level3 hasAnchor" number="5.7.2">
+<div id="appendix-2-gamma1." class="section level3 hasAnchor">
 <h3><span class="header-section-number">5.7.2</span> Appendix 2: <span class="math inline">\(\gamma=1\)</span>.<a href="inferring-causality.html#appendix-2-gamma1." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\begin{align}
-P(CC)
+P(CC) 
 &amp;= \frac{1}{1+e^{-\gamma\log \frac{P(D \mid CC)}{P(D \mid CE)} }} \\
 &amp;= \frac{1}{1+e^{\log \left( \left( \frac{P(D \mid CC)}{P(D \mid CE)} \right)^{-\gamma} \right) }} \\
 &amp;= \frac{1}{1+e^{\log \left( \left( \frac{P(D \mid CE)}{P(D \mid CC)} \right)^\gamma \right) }} \\
@@ -533,7 +514,7 @@ P(CC)
 &amp;= P(CC \mid D)
 \end{align}\]</span></p>
 </div>
-<div id="appendix-3-another-complication" class="section level3 hasAnchor" number="5.7.3">
+<div id="appendix-3-another-complication" class="section level3 hasAnchor">
 <h3><span class="header-section-number">5.7.3</span> Appendix 3: Another complication<a href="inferring-causality.html#appendix-3-another-complication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The second complication in the model is the Bayesian learner might put less emphasis on older observations, i.e. they might play a smaller role in determining the posterior distribution. Recall from above that:</p>
 <p><span class="math display">\[
@@ -546,55 +527,55 @@ P(CC)
 e^{-\frac{T-t}{\delta}}
 \]</span></p>
 <p>Let’s plot it to make sure it has the shape we want (where <span class="math inline">\(t\)</span> ranges from 1 to <span class="math inline">\(T\)</span> included):</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="inferring-causality.html#cb118-1" tabindex="-1"></a>T <span class="ot">=</span> <span class="dv">10</span></span>
-<span id="cb118-2"><a href="inferring-causality.html#cb118-2" tabindex="-1"></a></span>
-<span id="cb118-3"><a href="inferring-causality.html#cb118-3" tabindex="-1"></a>time.discount.f <span class="ot">=</span> <span class="cf">function</span>(t, T, delta){</span>
-<span id="cb118-4"><a href="inferring-causality.html#cb118-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">exp</span>(<span class="sc">-</span>(T<span class="sc">-</span>t)<span class="sc">/</span>delta))</span>
-<span id="cb118-5"><a href="inferring-causality.html#cb118-5" tabindex="-1"></a>}</span>
-<span id="cb118-6"><a href="inferring-causality.html#cb118-6" tabindex="-1"></a></span>
-<span id="cb118-7"><a href="inferring-causality.html#cb118-7" tabindex="-1"></a>values.of.delta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">10</span>)</span>
-<span id="cb118-8"><a href="inferring-causality.html#cb118-8" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">heat.colors</span>(<span class="fu">length</span>(values.of.delta), <span class="at">rev=</span><span class="cn">TRUE</span>)</span>
-<span id="cb118-9"><a href="inferring-causality.html#cb118-9" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(values.of.delta)){</span>
-<span id="cb118-10"><a href="inferring-causality.html#cb118-10" tabindex="-1"></a>  <span class="fu">curve</span>(</span>
-<span id="cb118-11"><a href="inferring-causality.html#cb118-11" tabindex="-1"></a>    <span class="fu">time.discount.f</span>(x, T, values.of.delta[i]),</span>
-<span id="cb118-12"><a href="inferring-causality.html#cb118-12" tabindex="-1"></a>    <span class="at">from =</span> <span class="dv">1</span>,</span>
-<span id="cb118-13"><a href="inferring-causality.html#cb118-13" tabindex="-1"></a>    <span class="at">to =</span> T,</span>
-<span id="cb118-14"><a href="inferring-causality.html#cb118-14" tabindex="-1"></a>    <span class="at">col =</span> col[i],</span>
-<span id="cb118-15"><a href="inferring-causality.html#cb118-15" tabindex="-1"></a>    <span class="at">add =</span> i <span class="sc">!=</span> <span class="dv">1</span>,</span>
-<span id="cb118-16"><a href="inferring-causality.html#cb118-16" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&#39;&#39;</span>,</span>
-<span id="cb118-17"><a href="inferring-causality.html#cb118-17" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb118-18"><a href="inferring-causality.html#cb118-18" tabindex="-1"></a>  )</span>
-<span id="cb118-19"><a href="inferring-causality.html#cb118-19" tabindex="-1"></a>}</span>
-<span id="cb118-20"><a href="inferring-causality.html#cb118-20" tabindex="-1"></a></span>
-<span id="cb118-21"><a href="inferring-causality.html#cb118-21" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">1</span>, <span class="fl">1.</span>, values.of.delta, <span class="at">col=</span>col, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">title=</span><span class="fu">expression</span>(delta))</span>
-<span id="cb118-22"><a href="inferring-causality.html#cb118-22" tabindex="-1"></a></span>
-<span id="cb118-23"><a href="inferring-causality.html#cb118-23" tabindex="-1"></a><span class="fu">title</span>(</span>
-<span id="cb118-24"><a href="inferring-causality.html#cb118-24" tabindex="-1"></a>  <span class="fu">expression</span>(<span class="st">&quot;Discounting factor for term t with given &quot;</span><span class="sc">*</span>delta),</span>
-<span id="cb118-25"><a href="inferring-causality.html#cb118-25" tabindex="-1"></a>  <span class="at">xlab=</span><span class="st">&#39;t&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;Discounting factor&#39;</span></span>
-<span id="cb118-26"><a href="inferring-causality.html#cb118-26" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1">T =<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb118-2" title="2"></a>
+<a class="sourceLine" id="cb118-3" title="3">time.discount.f =<span class="st"> </span><span class="cf">function</span>(t, T, delta){</a>
+<a class="sourceLine" id="cb118-4" title="4">  <span class="kw">return</span>(<span class="kw">exp</span>(<span class="op">-</span>(T<span class="op">-</span>t)<span class="op">/</span>delta))</a>
+<a class="sourceLine" id="cb118-5" title="5">}</a>
+<a class="sourceLine" id="cb118-6" title="6"></a>
+<a class="sourceLine" id="cb118-7" title="7">values.of.delta &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb118-8" title="8">col &lt;-<span class="st"> </span><span class="kw">heat.colors</span>(<span class="kw">length</span>(values.of.delta), <span class="dt">rev=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb118-9" title="9"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(values.of.delta)){</a>
+<a class="sourceLine" id="cb118-10" title="10">  <span class="kw">curve</span>(</a>
+<a class="sourceLine" id="cb118-11" title="11">    <span class="kw">time.discount.f</span>(x, T, values.of.delta[i]),</a>
+<a class="sourceLine" id="cb118-12" title="12">    <span class="dt">from =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb118-13" title="13">    <span class="dt">to =</span> T,</a>
+<a class="sourceLine" id="cb118-14" title="14">    <span class="dt">col =</span> col[i],</a>
+<a class="sourceLine" id="cb118-15" title="15">    <span class="dt">add =</span> i <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb118-16" title="16">    <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,</a>
+<a class="sourceLine" id="cb118-17" title="17">    <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb118-18" title="18">  )</a>
+<a class="sourceLine" id="cb118-19" title="19">}</a>
+<a class="sourceLine" id="cb118-20" title="20"></a>
+<a class="sourceLine" id="cb118-21" title="21"><span class="kw">legend</span>(<span class="dv">1</span>, <span class="fl">1.</span>, values.of.delta, <span class="dt">col=</span>col, <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">title=</span><span class="kw">expression</span>(delta))</a>
+<a class="sourceLine" id="cb118-22" title="22"></a>
+<a class="sourceLine" id="cb118-23" title="23"><span class="kw">title</span>(</a>
+<a class="sourceLine" id="cb118-24" title="24">  <span class="kw">expression</span>(<span class="st">&quot;Discounting factor for term t with given &quot;</span><span class="op">*</span>delta),</a>
+<a class="sourceLine" id="cb118-25" title="25">  <span class="dt">xlab=</span><span class="st">&#39;t&#39;</span>, <span class="dt">ylab=</span><span class="st">&#39;Discounting factor&#39;</span></a>
+<a class="sourceLine" id="cb118-26" title="26">)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
 <p>When <span class="math inline">\(\delta=0\)</span>, everything but the <span class="math inline">\(T\)</span>th weight is 0. When <span class="math inline">\(\delta=\inf\)</span>, every weight is 1. Therefore, we can use <span class="math inline">\(\delta\)</span> to control the ‘amount’ of rationality.</p>
 <p>Finally, the other complication. The plot shows, as the observations come in, the probability of choosing hypothesis CC. Since CC is the true hypothesis, you can see that the agent slowly becomes more and more convinced of it:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="inferring-causality.html#cb119-1" tabindex="-1"></a>gamma <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb119-2"><a href="inferring-causality.html#cb119-2" tabindex="-1"></a>p.choosing.CC <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>gamma<span class="sc">*</span>phi))</span>
-<span id="cb119-3"><a href="inferring-causality.html#cb119-3" tabindex="-1"></a><span class="fu">plot</span>(p.choosing.CC)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1">gamma &lt;-<span class="st"> </span><span class="fl">0.05</span></a>
+<a class="sourceLine" id="cb119-2" title="2">p.choosing.CC &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(<span class="op">-</span>gamma<span class="op">*</span>phi))</a>
+<a class="sourceLine" id="cb119-3" title="3"><span class="kw">plot</span>(p.choosing.CC)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <p>Now let’s add the time discounting complication described above.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="inferring-causality.html#cb120-1" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb120-2"><a href="inferring-causality.html#cb120-2" tabindex="-1"></a></span>
-<span id="cb120-3"><a href="inferring-causality.html#cb120-3" tabindex="-1"></a>log.proportion <span class="ot">&lt;-</span> <span class="fu">log</span>(likelihoods.data.CC<span class="sc">/</span>likelihoods.data.CE)</span>
-<span id="cb120-4"><a href="inferring-causality.html#cb120-4" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb120-5"><a href="inferring-causality.html#cb120-5" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.datapoints){</span>
-<span id="cb120-6"><a href="inferring-causality.html#cb120-6" tabindex="-1"></a>  time.discount <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(</span>
-<span id="cb120-7"><a href="inferring-causality.html#cb120-7" tabindex="-1"></a>    <span class="dv">1</span><span class="sc">:</span>i,</span>
-<span id="cb120-8"><a href="inferring-causality.html#cb120-8" tabindex="-1"></a>    time.discount.f,</span>
-<span id="cb120-9"><a href="inferring-causality.html#cb120-9" tabindex="-1"></a>    <span class="at">T=</span>i,</span>
-<span id="cb120-10"><a href="inferring-causality.html#cb120-10" tabindex="-1"></a>    <span class="at">delta=</span>delta</span>
-<span id="cb120-11"><a href="inferring-causality.html#cb120-11" tabindex="-1"></a>  ))</span>
-<span id="cb120-12"><a href="inferring-causality.html#cb120-12" tabindex="-1"></a>  new.phi <span class="ot">&lt;-</span> <span class="fu">sum</span>(log.proportion[<span class="dv">1</span><span class="sc">:</span>i] <span class="sc">*</span> time.discount)</span>
-<span id="cb120-13"><a href="inferring-causality.html#cb120-13" tabindex="-1"></a>  phi <span class="ot">&lt;-</span> <span class="fu">c</span>(phi,new.phi)</span>
-<span id="cb120-14"><a href="inferring-causality.html#cb120-14" tabindex="-1"></a>}</span>
-<span id="cb120-15"><a href="inferring-causality.html#cb120-15" tabindex="-1"></a><span class="fu">plot</span>(phi)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1">delta &lt;-<span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb120-2" title="2"></a>
+<a class="sourceLine" id="cb120-3" title="3">log.proportion &lt;-<span class="st"> </span><span class="kw">log</span>(likelihoods.data.CC<span class="op">/</span>likelihoods.data.CE)</a>
+<a class="sourceLine" id="cb120-4" title="4">phi &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb120-5" title="5"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.datapoints){</a>
+<a class="sourceLine" id="cb120-6" title="6">  time.discount &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(</a>
+<a class="sourceLine" id="cb120-7" title="7">    <span class="dv">1</span><span class="op">:</span>i,</a>
+<a class="sourceLine" id="cb120-8" title="8">    time.discount.f,</a>
+<a class="sourceLine" id="cb120-9" title="9">    <span class="dt">T=</span>i,</a>
+<a class="sourceLine" id="cb120-10" title="10">    <span class="dt">delta=</span>delta</a>
+<a class="sourceLine" id="cb120-11" title="11">  ))</a>
+<a class="sourceLine" id="cb120-12" title="12">  new.phi &lt;-<span class="st"> </span><span class="kw">sum</span>(log.proportion[<span class="dv">1</span><span class="op">:</span>i] <span class="op">*</span><span class="st"> </span>time.discount)</a>
+<a class="sourceLine" id="cb120-13" title="13">  phi &lt;-<span class="st"> </span><span class="kw">c</span>(phi,new.phi)</a>
+<a class="sourceLine" id="cb120-14" title="14">}</a>
+<a class="sourceLine" id="cb120-15" title="15"><span class="kw">plot</span>(phi)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="Fausto Carcassi" />
 
 
-<meta name="date" content="2023-08-16" />
+<meta name="date" content="2023-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,27 +55,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,15 +82,15 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -137,15 +135,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#bits-and-pieces-of-r"><i class="fa fa-check"></i><b>1.1</b> Bits and pieces of R</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-motivating-example-sampling-from-an-urn"><i class="fa fa-check"></i><b>1.2</b> A motivating example: Sampling from an urn</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#a-motivating-example-sampling-from-an-urn"><i class="fa fa-check"></i><b>1.2</b> A motivating example: Sampling from an urn</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#sampling-possible-worlds-from-the-generative-model"><i class="fa fa-check"></i><b>1.2.1</b> Sampling possible worlds from the generative model</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#bayesian-update-learning-from-the-data"><i class="fa fa-check"></i><b>1.3</b> Bayesian update: Learning from the data</a>
-<ul>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#bayesian-update-learning-from-the-data"><i class="fa fa-check"></i><b>1.3</b> Bayesian update: Learning from the data</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#reminder-bayes-theorem"><i class="fa fa-check"></i><b>1.3.1</b> Reminder: Bayes Theorem</a></li>
 <li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#applying-bayes-theorem-to-the-urn-case"><i class="fa fa-check"></i><b>1.3.2</b> Applying Bayes theorem to the urn case</a></li>
 <li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#implementation-detail-how-to-avoid-calculating-pd"><i class="fa fa-check"></i><b>1.3.3</b> Implementation detail: How to avoid calculating p(D)</a></li>
@@ -154,10 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a></li>
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#answers"><i class="fa fa-check"></i><b>1.6</b> Answers</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="categorization.html"><a href="categorization.html"><i class="fa fa-check"></i><b>2</b> Categorization</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="categorization.html"><a href="categorization.html#the-case-of-a-single-observation"><i class="fa fa-check"></i><b>2.1</b> The case of a single observation</a>
-<ul>
+<li class="chapter" data-level="2" data-path="categorization.html"><a href="categorization.html"><i class="fa fa-check"></i><b>2</b> Categorization</a><ul>
+<li class="chapter" data-level="2.1" data-path="categorization.html"><a href="categorization.html#the-case-of-a-single-observation"><i class="fa fa-check"></i><b>2.1</b> The case of a single observation</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="categorization.html"><a href="categorization.html#little-r-programming-trick"><i class="fa fa-check"></i><b>2.1.1</b> Little R programming trick</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="categorization.html"><a href="categorization.html#the-case-of-multiple-observations"><i class="fa fa-check"></i><b>2.2</b> The case of multiple observations</a></li>
@@ -165,38 +158,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="categorization.html"><a href="categorization.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="categorization.html"><a href="categorization.html#answers-1"><i class="fa fa-check"></i><b>2.5</b> Answers</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="cultural-evolution.html"><a href="cultural-evolution.html"><i class="fa fa-check"></i><b>3</b> Cultural Evolution</a>
-<ul>
+<li class="chapter" data-level="3" data-path="cultural-evolution.html"><a href="cultural-evolution.html"><i class="fa fa-check"></i><b>3</b> Cultural Evolution</a><ul>
 <li class="chapter" data-level="3.1" data-path="cultural-evolution.html"><a href="cultural-evolution.html#the-languages"><i class="fa fa-check"></i><b>3.1</b> The languages</a></li>
 <li class="chapter" data-level="3.2" data-path="cultural-evolution.html"><a href="cultural-evolution.html#bayesian-learning-of-the-language-from-data"><i class="fa fa-check"></i><b>3.2</b> Bayesian learning of the language from data</a></li>
 <li class="chapter" data-level="3.3" data-path="cultural-evolution.html"><a href="cultural-evolution.html#cultural-evolution-with-bayesian-agents"><i class="fa fa-check"></i><b>3.3</b> Cultural evolution with Bayesian agents!</a></li>
 <li class="chapter" data-level="3.4" data-path="cultural-evolution.html"><a href="cultural-evolution.html#if-there-is-time-left-2"><i class="fa fa-check"></i><b>3.4</b> If there is time left…</a></li>
 <li class="chapter" data-level="3.5" data-path="cultural-evolution.html"><a href="cultural-evolution.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html"><i class="fa fa-check"></i><b>4</b> Rational Speech Acts</a>
-<ul>
+<li class="chapter" data-level="4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html"><i class="fa fa-check"></i><b>4</b> Rational Speech Acts</a><ul>
 <li class="chapter" data-level="4.1" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#surprisal-in-information-theory"><i class="fa fa-check"></i><b>4.1</b> Surprisal in information theory</a></li>
 <li class="chapter" data-level="4.2" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#the-rational-speech-act-model"><i class="fa fa-check"></i><b>4.2</b> The Rational Speech Act model</a></li>
 <li class="chapter" data-level="4.3" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#if-there-is-time-left-3"><i class="fa fa-check"></i><b>4.3</b> If there is time left…</a></li>
 <li class="chapter" data-level="4.4" data-path="rational-speech-acts.html"><a href="rational-speech-acts.html#exercises-3"><i class="fa fa-check"></i><b>4.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="inferring-causality.html"><a href="inferring-causality.html"><i class="fa fa-check"></i><b>5</b> Inferring causality</a>
-<ul>
+<li class="chapter" data-level="5" data-path="inferring-causality.html"><a href="inferring-causality.html"><i class="fa fa-check"></i><b>5</b> Inferring causality</a><ul>
 <li class="chapter" data-level="5.1" data-path="inferring-causality.html"><a href="inferring-causality.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
 <li class="chapter" data-level="5.2" data-path="inferring-causality.html"><a href="inferring-causality.html#approximating-the-likelihood-with-a-simulation"><i class="fa fa-check"></i><b>5.2</b> Approximating the likelihood with a simulation</a></li>
 <li class="chapter" data-level="5.3" data-path="inferring-causality.html"><a href="inferring-causality.html#bayesian-inference"><i class="fa fa-check"></i><b>5.3</b> Bayesian inference</a></li>
 <li class="chapter" data-level="5.4" data-path="inferring-causality.html"><a href="inferring-causality.html#one-complication-from-real-participants"><i class="fa fa-check"></i><b>5.4</b> One complication from real participants</a></li>
 <li class="chapter" data-level="5.5" data-path="inferring-causality.html"><a href="inferring-causality.html#putting-it-all-together"><i class="fa fa-check"></i><b>5.5</b> Putting it all together</a></li>
 <li class="chapter" data-level="5.6" data-path="inferring-causality.html"><a href="inferring-causality.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
-<li class="chapter" data-level="5.7" data-path="inferring-causality.html"><a href="inferring-causality.html#appendices-you-dont-need-to-understand-them"><i class="fa fa-check"></i><b>5.7</b> Appendices (You don’t need to understand them)</a>
-<ul>
+<li class="chapter" data-level="5.7" data-path="inferring-causality.html"><a href="inferring-causality.html#appendices-you-dont-need-to-understand-them"><i class="fa fa-check"></i><b>5.7</b> Appendices (You don’t need to understand them)</a><ul>
 <li class="chapter" data-level="5.7.1" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-1"><i class="fa fa-check"></i><b>5.7.1</b> Appendix 1</a></li>
 <li class="chapter" data-level="5.7.2" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-2-gamma1."><i class="fa fa-check"></i><b>5.7.2</b> Appendix 2: <span class="math inline">\(\gamma=1\)</span>.</a></li>
 <li class="chapter" data-level="5.7.3" data-path="inferring-causality.html"><a href="inferring-causality.html#appendix-3-another-complication"><i class="fa fa-check"></i><b>5.7.3</b> Appendix 3: Another complication</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html"><i class="fa fa-check"></i><b>6</b> Learning in a Language of Thought</a>
-<ul>
+<li class="chapter" data-level="6" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html"><i class="fa fa-check"></i><b>6</b> Learning in a Language of Thought</a><ul>
 <li class="chapter" data-level="6.1" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-logsumexp-function"><i class="fa fa-check"></i><b>6.1</b> The LogSumExp function</a></li>
 <li class="chapter" data-level="6.2" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#the-conceptual-primitives-and-number-systems"><i class="fa fa-check"></i><b>6.2</b> The conceptual primitives and number systems</a></li>
 <li class="chapter" data-level="6.3" data-path="learning-in-a-language-of-thought.html"><a href="learning-in-a-language-of-thought.html#learning-an-lot"><i class="fa fa-check"></i><b>6.3</b> Learning an LoT</a></li>
@@ -220,30 +208,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="cultural-evolution" class="section level1 hasAnchor" number="3">
+<div id="cultural-evolution" class="section level1 hasAnchor">
 <h1><span class="header-section-number">3</span> Cultural Evolution<a href="cultural-evolution.html#cultural-evolution" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Reading: Kirby, Simon, Mike Dowman, and Thomas L Grifﬁths. “Innateness and Culture in the Evolution of Language.” PNAS 104, no. 12 (2007): 5241–45. <a href="https://doi.org/10/c78969" class="uri">https://doi.org/10/c78969</a>.</p>
 <p>This lab will be about implementing a simple model of cultural evolution of language.</p>
-<div id="the-languages" class="section level2 hasAnchor" number="3.1">
+<div id="the-languages" class="section level2 hasAnchor">
 <h2><span class="header-section-number">3.1</span> The languages<a href="cultural-evolution.html#the-languages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The first thing we need to do is create the set of all languages we are going to consider. Each language will be modelled as a set of signals, where each signal refers to some (and possibly all) or none of the objects. For instance, one signal might refer to two of three objects, another to none of the objects, and yet another to all of the objects. We do not want to consider <em>all</em> possible languages, because we want the agent to always have at least one signal to send for each possible object. Therefore, we will exclude those languages such that there is no signal for one or more of the objects.</p>
 <p>We can represent a language as a 3 by 3 matrix. Each row represents one signal and each column is one object, so there are three signals and three objects. This is an example of a language:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="cultural-evolution.html#cb73-1" tabindex="-1"></a><span class="co"># Each language is a 3 by 3 matrix.</span></span>
-<span id="cb73-2"><a href="cultural-evolution.html#cb73-2" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
-<span id="cb73-3"><a href="cultural-evolution.html#cb73-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,</span>
-<span id="cb73-4"><a href="cultural-evolution.html#cb73-4" tabindex="-1"></a>    <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb73-5"><a href="cultural-evolution.html#cb73-5" tabindex="-1"></a>    <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
-<span id="cb73-6"><a href="cultural-evolution.html#cb73-6" tabindex="-1"></a>  <span class="at">nrow=</span><span class="dv">3</span></span>
-<span id="cb73-7"><a href="cultural-evolution.html#cb73-7" tabindex="-1"></a>)</span>
-<span id="cb73-8"><a href="cultural-evolution.html#cb73-8" tabindex="-1"></a></span>
-<span id="cb73-9"><a href="cultural-evolution.html#cb73-9" tabindex="-1"></a><span class="fu">print</span>(l1)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1"><span class="co"># Each language is a 3 by 3 matrix.</span></a>
+<a class="sourceLine" id="cb73-2" title="2">l1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(</a>
+<a class="sourceLine" id="cb73-3" title="3">  <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb73-4" title="4">    <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb73-5" title="5">    <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb73-6" title="6">  <span class="dt">nrow=</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb73-7" title="7">)</a>
+<a class="sourceLine" id="cb73-8" title="8"></a>
+<a class="sourceLine" id="cb73-9" title="9"><span class="kw">print</span>(l1)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    0    1    1
 ## [2,]    1    0    1
 ## [3,]    1    0    0</code></pre>
 <p>Note that a language is in a sense simply a list of 9 numbers (0s and 1s) organized in a grid. So the simplest way to create the set of all languages is to generate the set of all possible lists of nine 0s and 1s, and then organize each of them in a grid. Let’s start by creating all combinations:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="cultural-evolution.html#cb75-1" tabindex="-1"></a>flat.languages <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">expand.grid</span>(<span class="fu">rep</span>(<span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)),<span class="dv">9</span>)))</span>
-<span id="cb75-2"><a href="cultural-evolution.html#cb75-2" tabindex="-1"></a><span class="fu">head</span>(flat.languages)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1">flat.languages &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">expand.grid</span>(<span class="kw">rep</span>(<span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)),<span class="dv">9</span>)))</a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="kw">head</span>(flat.languages)</a></code></pre></div>
 <pre><code>##      Var1 Var2 Var3 Var4 Var5 Var6 Var7 Var8 Var9
 ## [1,]    0    0    0    0    0    0    0    0    0
 ## [2,]    1    0    0    0    0    0    0    0    0
@@ -252,182 +240,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [5,]    0    0    1    0    0    0    0    0    0
 ## [6,]    1    0    1    0    0    0    0    0    0</code></pre>
 <p>Now we can restructure each of those lists into a 3 by 3 matrix. What we get is a three-dimensional array: the first index represents the language, the second index the signal, and the third index the object. So if you take a specific language from the list (e.g. <code>languages.all.combinations[9,,]</code>) you get a 3 by 3 matrix.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="cultural-evolution.html#cb77-1" tabindex="-1"></a><span class="co"># reshape all combinations of 9 0s and 1s into 3 by 3 grids</span></span>
-<span id="cb77-2"><a href="cultural-evolution.html#cb77-2" tabindex="-1"></a><span class="co"># new array has shape (language, word, meaning)</span></span>
-<span id="cb77-3"><a href="cultural-evolution.html#cb77-3" tabindex="-1"></a>languages.all.combinations <span class="ot">&lt;-</span> <span class="fu">array</span>(flat.languages, <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">512</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span>
-<span id="cb77-4"><a href="cultural-evolution.html#cb77-4" tabindex="-1"></a><span class="co"># print an example of a language</span></span>
-<span id="cb77-5"><a href="cultural-evolution.html#cb77-5" tabindex="-1"></a>languages.all.combinations[<span class="dv">2</span>,,]</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1"><span class="co"># reshape all combinations of 9 0s and 1s into 3 by 3 grids</span></a>
+<a class="sourceLine" id="cb77-2" title="2"><span class="co"># new array has shape (language, word, meaning)</span></a>
+<a class="sourceLine" id="cb77-3" title="3">languages.all.combinations &lt;-<span class="st"> </span><span class="kw">array</span>(flat.languages, <span class="dt">dim=</span><span class="kw">c</span>(<span class="dv">512</span>,<span class="dv">3</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb77-4" title="4"><span class="co"># print an example of a language</span></a>
+<a class="sourceLine" id="cb77-5" title="5">languages.all.combinations[<span class="dv">2</span>,,]</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    0    0
 ## [2,]    0    0    0
 ## [3,]    0    0    0</code></pre>
 <p>Let’s do a sanity check!
 Since we are considering all <em>possible</em> languages, across all languages there should be no difference between any combination of word and object.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="cultural-evolution.html#cb79-1" tabindex="-1"></a><span class="fu">colSums</span>(languages.all.combinations)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" title="1"><span class="kw">colSums</span>(languages.all.combinations)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  256  256  256
 ## [2,]  256  256  256
 ## [3,]  256  256  256</code></pre>
 <p>Now let’s find those languages where there are states for which there is no word. We are not going to consider those languages!</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="cultural-evolution.html#cb81-1" tabindex="-1"></a>number.signals.per.object <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">aperm</span>(languages.all.combinations, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>)))</span>
-<span id="cb81-2"><a href="cultural-evolution.html#cb81-2" tabindex="-1"></a>indices.to.include <span class="ot">&lt;-</span> <span class="fu">apply</span>(number.signals.per.object <span class="sc">!=</span> <span class="dv">0</span>,<span class="dv">1</span>, all)</span>
-<span id="cb81-3"><a href="cultural-evolution.html#cb81-3" tabindex="-1"></a><span class="co"># create a new language array with only those languages that have</span></span>
-<span id="cb81-4"><a href="cultural-evolution.html#cb81-4" tabindex="-1"></a><span class="co"># at least one word for each state</span></span>
-<span id="cb81-5"><a href="cultural-evolution.html#cb81-5" tabindex="-1"></a>languages <span class="ot">&lt;-</span> languages.all.combinations[indices.to.include,,]</span>
-<span id="cb81-6"><a href="cultural-evolution.html#cb81-6" tabindex="-1"></a></span>
-<span id="cb81-7"><a href="cultural-evolution.html#cb81-7" tabindex="-1"></a><span class="co"># let&#39;s also keep track of the number of signals per object</span></span>
-<span id="cb81-8"><a href="cultural-evolution.html#cb81-8" tabindex="-1"></a><span class="co"># of just the languages we consider</span></span>
-<span id="cb81-9"><a href="cultural-evolution.html#cb81-9" tabindex="-1"></a><span class="co"># (it&#39;ll be useful later)</span></span>
-<span id="cb81-10"><a href="cultural-evolution.html#cb81-10" tabindex="-1"></a>number.signals.per.object.languages <span class="ot">&lt;-</span> number.signals.per.object[indices.to.include,]</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" title="1">number.signals.per.object &lt;-<span class="st"> </span><span class="kw">colSums</span>(<span class="kw">aperm</span>(languages.all.combinations, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>)))</a>
+<a class="sourceLine" id="cb81-2" title="2">indices.to.include &lt;-<span class="st"> </span><span class="kw">apply</span>(number.signals.per.object <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>,<span class="dv">1</span>, all)</a>
+<a class="sourceLine" id="cb81-3" title="3"><span class="co"># create a new language array with only those languages that have</span></a>
+<a class="sourceLine" id="cb81-4" title="4"><span class="co"># at least one word for each state</span></a>
+<a class="sourceLine" id="cb81-5" title="5">languages &lt;-<span class="st"> </span>languages.all.combinations[indices.to.include,,]</a>
+<a class="sourceLine" id="cb81-6" title="6"></a>
+<a class="sourceLine" id="cb81-7" title="7"><span class="co"># let&#39;s also keep track of the number of signals per object</span></a>
+<a class="sourceLine" id="cb81-8" title="8"><span class="co"># of just the languages we consider</span></a>
+<a class="sourceLine" id="cb81-9" title="9"><span class="co"># (it&#39;ll be useful later)</span></a>
+<a class="sourceLine" id="cb81-10" title="10">number.signals.per.object.languages &lt;-<span class="st"> </span>number.signals.per.object[indices.to.include,]</a></code></pre></div>
 <p>Another sanity check: go through a few languages and make sure that they indeed have at least one word for each object. There are 343 of them!</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="cultural-evolution.html#cb82-1" tabindex="-1"></a>languages[<span class="dv">1</span>,,]</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">languages[<span class="dv">1</span>,,]</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    1    1
 ## [2,]    0    0    0
 ## [3,]    0    0    0</code></pre>
 <p>We are left with 343 languages that satisfy our condition (namely, that there is at least one word for each object, so that whatever the agents observe they’ll have something to say). Next, we can write a function that given a language, produces an object (given by the world) and selects a signal at random in the language among the ones that refer to the object.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="cultural-evolution.html#cb84-1" tabindex="-1"></a>pick.object <span class="ot">&lt;-</span> <span class="cf">function</span>(language){</span>
-<span id="cb84-2"><a href="cultural-evolution.html#cb84-2" tabindex="-1"></a>  object <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb84-3"><a href="cultural-evolution.html#cb84-3" tabindex="-1"></a>  <span class="co"># get the *indices* of the signals that apply to the object in the language</span></span>
-<span id="cb84-4"><a href="cultural-evolution.html#cb84-4" tabindex="-1"></a>  indices.signals <span class="ot">&lt;-</span> <span class="fu">which</span>(language[,object]<span class="sc">==</span><span class="dv">1</span>)</span>
-<span id="cb84-5"><a href="cultural-evolution.html#cb84-5" tabindex="-1"></a>  <span class="co"># pick one of the indices</span></span>
-<span id="cb84-6"><a href="cultural-evolution.html#cb84-6" tabindex="-1"></a>  signal <span class="ot">&lt;-</span> <span class="fu">sample</span>(indices.signals, <span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb84-7"><a href="cultural-evolution.html#cb84-7" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(object, signal))</span>
-<span id="cb84-8"><a href="cultural-evolution.html#cb84-8" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1">pick.object &lt;-<span class="st"> </span><span class="cf">function</span>(language){</a>
+<a class="sourceLine" id="cb84-2" title="2">  object &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">size=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb84-3" title="3">  <span class="co"># get the *indices* of the signals that apply to the object in the language</span></a>
+<a class="sourceLine" id="cb84-4" title="4">  indices.signals &lt;-<span class="st"> </span><span class="kw">which</span>(language[,object]<span class="op">==</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb84-5" title="5">  <span class="co"># pick one of the indices</span></a>
+<a class="sourceLine" id="cb84-6" title="6">  signal &lt;-<span class="st"> </span><span class="kw">sample</span>(indices.signals, <span class="dt">size=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb84-7" title="7">  <span class="kw">return</span>(<span class="kw">c</span>(object, signal))</a>
+<a class="sourceLine" id="cb84-8" title="8">}</a></code></pre></div>
 <p>Another sanity check! Run this a bunch of times with different languages and make sure you understand what is going on.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="cultural-evolution.html#cb85-1" tabindex="-1"></a>language.index <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb85-2"><a href="cultural-evolution.html#cb85-2" tabindex="-1"></a><span class="fu">print</span>(languages[language.index,,])</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1">language.index &lt;-<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="kw">print</span>(languages[language.index,,])</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    0    1
 ## [2,]    1    1    0
 ## [3,]    0    0    0</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="cultural-evolution.html#cb87-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">pick.object</span>(languages[language.index,,]))</span></code></pre></div>
-<pre><code>## [1] 3 1</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" title="1"><span class="kw">print</span>(<span class="kw">pick.object</span>(languages[language.index,,]))</a></code></pre></div>
+<pre><code>## [1] 2 1</code></pre>
 </div>
-<div id="bayesian-learning-of-the-language-from-data" class="section level2 hasAnchor" number="3.2">
+<div id="bayesian-learning-of-the-language-from-data" class="section level2 hasAnchor">
 <h2><span class="header-section-number">3.2</span> Bayesian learning of the language from data<a href="cultural-evolution.html#bayesian-learning-of-the-language-from-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we have a function to produce a single combination of object and signal given a language. Let’s write a function that does Bayesian updating: going from the list of all languages, a prior, and some data to a posterior over languages.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="cultural-evolution.html#cb89-1" tabindex="-1"></a>bayesian.update <span class="ot">&lt;-</span> <span class="cf">function</span>(object, signal, prior, languages){</span>
-<span id="cb89-2"><a href="cultural-evolution.html#cb89-2" tabindex="-1"></a>  <span class="co"># the likelihood (probability of that combination of object and signal given a language)</span></span>
-<span id="cb89-3"><a href="cultural-evolution.html#cb89-3" tabindex="-1"></a>  <span class="co"># for a given language is equal to 0 if the signal is not compatible with the object</span></span>
-<span id="cb89-4"><a href="cultural-evolution.html#cb89-4" tabindex="-1"></a>  <span class="co"># in the language, and otherwise 1/(number of signals compatible with the object in the language)</span></span>
-<span id="cb89-5"><a href="cultural-evolution.html#cb89-5" tabindex="-1"></a>  </span>
-<span id="cb89-6"><a href="cultural-evolution.html#cb89-6" tabindex="-1"></a>  <span class="co"># the number of signals compatible with the object in each language</span></span>
-<span id="cb89-7"><a href="cultural-evolution.html#cb89-7" tabindex="-1"></a>  <span class="co"># is in the number.signals.per.object which we used before!</span></span>
-<span id="cb89-8"><a href="cultural-evolution.html#cb89-8" tabindex="-1"></a>  test <span class="ot">&lt;-</span> languages[,signal,object]<span class="sc">==</span><span class="dv">0</span></span>
-<span id="cb89-9"><a href="cultural-evolution.html#cb89-9" tabindex="-1"></a>  no <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>number.signals.per.object.languages[,object]</span>
-<span id="cb89-10"><a href="cultural-evolution.html#cb89-10" tabindex="-1"></a>  yes <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb89-11"><a href="cultural-evolution.html#cb89-11" tabindex="-1"></a>  </span>
-<span id="cb89-12"><a href="cultural-evolution.html#cb89-12" tabindex="-1"></a>  likelihood <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
-<span id="cb89-13"><a href="cultural-evolution.html#cb89-13" tabindex="-1"></a>    test,</span>
-<span id="cb89-14"><a href="cultural-evolution.html#cb89-14" tabindex="-1"></a>    yes,</span>
-<span id="cb89-15"><a href="cultural-evolution.html#cb89-15" tabindex="-1"></a>    no</span>
-<span id="cb89-16"><a href="cultural-evolution.html#cb89-16" tabindex="-1"></a>  )</span>
-<span id="cb89-17"><a href="cultural-evolution.html#cb89-17" tabindex="-1"></a>  </span>
-<span id="cb89-18"><a href="cultural-evolution.html#cb89-18" tabindex="-1"></a>  <span class="co"># calculate a normalized posterior </span></span>
-<span id="cb89-19"><a href="cultural-evolution.html#cb89-19" tabindex="-1"></a>  unnormalized.posterior <span class="ot">&lt;-</span> likelihood <span class="sc">*</span> prior</span>
-<span id="cb89-20"><a href="cultural-evolution.html#cb89-20" tabindex="-1"></a>  posterior <span class="ot">&lt;-</span> unnormalized.posterior <span class="sc">/</span> <span class="fu">sum</span>(unnormalized.posterior)</span>
-<span id="cb89-21"><a href="cultural-evolution.html#cb89-21" tabindex="-1"></a>  </span>
-<span id="cb89-22"><a href="cultural-evolution.html#cb89-22" tabindex="-1"></a>  <span class="fu">return</span>(posterior)</span>
-<span id="cb89-23"><a href="cultural-evolution.html#cb89-23" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1">bayesian.update &lt;-<span class="st"> </span><span class="cf">function</span>(object, signal, prior, languages){</a>
+<a class="sourceLine" id="cb89-2" title="2">  <span class="co"># the likelihood (probability of that combination of object and signal given a language)</span></a>
+<a class="sourceLine" id="cb89-3" title="3">  <span class="co"># for a given language is equal to 0 if the signal is not compatible with the object</span></a>
+<a class="sourceLine" id="cb89-4" title="4">  <span class="co"># in the language, and otherwise 1/(number of signals compatible with the object in the language)</span></a>
+<a class="sourceLine" id="cb89-5" title="5">  </a>
+<a class="sourceLine" id="cb89-6" title="6">  <span class="co"># the number of signals compatible with the object in each language</span></a>
+<a class="sourceLine" id="cb89-7" title="7">  <span class="co"># is in the number.signals.per.object which we used before!</span></a>
+<a class="sourceLine" id="cb89-8" title="8">  test &lt;-<span class="st"> </span>languages[,signal,object]<span class="op">==</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb89-9" title="9">  no &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>number.signals.per.object.languages[,object]</a>
+<a class="sourceLine" id="cb89-10" title="10">  yes &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb89-11" title="11">  </a>
+<a class="sourceLine" id="cb89-12" title="12">  likelihood &lt;-<span class="st"> </span><span class="kw">ifelse</span>(</a>
+<a class="sourceLine" id="cb89-13" title="13">    test,</a>
+<a class="sourceLine" id="cb89-14" title="14">    yes,</a>
+<a class="sourceLine" id="cb89-15" title="15">    no</a>
+<a class="sourceLine" id="cb89-16" title="16">  )</a>
+<a class="sourceLine" id="cb89-17" title="17">  </a>
+<a class="sourceLine" id="cb89-18" title="18">  <span class="co"># calculate a normalized posterior </span></a>
+<a class="sourceLine" id="cb89-19" title="19">  unnormalized.posterior &lt;-<span class="st"> </span>likelihood <span class="op">*</span><span class="st"> </span>prior</a>
+<a class="sourceLine" id="cb89-20" title="20">  posterior &lt;-<span class="st"> </span>unnormalized.posterior <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(unnormalized.posterior)</a>
+<a class="sourceLine" id="cb89-21" title="21">  </a>
+<a class="sourceLine" id="cb89-22" title="22">  <span class="kw">return</span>(posterior)</a>
+<a class="sourceLine" id="cb89-23" title="23">}</a></code></pre></div>
 <p>We have written the function to do the Bayesian updating, let’s test it on real data:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="cultural-evolution.html#cb90-1" tabindex="-1"></a>language.index <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb90-2"><a href="cultural-evolution.html#cb90-2" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;language:&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1">language.index &lt;-<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb90-2" title="2"><span class="kw">print</span>(<span class="st">&#39;language:&#39;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;language:&quot;</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="cultural-evolution.html#cb92-1" tabindex="-1"></a><span class="fu">print</span>(languages[language.index,,])</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1"><span class="kw">print</span>(languages[language.index,,])</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    0    1
 ## [2,]    1    1    0
 ## [3,]    0    0    0</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="cultural-evolution.html#cb94-1" tabindex="-1"></a><span class="co"># define a uniform prior</span></span>
-<span id="cb94-2"><a href="cultural-evolution.html#cb94-2" tabindex="-1"></a><span class="co"># that we will use again later on multiple times</span></span>
-<span id="cb94-3"><a href="cultural-evolution.html#cb94-3" tabindex="-1"></a>uniform.prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(languages)) <span class="sc">/</span> <span class="fu">nrow</span>(languages)</span>
-<span id="cb94-4"><a href="cultural-evolution.html#cb94-4" tabindex="-1"></a></span>
-<span id="cb94-5"><a href="cultural-evolution.html#cb94-5" tabindex="-1"></a>language.index <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb94-6"><a href="cultural-evolution.html#cb94-6" tabindex="-1"></a>language.sample <span class="ot">&lt;-</span> <span class="fu">pick.object</span>(languages[language.index,,])</span>
-<span id="cb94-7"><a href="cultural-evolution.html#cb94-7" tabindex="-1"></a></span>
-<span id="cb94-8"><a href="cultural-evolution.html#cb94-8" tabindex="-1"></a>object <span class="ot">&lt;-</span> language.sample[<span class="dv">1</span>]</span>
-<span id="cb94-9"><a href="cultural-evolution.html#cb94-9" tabindex="-1"></a>signal <span class="ot">&lt;-</span> language.sample[<span class="dv">2</span>]</span>
-<span id="cb94-10"><a href="cultural-evolution.html#cb94-10" tabindex="-1"></a></span>
-<span id="cb94-11"><a href="cultural-evolution.html#cb94-11" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">bayesian.update</span>(object, signal, uniform.prior, languages)</span>
-<span id="cb94-12"><a href="cultural-evolution.html#cb94-12" tabindex="-1"></a></span>
-<span id="cb94-13"><a href="cultural-evolution.html#cb94-13" tabindex="-1"></a><span class="fu">barplot</span>(posterior)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" title="1"><span class="co"># define a uniform prior</span></a>
+<a class="sourceLine" id="cb94-2" title="2"><span class="co"># that we will use again later on multiple times</span></a>
+<a class="sourceLine" id="cb94-3" title="3">uniform.prior &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="kw">nrow</span>(languages)) <span class="op">/</span><span class="st"> </span><span class="kw">nrow</span>(languages)</a>
+<a class="sourceLine" id="cb94-4" title="4"></a>
+<a class="sourceLine" id="cb94-5" title="5">language.index &lt;-<span class="st"> </span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb94-6" title="6">language.sample &lt;-<span class="st"> </span><span class="kw">pick.object</span>(languages[language.index,,])</a>
+<a class="sourceLine" id="cb94-7" title="7"></a>
+<a class="sourceLine" id="cb94-8" title="8">object &lt;-<span class="st"> </span>language.sample[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb94-9" title="9">signal &lt;-<span class="st"> </span>language.sample[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb94-10" title="10"></a>
+<a class="sourceLine" id="cb94-11" title="11">posterior &lt;-<span class="st"> </span><span class="kw">bayesian.update</span>(object, signal, uniform.prior, languages)</a>
+<a class="sourceLine" id="cb94-12" title="12"></a>
+<a class="sourceLine" id="cb94-13" title="13"><span class="kw">barplot</span>(posterior)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <p>Now we’d like to have the agent learn on more than one observation! We could do it in clever complicated ways, but let’s keep it simple. We can just use a loop where we keep producing data from the language, and then updating our beliefs after each observation.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="cultural-evolution.html#cb95-1" tabindex="-1"></a>run.multiple.observations <span class="ot">&lt;-</span> <span class="cf">function</span>(n.observations, language, prior){</span>
-<span id="cb95-2"><a href="cultural-evolution.html#cb95-2" tabindex="-1"></a>  <span class="co"># Okay, we could have directly have &#39;current.beliefs&#39; as the parameter</span></span>
-<span id="cb95-3"><a href="cultural-evolution.html#cb95-3" tabindex="-1"></a>  <span class="co"># but I am adding this line for you for clarity</span></span>
-<span id="cb95-4"><a href="cultural-evolution.html#cb95-4" tabindex="-1"></a>  posterior <span class="ot">&lt;-</span> prior</span>
-<span id="cb95-5"><a href="cultural-evolution.html#cb95-5" tabindex="-1"></a>  </span>
-<span id="cb95-6"><a href="cultural-evolution.html#cb95-6" tabindex="-1"></a>  <span class="co"># loop over the observations</span></span>
-<span id="cb95-7"><a href="cultural-evolution.html#cb95-7" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.observations){</span>
-<span id="cb95-8"><a href="cultural-evolution.html#cb95-8" tabindex="-1"></a>    prior <span class="ot">&lt;-</span> posterior</span>
-<span id="cb95-9"><a href="cultural-evolution.html#cb95-9" tabindex="-1"></a>    <span class="co"># produce one datapoint (i.e. one combination of object and signal)</span></span>
-<span id="cb95-10"><a href="cultural-evolution.html#cb95-10" tabindex="-1"></a>    new.data <span class="ot">&lt;-</span> <span class="fu">pick.object</span>(language)</span>
-<span id="cb95-11"><a href="cultural-evolution.html#cb95-11" tabindex="-1"></a>    object <span class="ot">&lt;-</span> new.data[<span class="dv">1</span>]</span>
-<span id="cb95-12"><a href="cultural-evolution.html#cb95-12" tabindex="-1"></a>    signal <span class="ot">&lt;-</span> new.data[<span class="dv">2</span>]</span>
-<span id="cb95-13"><a href="cultural-evolution.html#cb95-13" tabindex="-1"></a>    <span class="co"># do bayesian update on the new data</span></span>
-<span id="cb95-14"><a href="cultural-evolution.html#cb95-14" tabindex="-1"></a>    <span class="co"># and set &#39;current beliefs&#39; to the new posterior</span></span>
-<span id="cb95-15"><a href="cultural-evolution.html#cb95-15" tabindex="-1"></a>    <span class="co"># </span><span class="al">NOTE</span><span class="co">: we are using the previous beliefs as the prior here</span></span>
-<span id="cb95-16"><a href="cultural-evolution.html#cb95-16" tabindex="-1"></a>    posterior <span class="ot">&lt;-</span> <span class="fu">bayesian.update</span>(object, signal, prior, languages)</span>
-<span id="cb95-17"><a href="cultural-evolution.html#cb95-17" tabindex="-1"></a>  }</span>
-<span id="cb95-18"><a href="cultural-evolution.html#cb95-18" tabindex="-1"></a>  <span class="fu">return</span>(posterior)</span>
-<span id="cb95-19"><a href="cultural-evolution.html#cb95-19" tabindex="-1"></a>}</span>
-<span id="cb95-20"><a href="cultural-evolution.html#cb95-20" tabindex="-1"></a></span>
-<span id="cb95-21"><a href="cultural-evolution.html#cb95-21" tabindex="-1"></a><span class="co"># update belief with 10 observations</span></span>
-<span id="cb95-22"><a href="cultural-evolution.html#cb95-22" tabindex="-1"></a>current.beliefs <span class="ot">&lt;-</span> <span class="fu">run.multiple.observations</span>(<span class="dv">10</span>, languages[<span class="dv">10</span>,,], uniform.prior)</span>
-<span id="cb95-23"><a href="cultural-evolution.html#cb95-23" tabindex="-1"></a><span class="fu">barplot</span>(current.beliefs)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1">run.multiple.observations &lt;-<span class="st"> </span><span class="cf">function</span>(n.observations, language, prior){</a>
+<a class="sourceLine" id="cb95-2" title="2">  <span class="co"># Okay, we could have directly have &#39;current.beliefs&#39; as the parameter</span></a>
+<a class="sourceLine" id="cb95-3" title="3">  <span class="co"># but I am adding this line for you for clarity</span></a>
+<a class="sourceLine" id="cb95-4" title="4">  posterior &lt;-<span class="st"> </span>prior</a>
+<a class="sourceLine" id="cb95-5" title="5">  </a>
+<a class="sourceLine" id="cb95-6" title="6">  <span class="co"># loop over the observations</span></a>
+<a class="sourceLine" id="cb95-7" title="7">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.observations){</a>
+<a class="sourceLine" id="cb95-8" title="8">    prior &lt;-<span class="st"> </span>posterior</a>
+<a class="sourceLine" id="cb95-9" title="9">    <span class="co"># produce one datapoint (i.e. one combination of object and signal)</span></a>
+<a class="sourceLine" id="cb95-10" title="10">    new.data &lt;-<span class="st"> </span><span class="kw">pick.object</span>(language)</a>
+<a class="sourceLine" id="cb95-11" title="11">    object &lt;-<span class="st"> </span>new.data[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb95-12" title="12">    signal &lt;-<span class="st"> </span>new.data[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb95-13" title="13">    <span class="co"># do bayesian update on the new data</span></a>
+<a class="sourceLine" id="cb95-14" title="14">    <span class="co"># and set &#39;current beliefs&#39; to the new posterior</span></a>
+<a class="sourceLine" id="cb95-15" title="15">    <span class="co"># </span><span class="al">NOTE</span><span class="co">: we are using the previous beliefs as the prior here</span></a>
+<a class="sourceLine" id="cb95-16" title="16">    posterior &lt;-<span class="st"> </span><span class="kw">bayesian.update</span>(object, signal, prior, languages)</a>
+<a class="sourceLine" id="cb95-17" title="17">  }</a>
+<a class="sourceLine" id="cb95-18" title="18">  <span class="kw">return</span>(posterior)</a>
+<a class="sourceLine" id="cb95-19" title="19">}</a>
+<a class="sourceLine" id="cb95-20" title="20"></a>
+<a class="sourceLine" id="cb95-21" title="21"><span class="co"># update belief with 10 observations</span></a>
+<a class="sourceLine" id="cb95-22" title="22">current.beliefs &lt;-<span class="st"> </span><span class="kw">run.multiple.observations</span>(<span class="dv">10</span>, languages[<span class="dv">10</span>,,], uniform.prior)</a>
+<a class="sourceLine" id="cb95-23" title="23"><span class="kw">barplot</span>(current.beliefs)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 </div>
-<div id="cultural-evolution-with-bayesian-agents" class="section level2 hasAnchor" number="3.3">
+<div id="cultural-evolution-with-bayesian-agents" class="section level2 hasAnchor">
 <h2><span class="header-section-number">3.3</span> Cultural evolution with Bayesian agents!<a href="cultural-evolution.html#cultural-evolution-with-bayesian-agents" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Finally, we have all the ingredients necessary to run an iterated learning experiment.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="cultural-evolution.html#cb96-1" tabindex="-1"></a>iterate <span class="ot">&lt;-</span> <span class="cf">function</span>(n.iterations, n.observations, prior){</span>
-<span id="cb96-2"><a href="cultural-evolution.html#cb96-2" tabindex="-1"></a>  <span class="co"># start with an agent with a random language</span></span>
-<span id="cb96-3"><a href="cultural-evolution.html#cb96-3" tabindex="-1"></a>  current.language.index <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(languages),<span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb96-4"><a href="cultural-evolution.html#cb96-4" tabindex="-1"></a>  </span>
-<span id="cb96-5"><a href="cultural-evolution.html#cb96-5" tabindex="-1"></a>  history <span class="ot">&lt;-</span> <span class="fu">c</span>(current.language.index)</span>
-<span id="cb96-6"><a href="cultural-evolution.html#cb96-6" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.iterations){</span>
-<span id="cb96-7"><a href="cultural-evolution.html#cb96-7" tabindex="-1"></a>  </span>
-<span id="cb96-8"><a href="cultural-evolution.html#cb96-8" tabindex="-1"></a>    <span class="co"># first calculate the learner&#39;s posterior given the data produced by the </span></span>
-<span id="cb96-9"><a href="cultural-evolution.html#cb96-9" tabindex="-1"></a>    <span class="co"># previous generation&#39;s teacher</span></span>
-<span id="cb96-10"><a href="cultural-evolution.html#cb96-10" tabindex="-1"></a>    posterior <span class="ot">&lt;-</span> <span class="fu">run.multiple.observations</span>(</span>
-<span id="cb96-11"><a href="cultural-evolution.html#cb96-11" tabindex="-1"></a>      n.observations,</span>
-<span id="cb96-12"><a href="cultural-evolution.html#cb96-12" tabindex="-1"></a>      languages[current.language.index,,],</span>
-<span id="cb96-13"><a href="cultural-evolution.html#cb96-13" tabindex="-1"></a>      prior</span>
-<span id="cb96-14"><a href="cultural-evolution.html#cb96-14" tabindex="-1"></a>    )</span>
-<span id="cb96-15"><a href="cultural-evolution.html#cb96-15" tabindex="-1"></a>    </span>
-<span id="cb96-16"><a href="cultural-evolution.html#cb96-16" tabindex="-1"></a>    <span class="co"># then select a language given a posterior</span></span>
-<span id="cb96-17"><a href="cultural-evolution.html#cb96-17" tabindex="-1"></a>    <span class="co"># either by picking the language with the greatest probability</span></span>
-<span id="cb96-18"><a href="cultural-evolution.html#cb96-18" tabindex="-1"></a>    <span class="co"># or sampling from the posterior</span></span>
-<span id="cb96-19"><a href="cultural-evolution.html#cb96-19" tabindex="-1"></a>    <span class="co"># here we sample</span></span>
-<span id="cb96-20"><a href="cultural-evolution.html#cb96-20" tabindex="-1"></a>    current.language.index <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">nrow</span>(languages), <span class="at">size=</span><span class="dv">1</span>, <span class="at">prob=</span>posterior)</span>
-<span id="cb96-21"><a href="cultural-evolution.html#cb96-21" tabindex="-1"></a>    </span>
-<span id="cb96-22"><a href="cultural-evolution.html#cb96-22" tabindex="-1"></a>    history <span class="ot">&lt;-</span> <span class="fu">c</span>(history, current.language.index)</span>
-<span id="cb96-23"><a href="cultural-evolution.html#cb96-23" tabindex="-1"></a>  }</span>
-<span id="cb96-24"><a href="cultural-evolution.html#cb96-24" tabindex="-1"></a>  </span>
-<span id="cb96-25"><a href="cultural-evolution.html#cb96-25" tabindex="-1"></a>  <span class="fu">return</span>(history)</span>
-<span id="cb96-26"><a href="cultural-evolution.html#cb96-26" tabindex="-1"></a>}</span>
-<span id="cb96-27"><a href="cultural-evolution.html#cb96-27" tabindex="-1"></a>  </span>
-<span id="cb96-28"><a href="cultural-evolution.html#cb96-28" tabindex="-1"></a>n.iterations <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb96-29"><a href="cultural-evolution.html#cb96-29" tabindex="-1"></a>n.observations <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb96-30"><a href="cultural-evolution.html#cb96-30" tabindex="-1"></a></span>
-<span id="cb96-31"><a href="cultural-evolution.html#cb96-31" tabindex="-1"></a>history <span class="ot">&lt;-</span> <span class="fu">iterate</span>(n.iterations, n.observations, uniform.prior)</span>
-<span id="cb96-32"><a href="cultural-evolution.html#cb96-32" tabindex="-1"></a></span>
-<span id="cb96-33"><a href="cultural-evolution.html#cb96-33" tabindex="-1"></a><span class="fu">head</span>(history)</span></code></pre></div>
-<pre><code>## [1] 279  23 198 170  98 155</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1">iterate &lt;-<span class="st"> </span><span class="cf">function</span>(n.iterations, n.observations, prior){</a>
+<a class="sourceLine" id="cb96-2" title="2">  <span class="co"># start with an agent with a random language</span></a>
+<a class="sourceLine" id="cb96-3" title="3">  current.language.index &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(languages),<span class="dt">size=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb96-4" title="4">  </a>
+<a class="sourceLine" id="cb96-5" title="5">  history &lt;-<span class="st"> </span><span class="kw">c</span>(current.language.index)</a>
+<a class="sourceLine" id="cb96-6" title="6">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n.iterations){</a>
+<a class="sourceLine" id="cb96-7" title="7">  </a>
+<a class="sourceLine" id="cb96-8" title="8">    <span class="co"># first calculate the learner&#39;s posterior given the data produced by the </span></a>
+<a class="sourceLine" id="cb96-9" title="9">    <span class="co"># previous generation&#39;s teacher</span></a>
+<a class="sourceLine" id="cb96-10" title="10">    posterior &lt;-<span class="st"> </span><span class="kw">run.multiple.observations</span>(</a>
+<a class="sourceLine" id="cb96-11" title="11">      n.observations,</a>
+<a class="sourceLine" id="cb96-12" title="12">      languages[current.language.index,,],</a>
+<a class="sourceLine" id="cb96-13" title="13">      prior</a>
+<a class="sourceLine" id="cb96-14" title="14">    )</a>
+<a class="sourceLine" id="cb96-15" title="15">    </a>
+<a class="sourceLine" id="cb96-16" title="16">    <span class="co"># then select a language given a posterior</span></a>
+<a class="sourceLine" id="cb96-17" title="17">    <span class="co"># either by picking the language with the greatest probability</span></a>
+<a class="sourceLine" id="cb96-18" title="18">    <span class="co"># or sampling from the posterior</span></a>
+<a class="sourceLine" id="cb96-19" title="19">    <span class="co"># here we sample</span></a>
+<a class="sourceLine" id="cb96-20" title="20">    current.language.index &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">nrow</span>(languages), <span class="dt">size=</span><span class="dv">1</span>, <span class="dt">prob=</span>posterior)</a>
+<a class="sourceLine" id="cb96-21" title="21">    </a>
+<a class="sourceLine" id="cb96-22" title="22">    history &lt;-<span class="st"> </span><span class="kw">c</span>(history, current.language.index)</a>
+<a class="sourceLine" id="cb96-23" title="23">  }</a>
+<a class="sourceLine" id="cb96-24" title="24">  </a>
+<a class="sourceLine" id="cb96-25" title="25">  <span class="kw">return</span>(history)</a>
+<a class="sourceLine" id="cb96-26" title="26">}</a>
+<a class="sourceLine" id="cb96-27" title="27">  </a>
+<a class="sourceLine" id="cb96-28" title="28">n.iterations &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb96-29" title="29">n.observations &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb96-30" title="30"></a>
+<a class="sourceLine" id="cb96-31" title="31">history &lt;-<span class="st"> </span><span class="kw">iterate</span>(n.iterations, n.observations, uniform.prior)</a>
+<a class="sourceLine" id="cb96-32" title="32"></a>
+<a class="sourceLine" id="cb96-33" title="33"><span class="kw">head</span>(history)</a></code></pre></div>
+<pre><code>## [1] 329 163  16 324 285 189</code></pre>
 <p>If you run for 10k generations, you will see that it starts being pretty uniform over the set of languages! How can you interpret that?</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="cultural-evolution.html#cb98-1" tabindex="-1"></a><span class="fu">barplot</span>(history)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1"><span class="kw">barplot</span>(history)</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
-<div id="if-there-is-time-left-2" class="section level2 hasAnchor" number="3.4">
+<div id="if-there-is-time-left-2" class="section level2 hasAnchor">
 <h2><span class="header-section-number">3.4</span> If there is time left…<a href="cultural-evolution.html#if-there-is-time-left-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Instead of having a single agent in each generation, implement multiple agents. The cultural child for each cultural parent is picked at random from the whole population, so that one cultural parent can have multiple cultural children (otherwise the model would be equivalent to multiple independent IL chains).</li>
 <li>Add a selection by communicative pressure: decide whether an agent gets to be part of the following generation depending on how successfully it can comunicate with its own cultural parent.</li>
 </ul>
 </div>
-<div id="exercises-2" class="section level2 hasAnchor" number="3.5">
+<div id="exercises-2" class="section level2 hasAnchor">
 <h2><span class="header-section-number">3.5</span> Exercises<a href="cultural-evolution.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Exercise 1: What is the language that will lead to the worst communication and why? What are the language(s) that will lead to the best communication and why?</li>
